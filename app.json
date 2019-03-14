@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Simple tools to help your team practice smarter.",
+    "githubUrl": "https://github.com/cooperka/ImprovTilapia"
   }
 }
