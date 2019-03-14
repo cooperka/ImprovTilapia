@@ -1,0 +1,27 @@
+# Dependencies.
+node_modules/
+
+# Testing.
+coverage/
+
+# Build artifacts.
+lib/
+build/
+dist/
+tmp/
+out/
+
+# Various metadata.
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+firebase-debug.log*
+.eslintcache
+
+# IntelliJ personal data.
+**/.idea/dictionaries/
+**/.idea/libraries/
+**/.idea/tasks.xml
+**/.idea/workspace.xml*
