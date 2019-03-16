@@ -1,4 +1,5 @@
 {
+  "expo_README": "https://docs.expo.io/versions/v32.0.0/workflow/configuration/",
   "expo": {
     "name": "Improv Tilapia",
     "slug": "improv-tilapia",
@@ -22,6 +23,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "permissions": [
+      ]
+    },
     "ios": {
       "supportsTablet": true
     }
