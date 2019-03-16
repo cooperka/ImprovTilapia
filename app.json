@@ -24,9 +24,11 @@
       "**/*"
     ],
     "android": {
+      "package": "com.cooperka.improv",
       "permissions": []
     },
     "ios": {
+      "bundleIdentifier": "com.cooperka.improv",
       "supportsTablet": true
     },
     "description": "Simple tools to help your team practice smarter.",
