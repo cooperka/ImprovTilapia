@@ -11,6 +11,6 @@ exports[`renders as expected 1`] = `
     }
   }
 >
-  <Clock />
+  <Timer />
 </View>
 `;

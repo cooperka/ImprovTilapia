@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Clock from '../Clock/component';
+import Timer from '../Timer/component';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Clock />
+        <Timer />
       </View>
     );
   }

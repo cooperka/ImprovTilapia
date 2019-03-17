@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
 
-class Clock extends Component {
+class Timer extends Component {
   state = {
     seconds: 0,
   };
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   time: {},
 });
 
-export default Clock;
+export default Timer;
