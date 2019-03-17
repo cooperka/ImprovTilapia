@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { KeepAwake } from 'expo';
 
 class Clock extends Component {
   state = {
@@ -21,6 +22,7 @@ class Clock extends Component {
   render() {
     return (
       <View className={styles.timeContainer}>
+        <KeepAwake />
         <Text className={styles.time}>{this.state.seconds}</Text>
       </View>
     );
