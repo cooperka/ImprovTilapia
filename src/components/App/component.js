@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
@@ -33,6 +33,7 @@ class App extends Component {
     return (
       <PaperProvider theme={theme}>
         <View style={styles.container}>
+          <StatusBar barStyle="dark-content" />
           <Timer />
         </View>
       </PaperProvider>
