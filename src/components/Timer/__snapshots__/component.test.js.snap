@@ -16,10 +16,9 @@ exports[`renders as expected 1`] = `
     0
   </Text>
   <Button
+    icon={[Function]}
     mode="contained"
-  >
-    Test
-  </Button>
+  />
 </View>
 `;
 
@@ -39,9 +38,8 @@ exports[`renders as expected 2`] = `
     1
   </Text>
   <Button
+    icon={[Function]}
     mode="contained"
-  >
-    Test
-  </Button>
+  />
 </View>
 `;
