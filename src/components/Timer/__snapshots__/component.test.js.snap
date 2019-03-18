@@ -18,6 +18,7 @@ exports[`renders as expected 1`] = `
   <Button
     icon={[Function]}
     mode="contained"
+    onPress={[Function]}
   />
 </View>
 `;
@@ -35,11 +36,12 @@ exports[`renders as expected 2`] = `
   <Text
     className={Object {}}
   >
-    1
+    0
   </Text>
   <Button
     icon={[Function]}
     mode="contained"
+    onPress={[Function]}
   />
 </View>
 `;
