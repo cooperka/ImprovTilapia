@@ -15,6 +15,11 @@ exports[`renders as expected 1`] = `
   >
     0
   </Text>
+  <Button
+    mode="contained"
+  >
+    Test
+  </Button>
 </View>
 `;
 
@@ -33,5 +38,10 @@ exports[`renders as expected 2`] = `
   >
     1
   </Text>
+  <Button
+    mode="contained"
+  >
+    Test
+  </Button>
 </View>
 `;

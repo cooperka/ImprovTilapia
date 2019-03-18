@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<View
-  style={
+<Provider
+  theme={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#fff",
-      "flex": 1,
-      "justifyContent": "center",
+      "colors": Object {
+        "primary": "#3f51b5",
+      },
     }
   }
 >
-  <Timer />
-</View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Timer />
+  </View>
+</Provider>
 `;

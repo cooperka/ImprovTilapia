@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
+import { Button } from 'react-native-paper';
 
 class Timer extends Component {
   state = {
@@ -24,6 +25,7 @@ class Timer extends Component {
       <View className={styles.timeContainer}>
         <KeepAwake />
         <Text className={styles.time}>{this.state.seconds}</Text>
+        <Button mode="contained">Test</Button>
       </View>
     );
   }

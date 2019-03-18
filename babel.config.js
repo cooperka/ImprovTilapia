@@ -3,5 +3,13 @@ module.exports = function(api) {
 
   return {
     presets: ['babel-preset-expo'],
+    env: {
+      production: {
+        plugins: [
+          // Re-write imports to minimize bundle size.
+          'react-native-paper/babel',
+        ],
+      },
+    },
   };
 };
