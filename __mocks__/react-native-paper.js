@@ -36,5 +36,11 @@ module.exports = {
   TextInput: 'TextInput',
   ToggleButton: 'ToggleButton',
   TouchableRipple: 'TouchableRipple',
+
   Typography: 'Typography',
+  Caption: 'Caption',
+  Headline: 'Headline',
+  Paragraph: 'Paragraph',
+  Subheading: 'Subheading',
+  Title: 'Title',
 };

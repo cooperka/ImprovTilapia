@@ -9,11 +9,15 @@ exports[`renders as expected 1`] = `
     }
   }
 >
-  <Text
-    style={Object {}}
+  <Headline
+    style={
+      Object {
+        "marginBottom": 8,
+      }
+    }
   >
     0
-  </Text>
+  </Headline>
   <FAB
     icon={[Function]}
     onPress={[Function]}
@@ -35,11 +39,15 @@ exports[`renders as expected 2`] = `
     }
   }
 >
-  <Text
-    style={Object {}}
+  <Headline
+    style={
+      Object {
+        "marginBottom": 8,
+      }
+    }
   >
     0
-  </Text>
+  </Headline>
   <FAB
     icon={[Function]}
     onPress={[Function]}

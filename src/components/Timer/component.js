@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { KeepAwake } from 'expo';
-import { FAB } from 'react-native-paper';
+import { Headline, FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
 
 import theme from '../App/paperTheme';
@@ -44,7 +44,7 @@ class Timer extends Component {
     return (
       <View style={styles.timeContainer}>
         <KeepAwake />
-        <Text style={styles.time}>{this.state.seconds}</Text>
+        <Headline style={styles.time}>{this.state.seconds}</Headline>
         <FAB
           key={`playPause_${isRunning}`}
           style={styles.button}
@@ -61,7 +61,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  time: {},
+  time: {
+    marginBottom: 8,
+  },
   button: {
     backgroundColor: theme.colors.primary,
   },
