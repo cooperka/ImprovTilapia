@@ -2,46 +2,52 @@
 
 exports[`renders as expected 1`] = `
 <View
-  className={
+  style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
     }
   }
 >
   <Text
-    className={Object {}}
+    style={Object {}}
   >
     0
   </Text>
-  <Button
+  <FAB
     icon={[Function]}
-    mode="contained"
     onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#3f51b5",
+      }
+    }
   />
 </View>
 `;
 
 exports[`renders as expected 2`] = `
 <View
-  className={
+  style={
     Object {
       "alignItems": "center",
-      "flex": 1,
       "justifyContent": "center",
     }
   }
 >
   <Text
-    className={Object {}}
+    style={Object {}}
   >
     0
   </Text>
-  <Button
+  <FAB
     icon={[Function]}
-    mode="contained"
     onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#3f51b5",
+      }
+    }
   />
 </View>
 `;

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
-import { Button } from 'react-native-paper';
+import { FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
 
-const PlayIcon = () => <Ionicons name="md-play" color="white" />;
-const PauseIcon = () => <Ionicons name="md-pause" color="white" />;
+import theme from '../App/paperTheme';
+
+const FabIcon = ({ name }) => (
+  <Ionicons style={styles.icon} name={name} size={28} color="white" />
+);
+const PlayIcon = () => <FabIcon name="md-play" />;
+const PauseIcon = () => <FabIcon name="md-pause" />;
 
 class Timer extends Component {
   state = {
@@ -37,11 +42,11 @@ class Timer extends Component {
     const { isRunning } = this.state;
 
     return (
-      <View className={styles.timeContainer}>
+      <View style={styles.timeContainer}>
         <KeepAwake />
-        <Text className={styles.time}>{this.state.seconds}</Text>
-        <Button
-          mode="contained"
+        <Text style={styles.time}>{this.state.seconds}</Text>
+        <FAB
+          style={styles.button}
           icon={isRunning ? PauseIcon : PlayIcon}
           onPress={this.handleToggleTimer}
         />
@@ -52,11 +57,17 @@ class Timer extends Component {
 
 const styles = StyleSheet.create({
   timeContainer: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   time: {},
+  button: {
+    backgroundColor: theme.colors.primary,
+  },
+  icon: {
+    // TODO: Figure out why the icon isn't centering.
+    marginLeft: 4,
+  },
 });
 
 export default Timer;
