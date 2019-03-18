@@ -46,6 +46,7 @@ class Timer extends Component {
         <KeepAwake />
         <Text style={styles.time}>{this.state.seconds}</Text>
         <FAB
+          key={`playPause_${isRunning}`}
           style={styles.button}
           icon={isRunning ? PauseIcon : PlayIcon}
           onPress={this.handleToggleTimer}
