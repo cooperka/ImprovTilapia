@@ -34,6 +34,12 @@ class Timer extends Component {
   }
 
   tick() {
+    const { seconds } = this.state;
+
+    if (seconds <= 0) {
+      this.setState({ seconds: 0, isRunning: false });
+    }
+
     // TODO: Save actual milliseconds instead of this short-term hack.
     this.setState(({ seconds, isRunning }) => ({
       seconds: seconds - (isRunning ? 1 : 0),
@@ -46,7 +52,7 @@ class Timer extends Component {
   };
 
   handleReset = () => {
-    this.setState({ seconds: 0 });
+    this.setState({ seconds: 0, isRunning: false });
   };
 
   handleSetTime = (date) => {
