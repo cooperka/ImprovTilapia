@@ -1,8 +1,8 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
-import { Headline, Button, FAB } from 'react-native-paper';
+import { Button, FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
 
 import theme from '../App/paperTheme';
@@ -53,13 +53,14 @@ class Timer extends Component {
 
   render() {
     const { isRunning } = this.state;
+    const width = Dimensions.get('window').width;
 
     return (
       <View style={styles.timeContainer}>
         <KeepAwake />
-        <Headline style={styles.time}>
+        <Text style={[styles.time, { fontSize: width / 4.0 }]}>
           {formatTime(this.state.seconds)}
-        </Headline>
+        </Text>
         <View style={styles.buttonsContainer}>
           <Button style={styles.button} onPress={this.handleReset}>
             Reset
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
   },
   time: {
     marginBottom: 8,
+    color: '#f00',
   },
   buttonsContainer: {
     display: 'flex',
