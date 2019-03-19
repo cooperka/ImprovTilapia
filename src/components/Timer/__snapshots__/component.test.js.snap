@@ -6,6 +6,7 @@ exports[`renders as expected 1`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
+      "width": "100%",
     }
   }
 >
@@ -18,15 +19,46 @@ exports[`renders as expected 1`] = `
   >
     0
   </Headline>
-  <FAB
-    icon={[Function]}
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "backgroundColor": "#3f51b5",
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
       }
     }
-  />
+  >
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      Reset
+    </Button>
+    <FAB
+      icon={[Function]}
+      onPress={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#3f51b5",
+        }
+      }
+    />
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      +1 min
+    </Button>
+  </View>
 </View>
 `;
 
@@ -36,6 +68,7 @@ exports[`renders as expected 2`] = `
     Object {
       "alignItems": "center",
       "justifyContent": "center",
+      "width": "100%",
     }
   }
 >
@@ -48,14 +81,45 @@ exports[`renders as expected 2`] = `
   >
     0
   </Headline>
-  <FAB
-    icon={[Function]}
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "backgroundColor": "#3f51b5",
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
       }
     }
-  />
+  >
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      Reset
+    </Button>
+    <FAB
+      icon={[Function]}
+      onPress={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#3f51b5",
+        }
+      }
+    />
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      +1 min
+    </Button>
+  </View>
 </View>
 `;

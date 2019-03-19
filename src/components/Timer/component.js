@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { KeepAwake } from 'expo';
-import { Headline, FAB } from 'react-native-paper';
+import { Headline, Button, FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
 
 import theme from '../App/paperTheme';
@@ -38,6 +38,14 @@ class Timer extends Component {
     this.setState({ isRunning: !isRunning });
   };
 
+  handleReset = () => {
+    this.setState({ seconds: 0 });
+  };
+
+  handleAddTime = (additionalSeconds) => () => {
+    this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
+  };
+
   render() {
     const { isRunning } = this.state;
 
@@ -45,12 +53,20 @@ class Timer extends Component {
       <View style={styles.timeContainer}>
         <KeepAwake />
         <Headline style={styles.time}>{this.state.seconds}</Headline>
-        <FAB
-          key={`playPause_${isRunning}`}
-          style={styles.button}
-          icon={isRunning ? PauseIcon : PlayIcon}
-          onPress={this.handleToggleTimer}
-        />
+        <View style={styles.buttonsContainer}>
+          <Button style={styles.button} onPress={this.handleReset}>
+            Reset
+          </Button>
+          <FAB
+            key={`playPause_${isRunning}`}
+            style={styles.fab}
+            icon={isRunning ? PauseIcon : PlayIcon}
+            onPress={this.handleToggleTimer}
+          />
+          <Button style={styles.button} onPress={this.handleAddTime(60)}>
+            +1 min
+          </Button>
+        </View>
       </View>
     );
   }
@@ -58,13 +74,23 @@ class Timer extends Component {
 
 const styles = StyleSheet.create({
   timeContainer: {
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   time: {
     marginBottom: 8,
   },
+  buttonsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   button: {
+    flex: 1,
+  },
+  fab: {
     backgroundColor: theme.colors.primary,
   },
   icon: {
