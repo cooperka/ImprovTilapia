@@ -11,6 +11,7 @@ exports[`renders as expected 1`] = `
   }
 >
   <Text
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -65,6 +66,12 @@ exports[`renders as expected 1`] = `
       +1 min
     </Button>
   </View>
+  <DateTimePicker
+    isVisible={false}
+    mode="time"
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </View>
 `;
 
@@ -79,6 +86,7 @@ exports[`renders as expected 2`] = `
   }
 >
   <Text
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -133,5 +141,11 @@ exports[`renders as expected 2`] = `
       +1 min
     </Button>
   </View>
+  <DateTimePicker
+    isVisible={false}
+    mode="time"
+    onCancel={[Function]}
+    onConfirm={[Function]}
+  />
 </View>
 `;

@@ -4,6 +4,7 @@ import { Dimensions, StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import theme from '../App/paperTheme';
 
@@ -21,6 +22,7 @@ class Timer extends Component {
   state = {
     seconds: 0,
     isRunning: false,
+    isShowingPicker: false,
   };
 
   componentDidMount() {
@@ -47,20 +49,40 @@ class Timer extends Component {
     this.setState({ seconds: 0 });
   };
 
+  handleSetTime = (date) => {
+    const minutes = date.getHours();
+    const seconds = date.getMinutes();
+    this.setState({ seconds: minutes * 60 + seconds });
+    this.hidePicker();
+  };
+
   handleAddTime = (additionalSeconds) => () => {
     this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
   };
 
+  showPicker = () => {
+    this.setState({ isShowingPicker: true });
+  };
+
+  hidePicker = () => {
+    this.setState({ isShowingPicker: false });
+  };
+
   render() {
-    const { isRunning } = this.state;
+    const { isRunning, isShowingPicker } = this.state;
     const width = Dimensions.get('window').width;
 
     return (
       <View style={styles.timeContainer}>
         <KeepAwake />
-        <Text style={[styles.time, { fontSize: width / 4.0 }]}>
+
+        <Text
+          style={[styles.time, { fontSize: width / 4.0 }]}
+          onPress={this.showPicker}
+        >
           {formatTime(this.state.seconds)}
         </Text>
+
         <View style={styles.buttonsContainer}>
           <Button style={styles.button} onPress={this.handleReset}>
             Reset
@@ -75,6 +97,13 @@ class Timer extends Component {
             +1 min
           </Button>
         </View>
+
+        <DateTimePicker
+          mode="time"
+          isVisible={isShowingPicker}
+          onConfirm={this.handleSetTime}
+          onCancel={this.hidePicker}
+        />
       </View>
     );
   }
