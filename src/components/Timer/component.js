@@ -36,7 +36,7 @@ class Timer extends Component {
   tick() {
     // TODO: Save actual milliseconds instead of this short-term hack.
     this.setState(({ seconds, isRunning }) => ({
-      seconds: seconds + (isRunning ? 1 : 0),
+      seconds: seconds - (isRunning ? 1 : 0),
     }));
   }
 
