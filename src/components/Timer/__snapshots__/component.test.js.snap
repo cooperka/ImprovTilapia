@@ -41,6 +41,7 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
+          "marginHorizontal": 32,
         }
       }
     >
@@ -60,6 +61,7 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
+          "marginHorizontal": 32,
         }
       }
     >
@@ -116,6 +118,7 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
+          "marginHorizontal": 32,
         }
       }
     >
@@ -135,6 +138,7 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
+          "marginHorizontal": 32,
         }
       }
     >

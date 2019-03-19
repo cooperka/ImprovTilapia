@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+    marginHorizontal: 32,
   },
   fab: {
     backgroundColor: theme.colors.primary,
