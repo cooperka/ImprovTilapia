@@ -1,3 +1,4 @@
+import { Duration } from 'luxon';
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { KeepAwake } from 'expo';
@@ -11,6 +12,10 @@ const FabIcon = ({ name }) => (
 );
 const PlayIcon = () => <FabIcon name="md-play" />;
 const PauseIcon = () => <FabIcon name="md-pause" />;
+
+function formatTime(seconds) {
+  return Duration.fromObject({ seconds }).toFormat('m:ss');
+}
 
 class Timer extends Component {
   state = {
@@ -52,7 +57,9 @@ class Timer extends Component {
     return (
       <View style={styles.timeContainer}>
         <KeepAwake />
-        <Headline style={styles.time}>{this.state.seconds}</Headline>
+        <Headline style={styles.time}>
+          {formatTime(this.state.seconds)}
+        </Headline>
         <View style={styles.buttonsContainer}>
           <Button style={styles.button} onPress={this.handleReset}>
             Reset

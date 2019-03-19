@@ -17,7 +17,7 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    0
+    0:00
   </Headline>
   <View
     style={
@@ -79,7 +79,7 @@ exports[`renders as expected 2`] = `
       }
     }
   >
-    0
+    0:00
   </Headline>
   <View
     style={
