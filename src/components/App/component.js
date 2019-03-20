@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <PaperProvider theme={theme}>
         <View style={styles.container}>
-          <StatusBar barStyle="dark-content" />
+          <StatusBar barStyle="light-content" />
           <Timer />
         </View>
       </PaperProvider>
