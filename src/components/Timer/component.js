@@ -1,6 +1,6 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,6 +23,8 @@ class Timer extends Component {
     seconds: 0,
     isRunning: false,
     isShowingPicker: false,
+    // Track width to be responsive to layout changes.
+    width: null,
   };
 
   componentDidMount() {
@@ -74,12 +76,19 @@ class Timer extends Component {
     this.setState({ isShowingPicker: false });
   };
 
+  handleLayoutChange = ({
+    nativeEvent: {
+      layout: { width },
+    },
+  }) => {
+    this.setState({ width });
+  };
+
   render() {
-    const { isRunning, isShowingPicker } = this.state;
-    const width = Dimensions.get('window').width;
+    const { isRunning, isShowingPicker, width } = this.state;
 
     return (
-      <View style={styles.timeContainer}>
+      <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
         <Text

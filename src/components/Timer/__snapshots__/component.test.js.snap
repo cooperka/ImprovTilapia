@@ -2,6 +2,7 @@
 
 exports[`renders as expected 1`] = `
 <View
+  onLayout={[Function]}
   style={
     Object {
       "alignItems": "center",
@@ -19,7 +20,7 @@ exports[`renders as expected 1`] = `
           "marginBottom": 8,
         },
         Object {
-          "fontSize": 187.5,
+          "fontSize": 0,
         },
       ]
     }
@@ -79,6 +80,7 @@ exports[`renders as expected 1`] = `
 
 exports[`renders as expected 2`] = `
 <View
+  onLayout={[Function]}
   style={
     Object {
       "alignItems": "center",
@@ -96,7 +98,7 @@ exports[`renders as expected 2`] = `
           "marginBottom": 8,
         },
         Object {
-          "fontSize": 187.5,
+          "fontSize": 0,
         },
       ]
     }
