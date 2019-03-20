@@ -20,6 +20,7 @@
     "android": {
       "versionCode": 3,
       "package": "com.cooperka.improv",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.cooperka.improv",
       "icon": "./assets/icon-android.png",
       "permissions": []
     },
