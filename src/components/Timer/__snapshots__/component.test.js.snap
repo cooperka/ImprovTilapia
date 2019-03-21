@@ -100,7 +100,7 @@ exports[`renders as expected 1`] = `
         }
       }
     >
-      5
+      +5
     </Button>
     <Button
       onPress={[Function]}
@@ -111,7 +111,7 @@ exports[`renders as expected 1`] = `
         }
       }
     >
-      10
+      +10
     </Button>
     <Button
       onPress={[Function]}
@@ -122,7 +122,7 @@ exports[`renders as expected 1`] = `
         }
       }
     >
-      20
+      +20
     </Button>
     <Button
       onPress={[Function]}
@@ -133,7 +133,7 @@ exports[`renders as expected 1`] = `
         }
       }
     >
-      30
+      +30
     </Button>
   </View>
 </View>
@@ -239,7 +239,7 @@ exports[`renders as expected 2`] = `
         }
       }
     >
-      5
+      +5
     </Button>
     <Button
       onPress={[Function]}
@@ -250,7 +250,7 @@ exports[`renders as expected 2`] = `
         }
       }
     >
-      10
+      +10
     </Button>
     <Button
       onPress={[Function]}
@@ -261,7 +261,7 @@ exports[`renders as expected 2`] = `
         }
       }
     >
-      20
+      +20
     </Button>
     <Button
       onPress={[Function]}
@@ -272,7 +272,7 @@ exports[`renders as expected 2`] = `
         }
       }
     >
-      30
+      +30
     </Button>
   </View>
 </View>

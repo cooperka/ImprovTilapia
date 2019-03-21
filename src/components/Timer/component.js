@@ -60,10 +60,6 @@ class Timer extends Component {
     this.setState({ seconds: 0, isRunning: false });
   };
 
-  handleSetTime = (seconds) => () => {
-    this.setState({ seconds });
-  };
-
   handleAddTime = (additionalSeconds) => () => {
     this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
   };
@@ -107,9 +103,9 @@ class Timer extends Component {
             <Button
               key={minutes}
               style={styles.button}
-              onPress={this.handleSetTime(minutes * 60)}
+              onPress={this.handleAddTime(minutes * 60)}
             >
-              {minutes}
+              {`+${minutes}`}
             </Button>
           ))}
         </View>
