@@ -87,7 +87,7 @@ class Timer extends Component {
           {formatTime(this.state.seconds)}
         </Text>
 
-        <View style={styles.buttonsContainer}>
+        <View style={[styles.buttonsContainer, styles.buttonsTop]}>
           <Button style={styles.button} onPress={this.handleReset}>
             Reset
           </Button>
@@ -102,7 +102,7 @@ class Timer extends Component {
           </Button>
         </View>
 
-        <View style={[styles.buttonsContainer, styles.containerBottom]}>
+        <View style={[styles.buttonsContainer, styles.buttonsBottom]}>
           {[5, 10, 20, 30].map((minutes) => (
             <Button
               key={minutes}
@@ -132,10 +132,15 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    maxWidth: 500,
+  },
+  buttonsTop: {
     justifyContent: 'center',
   },
-  containerBottom: {
+  buttonsBottom: {
     marginTop: 24,
+    marginHorizontal: 16,
+    justifyContent: 'space-between',
   },
   button: {
     flex: 1,

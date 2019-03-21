@@ -28,12 +28,17 @@ exports[`renders as expected 1`] = `
   </Text>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "maxWidth": 500,
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
     }
   >
     <Button
@@ -76,9 +81,11 @@ exports[`renders as expected 1`] = `
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
+          "maxWidth": 500,
         },
         Object {
+          "justifyContent": "space-between",
+          "marginHorizontal": 16,
           "marginTop": 24,
         },
       ]
@@ -160,12 +167,17 @@ exports[`renders as expected 2`] = `
   </Text>
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "row",
-        "justifyContent": "center",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "maxWidth": 500,
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
     }
   >
     <Button
@@ -208,9 +220,11 @@ exports[`renders as expected 2`] = `
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "justifyContent": "center",
+          "maxWidth": 500,
         },
         Object {
+          "justifyContent": "space-between",
+          "marginHorizontal": 16,
           "marginTop": 24,
         },
       ]
