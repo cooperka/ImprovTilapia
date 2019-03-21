@@ -23,6 +23,10 @@ function formatTime(seconds) {
 }
 
 class Timer extends Component {
+  static navigationOptions = {
+    tabBarIcon: () => <MaterialCommunityIcons name="timer" />,
+  };
+
   state = {
     seconds: 0,
     isRunning: false,
@@ -116,9 +120,10 @@ class Timer extends Component {
 
 const styles = StyleSheet.create({
   timeContainer: {
-    width: '100%',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000',
   },
   time: {
     marginBottom: 8,
