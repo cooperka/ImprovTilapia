@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import theme from './paperTheme';
 import { loadAssets } from './utils';
@@ -10,7 +10,7 @@ import { loadAssets } from './utils';
 import Timer from '../Timer/component';
 
 const images = [];
-const fonts = [Ionicons.font];
+const fonts = [MaterialCommunityIcons.font];
 
 class App extends Component {
   state = {

@@ -3,16 +3,21 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import theme from '../App/paperTheme';
 
 const FabIcon = ({ name }) => (
-  <Ionicons style={styles.icon} name={name} size={28} color="white" />
+  <MaterialCommunityIcons
+    style={styles.icon}
+    name={name}
+    size={36}
+    color="white"
+  />
 );
-const PlayIcon = () => <FabIcon name="md-play" />;
-const PauseIcon = () => <FabIcon name="md-pause" />;
+const PlayIcon = () => <FabIcon name="play" />;
+const PauseIcon = () => <FabIcon name="pause" />;
 
 function formatTime(seconds) {
   return Duration.fromObject({ seconds }).toFormat('m:ss');
@@ -148,8 +153,9 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
   },
   icon: {
-    // TODO: Figure out why the icon isn't centering.
-    marginLeft: 4,
+    textAlign: 'center',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
 });
 
