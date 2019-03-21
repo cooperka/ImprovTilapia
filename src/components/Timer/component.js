@@ -24,7 +24,7 @@ function formatTime(seconds) {
 
 class Timer extends Component {
   static navigationOptions = {
-    tabBarIcon: () => <MaterialCommunityIcons name="timer" />,
+    tabBarIcon: () => <MaterialCommunityIcons name="timer" color="white" />,
   };
 
   state = {

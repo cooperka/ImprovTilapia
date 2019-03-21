@@ -3,7 +3,8 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import theme from './paperTheme';
 import { loadAssets } from './utils';
@@ -13,7 +14,7 @@ import Timer from '../Timer/component';
 const images = [];
 const fonts = [MaterialCommunityIcons.font];
 
-const TabNavigator = createBottomTabNavigator({
+const TabNavigator = createMaterialBottomTabNavigator({
   Timer: {
     screen: Timer,
   },
