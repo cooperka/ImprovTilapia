@@ -12,7 +12,6 @@ exports[`renders as expected 1`] = `
   }
 >
   <Text
-    onPress={[Function]}
     style={
       Array [
         Object {
@@ -42,7 +41,7 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 32,
+          "marginHorizontal": 16,
         }
       }
     >
@@ -54,6 +53,7 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "backgroundColor": "#3f51b5",
+          "marginHorizontal": 16,
         }
       }
     />
@@ -62,19 +62,73 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 32,
+          "marginHorizontal": 16,
         }
       }
     >
       +1 min
     </Button>
   </View>
-  <DateTimePicker
-    isVisible={false}
-    mode="time"
-    onCancel={[Function]}
-    onConfirm={[Function]}
-  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Object {
+          "marginTop": 24,
+        },
+      ]
+    }
+  >
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      5
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      10
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      20
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      30
+    </Button>
+  </View>
 </View>
 `;
 
@@ -90,7 +144,6 @@ exports[`renders as expected 2`] = `
   }
 >
   <Text
-    onPress={[Function]}
     style={
       Array [
         Object {
@@ -120,7 +173,7 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 32,
+          "marginHorizontal": 16,
         }
       }
     >
@@ -132,6 +185,7 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "backgroundColor": "#3f51b5",
+          "marginHorizontal": 16,
         }
       }
     />
@@ -140,18 +194,72 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 32,
+          "marginHorizontal": 16,
         }
       }
     >
       +1 min
     </Button>
   </View>
-  <DateTimePicker
-    isVisible={false}
-    mode="time"
-    onCancel={[Function]}
-    onConfirm={[Function]}
-  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Object {
+          "marginTop": 24,
+        },
+      ]
+    }
+  >
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      5
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      10
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      20
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      30
+    </Button>
+  </View>
 </View>
 `;

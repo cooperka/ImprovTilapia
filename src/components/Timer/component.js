@@ -4,7 +4,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import DateTimePicker from 'react-native-modal-datetime-picker';
 
 import theme from '../App/paperTheme';
 
@@ -27,7 +26,6 @@ class Timer extends Component {
   state = {
     seconds: 0,
     isRunning: false,
-    isShowingPicker: false,
     // Track width to be responsive to layout changes.
     width: null,
   };
@@ -62,23 +60,12 @@ class Timer extends Component {
     this.setState({ seconds: 0, isRunning: false });
   };
 
-  handleSetTime = (date) => {
-    const minutes = date.getHours();
-    const seconds = date.getMinutes();
-    this.setState({ seconds: minutes * 60 + seconds });
-    this.hidePicker();
+  handleSetTime = (seconds) => () => {
+    this.setState({ seconds });
   };
 
   handleAddTime = (additionalSeconds) => () => {
     this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
-  };
-
-  showPicker = () => {
-    this.setState({ isShowingPicker: true });
-  };
-
-  hidePicker = () => {
-    this.setState({ isShowingPicker: false });
   };
 
   handleLayoutChange = ({
@@ -90,16 +77,13 @@ class Timer extends Component {
   };
 
   render() {
-    const { isRunning, isShowingPicker, width } = this.state;
+    const { isRunning, width } = this.state;
 
     return (
       <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
-        <Text
-          style={[styles.time, { fontSize: width / 4.0 }]}
-          onPress={this.showPicker}
-        >
+        <Text style={[styles.time, { fontSize: width / 4.0 }]}>
           {formatTime(this.state.seconds)}
         </Text>
 
@@ -118,12 +102,17 @@ class Timer extends Component {
           </Button>
         </View>
 
-        <DateTimePicker
-          mode="time"
-          isVisible={isShowingPicker}
-          onConfirm={this.handleSetTime}
-          onCancel={this.hidePicker}
-        />
+        <View style={[styles.buttonsContainer, styles.containerBottom]}>
+          {[5, 10, 20, 30].map((minutes) => (
+            <Button
+              key={minutes}
+              style={styles.button}
+              onPress={this.handleSetTime(minutes * 60)}
+            >
+              {minutes}
+            </Button>
+          ))}
+        </View>
       </View>
     );
   }
@@ -145,12 +134,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerBottom: {
+    marginTop: 24,
+  },
   button: {
     flex: 1,
-    marginHorizontal: 32,
+    marginHorizontal: 16,
   },
   fab: {
     backgroundColor: theme.colors.primary,
+    marginHorizontal: 16,
   },
   icon: {
     textAlign: 'center',
