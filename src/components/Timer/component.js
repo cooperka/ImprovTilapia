@@ -20,6 +20,11 @@ const FabIcon = ({ name }) => (
 const PlayIcon = () => <FabIcon name="play" />;
 const PauseIcon = () => <FabIcon name="pause" />;
 
+const BUTTON_OPTIONS =
+  process.env.NODE_ENV === 'development'
+    ? [3 / 60.0, 5, 10, 20, 30]
+    : [5, 10, 20, 30];
+
 function formatTime(seconds) {
   return Duration.fromObject({ seconds }).toFormat('m:ss');
 }
@@ -108,7 +113,7 @@ class Timer extends Component {
         </View>
 
         <View style={[styles.buttonsContainer, styles.buttonsBottom]}>
-          {[5, 10, 20, 30].map((minutes) => (
+          {BUTTON_OPTIONS.map((minutes) => (
             <Button
               key={minutes}
               style={styles.button}
