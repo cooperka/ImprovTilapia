@@ -1,6 +1,7 @@
 import { createAppContainer, createDrawerNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
+import Drawer from '../../Drawer/component';
 import Timer from '../../Timer/component';
 
 const TabNavigator = createMaterialBottomTabNavigator({
@@ -9,11 +10,16 @@ const TabNavigator = createMaterialBottomTabNavigator({
   },
 });
 
-const DrawerNavigator = createDrawerNavigator({
-  Home: {
-    screen: TabNavigator,
+const DrawerNavigator = createDrawerNavigator(
+  {
+    Home: {
+      screen: TabNavigator,
+    },
   },
-});
+  {
+    contentComponent: Drawer,
+  },
+);
 
 const AppNavigator = createAppContainer(DrawerNavigator);
 
