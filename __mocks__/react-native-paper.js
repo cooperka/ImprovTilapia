@@ -5,7 +5,11 @@ module.exports = {
 
   Colors: actual.Colors,
   Avatar: {},
-  List: {},
+  List: {
+    Accordion: 'Accordion',
+    Item: 'Item',
+    Icon: 'Icon',
+  },
   Drawer: {},
 
   Provider: 'Provider',

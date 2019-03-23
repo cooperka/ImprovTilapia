@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `<DrawerItems />`;
+exports[`renders as expected 1`] = `
+<Accordion
+  left={[Function]}
+  title="Timer settings"
+>
+  <Item
+    title="First item"
+  />
+  <Item
+    title="Second item"
+  />
+</Accordion>
+`;
