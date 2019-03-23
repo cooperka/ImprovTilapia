@@ -3,7 +3,7 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createDrawerNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import theme from './paperTheme';
@@ -20,7 +20,13 @@ const TabNavigator = createMaterialBottomTabNavigator({
   },
 });
 
-const AppContainer = createAppContainer(TabNavigator);
+const DrawerNavigator = createDrawerNavigator({
+  Home: {
+    screen: TabNavigator,
+  },
+});
+
+const AppContainer = createAppContainer(DrawerNavigator);
 
 class App extends Component {
   state = {
