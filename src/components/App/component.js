@@ -1,32 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { createAppContainer, createDrawerNavigator } from 'react-navigation';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import theme from './paperTheme';
 import { loadAssets } from './utils';
 
-import Timer from '../Timer/component';
+import AppNavigator from './AppNavigator/component';
 
 const images = [];
 const fonts = [MaterialCommunityIcons.font];
-
-const TabNavigator = createMaterialBottomTabNavigator({
-  Timer: {
-    screen: Timer,
-  },
-});
-
-const DrawerNavigator = createDrawerNavigator({
-  Home: {
-    screen: TabNavigator,
-  },
-});
-
-const AppContainer = createAppContainer(DrawerNavigator);
 
 class App extends Component {
   state = {
@@ -49,7 +33,7 @@ class App extends Component {
     return (
       <PaperProvider theme={theme}>
         <StatusBar barStyle="light-content" />
-        <AppContainer />
+        <AppNavigator />
       </PaperProvider>
     );
   }
