@@ -84,6 +84,9 @@ class Timer extends Component {
           isInteraction: false,
         }),
       ]),
+      {
+        iterations: 5,
+      },
     ).start();
   };
 
