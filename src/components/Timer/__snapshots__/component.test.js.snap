@@ -95,7 +95,16 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
+        }
+      }
+    >
+      +:10
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
         }
       }
     >
@@ -106,7 +115,6 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
         }
       }
     >
@@ -117,18 +125,6 @@ exports[`renders as expected 1`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
-        }
-      }
-    >
-      +20
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "marginHorizontal": 16,
         }
       }
     >
@@ -233,7 +229,16 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
+        }
+      }
+    >
+      +:10
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
         }
       }
     >
@@ -244,7 +249,6 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
         }
       }
     >
@@ -255,18 +259,6 @@ exports[`renders as expected 2`] = `
       style={
         Object {
           "flex": 1,
-          "marginHorizontal": 16,
-        }
-      }
-    >
-      +20
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "marginHorizontal": 16,
         }
       }
     >

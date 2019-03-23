@@ -20,13 +20,14 @@ const FabIcon = ({ name }) => (
 const PlayIcon = () => <FabIcon name="play" />;
 const PauseIcon = () => <FabIcon name="pause" />;
 
-const BUTTON_OPTIONS =
-  process.env.NODE_ENV === 'development'
-    ? [3 / 60.0, 5, 10, 20, 30]
-    : [5, 10, 20, 30];
-
 function formatTime(seconds) {
   return Duration.fromObject({ seconds }).toFormat('m:ss');
+}
+
+function formatTimeCompact(seconds) {
+  return Duration.fromObject({ seconds }).toFormat(
+    seconds % 60 === 0 ? 'm' : ':ss',
+  );
 }
 
 class Timer extends Component {
@@ -150,15 +151,17 @@ class Timer extends Component {
         </View>
 
         <View style={[styles.buttonsContainer, styles.buttonsBottom]}>
-          {BUTTON_OPTIONS.map((minutes) => (
-            <Button
-              key={minutes}
-              style={styles.button}
-              onPress={this.handleAddTime(minutes * 60)}
-            >
-              {`+${minutes}`}
-            </Button>
-          ))}
+          {[10 / 60.0, 5, 10, 30]
+            .map((num) => num * 60)
+            .map((seconds) => (
+              <Button
+                key={seconds}
+                style={styles.buttonBottom}
+                onPress={this.handleAddTime(seconds)}
+              >
+                {`+${formatTimeCompact(seconds)}`}
+              </Button>
+            ))}
         </View>
       </View>
     );
@@ -193,6 +196,9 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     marginHorizontal: 16,
+  },
+  buttonBottom: {
+    flex: 1,
   },
   fab: {
     backgroundColor: theme.colors.primary,
