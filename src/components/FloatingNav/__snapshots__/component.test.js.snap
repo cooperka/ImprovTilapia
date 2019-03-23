@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<View
+<FAB
+  icon={[Function]}
+  onPress={[Function]}
   style={
     Object {
+      "backgroundColor": "transparent",
       "left": 16,
       "position": "absolute",
       "top": 36,
     }
   }
->
-  <Text />
-</View>
+/>
 `;
