@@ -32,6 +32,7 @@ class Timer extends Component {
   state = {
     seconds: 0,
     isRunning: false,
+    didFinish: false,
     // Track width to be responsive to layout changes.
     width: null,
   };
@@ -48,7 +49,11 @@ class Timer extends Component {
     const { seconds } = this.state;
 
     if (seconds <= 0) {
-      this.setState({ seconds: 0, isRunning: false });
+      this.setState({
+        seconds: 0,
+        isRunning: false,
+        didFinish: true,
+      });
     }
 
     // TODO: Save actual milliseconds instead of this short-term hack.
@@ -63,11 +68,18 @@ class Timer extends Component {
   };
 
   handleReset = () => {
-    this.setState({ seconds: 0, isRunning: false });
+    this.setState({
+      seconds: 0,
+      isRunning: false,
+      didFinish: false,
+    });
   };
 
   handleAddTime = (additionalSeconds) => () => {
-    this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
+    this.setState(({ seconds }) => ({
+      seconds: seconds + additionalSeconds,
+      didFinish: false,
+    }));
   };
 
   handleLayoutChange = ({
