@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Constants } from 'expo';
 import { FAB } from 'react-native-paper';
+import { DrawerActions } from 'react-navigation';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 class FloatingNav extends Component {
-  handleOpenDrawer = () => {};
+  static propTypes = {
+    navigation: PropTypes.object.isRequired,
+  };
+
+  handleOpenDrawer = () => {
+    const { navigation } = this.props;
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
 
   render() {
     return (

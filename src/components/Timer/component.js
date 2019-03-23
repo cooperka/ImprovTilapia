@@ -79,13 +79,14 @@ class Timer extends Component {
   };
 
   render() {
+    const { navigation } = this.props;
     const { isRunning, width } = this.state;
 
     return (
       <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
-        <FloatingNav />
+        <FloatingNav navigation={navigation} />
 
         <Text style={[styles.time, { fontSize: width / 4.0 }]}>
           {formatTime(this.state.seconds)}
