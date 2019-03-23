@@ -1,11 +1,13 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Constants, KeepAwake } from 'expo';
+import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import theme from '../App/paperTheme';
+
+import FloatingNav from '../FloatingNav/component';
 
 const FabIcon = ({ name }) => (
   <MaterialCommunityIcons
@@ -83,14 +85,7 @@ class Timer extends Component {
       <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
-        <View style={styles.menuButton}>
-          <MaterialCommunityIcons
-            style={styles.icon}
-            name="menu"
-            size={36}
-            color="white"
-          />
-        </View>
+        <FloatingNav />
 
         <Text style={[styles.time, { fontSize: width / 4.0 }]}>
           {formatTime(this.state.seconds)}
@@ -128,11 +123,6 @@ class Timer extends Component {
 }
 
 const styles = StyleSheet.create({
-  menuButton: {
-    position: 'absolute',
-    top: Constants.statusBarHeight + 16,
-    left: 16,
-  },
   timeContainer: {
     flex: 1,
     alignItems: 'center',
