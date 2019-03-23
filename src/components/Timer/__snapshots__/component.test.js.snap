@@ -12,6 +12,17 @@ exports[`renders as expected 1`] = `
     }
   }
 >
+  <View
+    style={
+      Object {
+        "left": 16,
+        "position": "absolute",
+        "top": 36,
+      }
+    }
+  >
+    <Text />
+  </View>
   <Text
     style={
       Array [
@@ -152,6 +163,17 @@ exports[`renders as expected 2`] = `
     }
   }
 >
+  <View
+    style={
+      Object {
+        "left": 16,
+        "position": "absolute",
+        "top": 36,
+      }
+    }
+  >
+    <Text />
+  </View>
   <Text
     style={
       Array [
