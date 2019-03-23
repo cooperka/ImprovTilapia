@@ -1,6 +1,6 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Animated } from 'react-native';
 import { KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -39,20 +39,24 @@ class Timer extends Component {
     isRunning: false,
     // Track width to be responsive to layout changes.
     width: null,
+    flashValue: new Animated.Value(1),
   };
 
   componentDidMount() {
-    this.timer = setInterval(() => this.tick(), 1000);
+    this.timer = setInterval(this.tick, 1000);
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
   }
 
-  tick() {
-    const { seconds } = this.state;
+  tick = () => {
+    const { seconds, isRunning } = this.state;
 
     if (seconds <= 0) {
+      if (isRunning) {
+        this.startFlashAnim();
+      }
       this.setState({ seconds: 0, isRunning: false });
     }
 
@@ -60,7 +64,33 @@ class Timer extends Component {
     this.setState(({ seconds, isRunning }) => ({
       seconds: seconds - (isRunning ? 1 : 0),
     }));
-  }
+  };
+
+  startFlashAnim = () => {
+    const { flashValue } = this.state;
+
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(flashValue, {
+          toValue: 0.2,
+          duration: 500,
+          useNativeDriver: true,
+          isInteraction: false,
+        }),
+        Animated.timing(flashValue, {
+          toValue: 1,
+          duration: 500,
+          useNativeDriver: true,
+          isInteraction: false,
+        }),
+      ]),
+    ).start();
+  };
+
+  stopFlashAnim = () => {
+    const { flashValue } = this.state;
+    Animated.timing(flashValue).stop();
+  };
 
   handleToggleTimer = () => {
     const { isRunning } = this.state;
@@ -68,10 +98,12 @@ class Timer extends Component {
   };
 
   handleReset = () => {
+    this.stopFlashAnim();
     this.setState({ seconds: 0, isRunning: false });
   };
 
   handleAddTime = (additionalSeconds) => () => {
+    this.stopFlashAnim();
     this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
   };
 
@@ -85,7 +117,7 @@ class Timer extends Component {
 
   render() {
     const { navigation } = this.props;
-    const { isRunning, width } = this.state;
+    const { isRunning, width, flashValue } = this.state;
 
     return (
       <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
@@ -93,9 +125,11 @@ class Timer extends Component {
 
         <FloatingNav navigation={navigation} />
 
-        <Text style={[styles.time, { fontSize: width / 4.0 }]}>
+        <Animated.Text
+          style={[styles.time, { fontSize: width / 4.0, opacity: flashValue }]}
+        >
           {formatTime(this.state.seconds)}
-        </Text>
+        </Animated.Text>
 
         <View style={[styles.buttonsContainer, styles.buttonsTop]}>
           <Button style={styles.button} onPress={this.handleReset}>

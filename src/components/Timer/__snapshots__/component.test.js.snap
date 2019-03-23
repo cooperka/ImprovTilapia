@@ -15,15 +15,12 @@ exports[`renders as expected 1`] = `
   <FloatingNav />
   <Text
     style={
-      Array [
-        Object {
-          "color": "#f00",
-          "marginBottom": 8,
-        },
-        Object {
-          "fontSize": 0,
-        },
-      ]
+      Object {
+        "color": "#f00",
+        "fontSize": 0,
+        "marginBottom": 8,
+        "opacity": 1,
+      }
     }
   >
     0:00
@@ -156,15 +153,12 @@ exports[`renders as expected 2`] = `
   <FloatingNav />
   <Text
     style={
-      Array [
-        Object {
-          "color": "#f00",
-          "marginBottom": 8,
-        },
-        Object {
-          "fontSize": 0,
-        },
-      ]
+      Object {
+        "color": "#f00",
+        "fontSize": 0,
+        "marginBottom": 8,
+        "opacity": 1,
+      }
     }
   >
     0:00
