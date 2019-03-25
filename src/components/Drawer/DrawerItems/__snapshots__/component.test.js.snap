@@ -7,10 +7,7 @@ Array [
     title="Timer settings"
   >
     <Item
-      title="First item"
-    />
-    <Item
-      title="Second item"
+      title="Nothing yet"
     />
   </Accordion>,
   <Accordion
@@ -18,10 +15,7 @@ Array [
     title="Suggestions settings"
   >
     <Item
-      title="First item"
-    />
-    <Item
-      title="Second item"
+      title="Nothing yet"
     />
   </Accordion>,
 ]

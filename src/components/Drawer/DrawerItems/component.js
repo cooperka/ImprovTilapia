@@ -31,16 +31,14 @@ class DrawerItems extends Component {
         ) : null}
 
         <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Nothing yet" />
         </List.Accordion>
 
         <List.Accordion
           title="Suggestions settings"
           left={getDrawerIcon('message-outline')}
         >
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Nothing yet" />
         </List.Accordion>
       </React.Fragment>
     );
