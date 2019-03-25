@@ -9,7 +9,7 @@ import theme from '../App/paperTheme';
 
 import FloatingNav from '../FloatingNav/component';
 
-const FabIcon = ({ name }) => (
+const getFabIcon = (name) => () => (
   <MaterialCommunityIcons
     style={styles.icon}
     name={name}
@@ -17,8 +17,8 @@ const FabIcon = ({ name }) => (
     color="white"
   />
 );
-const PlayIcon = () => <FabIcon name="play" />;
-const PauseIcon = () => <FabIcon name="pause" />;
+const PlayIcon = getFabIcon('play');
+const PauseIcon = getFabIcon('pause');
 
 function formatTime(seconds) {
   return Duration.fromObject({ seconds }).toFormat('m:ss');
