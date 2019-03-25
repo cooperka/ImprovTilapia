@@ -31,9 +31,10 @@ function formatTimeCompact(seconds) {
 }
 
 class Timer extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     tabBarIcon: () => <MaterialCommunityIcons name="timer" color="white" />,
-  };
+    tabBarVisible: !navigation.getParam('isFullscreen'),
+  });
 
   state = {
     seconds: 0,
@@ -113,9 +114,12 @@ class Timer extends Component {
 
   handleLayoutChange = ({
     nativeEvent: {
-      layout: { width },
+      layout: { width, height },
     },
   }) => {
+    const { navigation } = this.props;
+    navigation.setParams({ isFullscreen: width > height });
+
     this.setState({ width });
   };
 
