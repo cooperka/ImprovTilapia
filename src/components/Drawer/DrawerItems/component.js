@@ -25,6 +25,14 @@ class DrawerItems extends Component {
           <List.Item title="First item" />
           <List.Item title="Second item" />
         </List.Accordion>
+
+        <List.Accordion
+          title="Suggestions settings"
+          left={(props) => <List.Icon {...props} icon="message-outline" />}
+        >
+          <List.Item title="First item" />
+          <List.Item title="Second item" />
+        </List.Accordion>
       </React.Fragment>
     );
   }

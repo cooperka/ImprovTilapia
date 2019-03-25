@@ -1,15 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<Accordion
-  left={[Function]}
-  title="Timer settings"
->
-  <Item
-    title="First item"
-  />
-  <Item
-    title="Second item"
-  />
-</Accordion>
+Array [
+  <Accordion
+    left={[Function]}
+    title="Timer settings"
+  >
+    <Item
+      title="First item"
+    />
+    <Item
+      title="Second item"
+    />
+  </Accordion>,
+  <Accordion
+    left={[Function]}
+    title="Suggestions settings"
+  >
+    <Item
+      title="First item"
+    />
+    <Item
+      title="Second item"
+    />
+  </Accordion>,
+]
 `;
