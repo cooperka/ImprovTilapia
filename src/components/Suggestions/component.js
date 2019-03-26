@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import FloatingNav from '../FloatingNav/component';
 import { Button, FAB } from 'react-native-paper';
 import { getRandomOccupation, getRandomRelationship } from './utils';
+import { Constants } from 'expo';
 
 class Timer extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -75,17 +76,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
   suggestion: {
+    marginTop: Constants.statusBarHeight,
     marginBottom: 8,
     textAlign: 'center',
     color: '#0f0',
+    marginHorizontal: 16,
   },
   buttonsContainer: {
     flex: 1,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     maxWidth: 500,
-    maxHeight: 100,
+    maxHeight: 140,
   },
   button: {
     flex: 1,

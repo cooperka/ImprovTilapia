@@ -1,7 +1,7 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Animated } from 'react-native';
-import { KeepAwake } from 'expo';
+import { Constants, KeepAwake } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -127,44 +127,51 @@ class Timer extends Component {
     const { isRunning, width, flashValue } = this.state;
 
     return (
-      <View style={styles.timeContainer} onLayout={this.handleLayoutChange}>
+      <View style={styles.container} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
         <FloatingNav navigation={navigation} />
 
-        <Animated.Text
-          style={[styles.time, { fontSize: width / 4.0, opacity: flashValue }]}
-        >
-          {formatTime(this.state.seconds)}
-        </Animated.Text>
-
-        <View style={[styles.buttonsContainer, styles.buttonsTop]}>
-          <Button style={styles.button} onPress={this.handleReset}>
-            Reset
-          </Button>
-          <FAB
-            key={`playPause_${isRunning}`}
-            style={styles.fab}
-            icon={isRunning ? PauseIcon : PlayIcon}
-            onPress={this.handleToggleTimer}
-          />
-          <Button style={styles.button} onPress={this.handleAddTime(60)}>
-            +1 min
-          </Button>
+        <View style={styles.timeContainer}>
+          <Animated.Text
+            style={[
+              styles.time,
+              { fontSize: width / 4.0, opacity: flashValue },
+            ]}
+          >
+            {formatTime(this.state.seconds)}
+          </Animated.Text>
         </View>
 
-        <View style={[styles.buttonsContainer, styles.buttonsBottom]}>
-          {[10 / 60.0, 5, 10, 30]
-            .map((num) => num * 60)
-            .map((seconds) => (
-              <Button
-                key={seconds}
-                style={styles.buttonBottom}
-                onPress={this.handleAddTime(seconds)}
-              >
-                {`+${formatTimeCompact(seconds)}`}
-              </Button>
-            ))}
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonsRow}>
+            <Button style={styles.button} onPress={this.handleReset}>
+              Reset
+            </Button>
+            <FAB
+              key={`playPause_${isRunning}`}
+              style={styles.fab}
+              icon={isRunning ? PauseIcon : PlayIcon}
+              onPress={this.handleToggleTimer}
+            />
+            <Button style={styles.button} onPress={this.handleAddTime(60)}>
+              +1 min
+            </Button>
+          </View>
+
+          <View style={styles.buttonsRow}>
+            {[10 / 60.0, 5, 10, 30]
+              .map((num) => num * 60)
+              .map((seconds) => (
+                <Button
+                  key={seconds}
+                  style={styles.button}
+                  onPress={this.handleAddTime(seconds)}
+                >
+                  {`+${formatTimeCompact(seconds)}`}
+                </Button>
+              ))}
+          </View>
         </View>
       </View>
     );
@@ -172,36 +179,40 @@ class Timer extends Component {
 }
 
 const styles = StyleSheet.create({
-  timeContainer: {
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000',
   },
-  time: {
+  timeContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: Constants.statusBarHeight,
     marginBottom: 8,
+  },
+  time: {
     color: '#f00',
   },
   buttonsContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: 500,
+    maxHeight: 180,
+  },
+  buttonsRow: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    maxWidth: 500,
-  },
-  buttonsTop: {
-    justifyContent: 'center',
-  },
-  buttonsBottom: {
+    justifyContent: 'space-between',
     marginTop: 24,
     marginHorizontal: 16,
-    justifyContent: 'space-between',
   },
   button: {
     flex: 1,
     marginHorizontal: 16,
-  },
-  buttonBottom: {
-    flex: 1,
   },
   fab: {
     backgroundColor: theme.colors.primary,

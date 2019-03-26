@@ -13,123 +13,142 @@ exports[`renders as expected 1`] = `
   }
 >
   <FloatingNav />
-  <Text
-    style={
-      Object {
-        "color": "#f00",
-        "fontSize": 0,
-        "marginBottom": 8,
-        "opacity": 1,
-      }
-    }
-  >
-    0:00
-  </Text>
   <View
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "maxWidth": 500,
-        },
-        Object {
-          "justifyContent": "center",
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "marginBottom": 8,
+        "marginTop": 20,
+      }
     }
   >
-    <Button
-      onPress={[Function]}
+    <Text
       style={
         Object {
-          "flex": 1,
-          "marginHorizontal": 16,
+          "color": "#f00",
+          "fontSize": 0,
+          "opacity": 1,
         }
       }
     >
-      Reset
-    </Button>
-    <FAB
-      icon={[Function]}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#3f51b5",
-          "marginHorizontal": 16,
-        }
-      }
-    />
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "marginHorizontal": 16,
-        }
-      }
-    >
-      +1 min
-    </Button>
+      0:00
+    </Text>
   </View>
   <View
     style={
-      Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "maxHeight": 180,
+        "maxWidth": 500,
+      }
+    }
+  >
+    <View
+      style={
         Object {
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "maxWidth": 500,
-        },
-        Object {
           "justifyContent": "space-between",
           "marginHorizontal": 16,
           "marginTop": 24,
-        },
-      ]
-    }
-  >
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
         }
       }
     >
-      +:10
-    </Button>
-    <Button
-      onPress={[Function]}
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        Reset
+      </Button>
+      <FAB
+        icon={[Function]}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "marginHorizontal": 16,
+          }
+        }
+      />
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +1 min
+      </Button>
+    </View>
+    <View
       style={
         Object {
-          "flex": 1,
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginHorizontal": 16,
+          "marginTop": 24,
         }
       }
     >
-      +5
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
         }
-      }
-    >
-      +10
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
+      >
+        +:10
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
         }
-      }
-    >
-      +30
-    </Button>
+      >
+        +5
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +10
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +30
+      </Button>
+    </View>
   </View>
 </View>
 `;
@@ -147,123 +166,142 @@ exports[`renders as expected 2`] = `
   }
 >
   <FloatingNav />
-  <Text
-    style={
-      Object {
-        "color": "#f00",
-        "fontSize": 0,
-        "marginBottom": 8,
-        "opacity": 1,
-      }
-    }
-  >
-    0:00
-  </Text>
   <View
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "maxWidth": 500,
-        },
-        Object {
-          "justifyContent": "center",
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "marginBottom": 8,
+        "marginTop": 20,
+      }
     }
   >
-    <Button
-      onPress={[Function]}
+    <Text
       style={
         Object {
-          "flex": 1,
-          "marginHorizontal": 16,
+          "color": "#f00",
+          "fontSize": 0,
+          "opacity": 1,
         }
       }
     >
-      Reset
-    </Button>
-    <FAB
-      icon={[Function]}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#3f51b5",
-          "marginHorizontal": 16,
-        }
-      }
-    />
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
-          "marginHorizontal": 16,
-        }
-      }
-    >
-      +1 min
-    </Button>
+      0:00
+    </Text>
   </View>
   <View
     style={
-      Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "maxHeight": 180,
+        "maxWidth": 500,
+      }
+    }
+  >
+    <View
+      style={
         Object {
           "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
-          "maxWidth": 500,
-        },
-        Object {
           "justifyContent": "space-between",
           "marginHorizontal": 16,
           "marginTop": 24,
-        },
-      ]
-    }
-  >
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
         }
       }
     >
-      +:10
-    </Button>
-    <Button
-      onPress={[Function]}
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        Reset
+      </Button>
+      <FAB
+        icon={[Function]}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "marginHorizontal": 16,
+          }
+        }
+      />
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +1 min
+      </Button>
+    </View>
+    <View
       style={
         Object {
-          "flex": 1,
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginHorizontal": 16,
+          "marginTop": 24,
         }
       }
     >
-      +5
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
         }
-      }
-    >
-      +10
-    </Button>
-    <Button
-      onPress={[Function]}
-      style={
-        Object {
-          "flex": 1,
+      >
+        +:10
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
         }
-      }
-    >
-      +30
-    </Button>
+      >
+        +5
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +10
+      </Button>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        +30
+      </Button>
+    </View>
   </View>
 </View>
 `;
