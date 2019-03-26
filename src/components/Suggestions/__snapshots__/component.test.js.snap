@@ -2,6 +2,7 @@
 
 exports[`renders as expected 1`] = `
 <View
+  onLayout={[Function]}
   style={
     Object {
       "alignItems": "center",
@@ -12,5 +13,67 @@ exports[`renders as expected 1`] = `
   }
 >
   <FloatingNav />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#000",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#0f0",
+            "marginBottom": 8,
+            "textAlign": "center",
+          },
+          Object {
+            "fontSize": 0,
+          },
+        ]
+      }
+    >
+      Press a button below to get a suggestion
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flex": 1,
+        "flexDirection": "row",
+        "maxHeight": 100,
+        "maxWidth": 500,
+      }
+    }
+  >
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      Relationship
+    </Button>
+    <Button
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      Occupation
+    </Button>
+  </View>
 </View>
 `;

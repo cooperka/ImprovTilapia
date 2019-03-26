@@ -39,7 +39,6 @@ class Timer extends Component {
   state = {
     seconds: 0,
     isRunning: false,
-    // Track width to be responsive to layout changes.
     width: null,
     flashValue: new Animated.Value(1),
   };
