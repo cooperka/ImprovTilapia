@@ -1,0 +1,71 @@
+/**
+ * These suggestions may individually be subject to a different license than
+ * the main project. See the LICENSE file in this directory for more details.
+ *
+ * To the best of my ability, I've included comments describing the source of
+ * each group of suggestions.
+ */
+export const relationships = [
+  // Cleaned up from https://improwiki.com/en/wiki/improv/list_of_relations.
+  // License: https://improwiki.com/en/lizenz
+  'Spouses / partners',
+  'Father + child',
+  'Mother + child',
+  'Parent-in-law + child-in-law',
+  'Brothers',
+  'Sisters',
+  'Siblings',
+  'Grandparent + grandchild',
+  'Step-parent + step-child',
+  'Aging lovers',
+  'Ex-wife + new woman',
+  'Ex-husband + new man',
+  'Teacher + student',
+  'Teacher + headmaster',
+  'Teacher + parent',
+  'Professor + student',
+  'Guard + prisoner',
+  'Lawyer + client',
+  'Judge + lawyer',
+  'Detective + criminal',
+  'Highway officer + driver',
+  'Murderer + victim',
+  'Pop star + fan',
+  'Actor + director',
+  'Director + producer',
+  'Actor + stunt double',
+  'Fruit in a bowl',
+  'Robot + its creator',
+  'Child + toy',
+  'Ventriloquist + doll',
+  '1 dollar bill + 20 dollar bill',
+  'Dog + bone',
+  'Rat + laboratory scientist',
+  'Fish + worm at the hook',
+  'Frog + princess',
+  'Human + conscience (devil/angel)',
+  'Human + their brain',
+  'A god + human',
+  'A god + devil',
+  'Astronaut + alien',
+  'First meeting of human + alien',
+  'Batman + Robin',
+  'Quiz show host + contestant',
+  'Pilot + crew member',
+  'Pilot + passenger',
+  'Chef + employee',
+  'President + cabinet member',
+  'Doctor + patient',
+  'Doctor + nurse',
+  'Psychiatrist + patient',
+  'Veterinarian + patient',
+  'Cosmetic surgeon + aging supermodel',
+  'Priest + person confessing sins',
+
+  // From my own head and things I've heard:
+  'Partners in crime',
+  'Tax collector + citizen',
+  'Ruler + citizen',
+  'Coconuts in a tree',
+  'Trees in a forest',
+];
