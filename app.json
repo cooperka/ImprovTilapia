@@ -25,7 +25,7 @@
       "permissions": []
     },
     "ios": {
-      "buildNumber": "6",
+      "buildNumber": "7",
       "bundleIdentifier": "com.cooperka.improv",
       "icon": "./assets/icon-ios.png",
       "supportsTablet": true
