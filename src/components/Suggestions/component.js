@@ -43,7 +43,7 @@ class Timer extends Component {
       <View style={styles.container} onLayout={this.handleLayoutChange}>
         <FloatingNav navigation={navigation} />
 
-        <View style={styles.container}>
+        <View style={styles.suggestionContainer}>
           <Text style={[styles.suggestion, { fontSize: width / 8.0 }]}>
             {currSuggestion}
           </Text>
@@ -74,6 +74,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000',
+  },
+  suggestionContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   suggestion: {
     marginTop: Constants.statusBarHeight,
