@@ -5,14 +5,19 @@ import Drawer from '../../Drawer/component';
 import Timer from '../../Timer/component';
 import Suggestions from '../../Suggestions/component';
 
-const TabNavigator = createMaterialBottomTabNavigator({
-  Timer: {
-    screen: Timer,
+const TabNavigator = createMaterialBottomTabNavigator(
+  {
+    Timer: {
+      screen: Timer,
+    },
+    Suggestions: {
+      screen: Suggestions,
+    },
   },
-  Suggestions: {
-    screen: Suggestions,
+  {
+    shifting: true,
   },
-});
+);
 
 const DrawerNavigator = createDrawerNavigator(
   {
