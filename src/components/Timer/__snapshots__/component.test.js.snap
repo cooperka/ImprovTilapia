@@ -89,7 +89,7 @@ exports[`renders as expected 1`] = `
           }
         }
       >
-        +10 sec
+        +0:10
       </Button>
     </View>
     <View
@@ -242,7 +242,7 @@ exports[`renders as expected 2`] = `
           }
         }
       >
-        +10 sec
+        +0:10
       </Button>
     </View>
     <View

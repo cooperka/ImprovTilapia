@@ -167,7 +167,7 @@ class Timer extends Component {
               onPress={this.handleToggleTimer}
             />
             <Button style={styles.button} onPress={this.handleAddTime(10)}>
-              +10 sec
+              +0:10
             </Button>
           </View>
 
