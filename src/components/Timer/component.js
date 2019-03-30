@@ -1,7 +1,7 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Animated } from 'react-native';
-import { Constants, KeepAwake } from 'expo';
+import { StyleSheet, View, Animated } from 'react-native';
+import { Constants, KeepAwake, Brightness, Permissions } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -43,8 +43,13 @@ class Timer extends Component {
     isRunning: false,
     lastSetTime: 0,
     width: null,
+    originalBrightness: undefined,
     flashValue: new Animated.Value(1),
   };
+
+  componentWillMount() {
+    Permissions.askAsync(Permissions.SYSTEM_BRIGHTNESS);
+  }
 
   componentDidMount() {
     this.timer = setInterval(this.tick, 1000);
@@ -70,6 +75,29 @@ class Timer extends Component {
     }));
   };
 
+  setMaxBrightness = async () => {
+    const { status } = await Permissions.getAsync(
+      Permissions.SYSTEM_BRIGHTNESS,
+    );
+
+    if (status === 'granted') {
+      const originalBrightness = await Brightness.getBrightnessAsync();
+      this.setState({ originalBrightness });
+      Brightness.setBrightnessAsync(1.0);
+    }
+  };
+
+  undoBrightness = async () => {
+    const { originalBrightness } = this.state;
+    const { status } = await Permissions.getAsync(
+      Permissions.SYSTEM_BRIGHTNESS,
+    );
+
+    if (status === 'granted' && originalBrightness !== undefined) {
+      Brightness.setBrightnessAsync(originalBrightness);
+    }
+  };
+
   startFlashAnim = () => {
     const { flashValue } = this.state;
 
@@ -91,7 +119,7 @@ class Timer extends Component {
       {
         iterations: 5,
       },
-    ).start();
+    ).start(() => this.undoBrightness());
   };
 
   stopFlashAnim = () => {
@@ -101,7 +129,13 @@ class Timer extends Component {
 
   handleToggleTimer = () => {
     const { isRunning } = this.state;
-    this.setState({ isRunning: !isRunning });
+    const shouldPlay = !isRunning;
+
+    if (shouldPlay) {
+      this.setMaxBrightness();
+    }
+
+    this.setState({ isRunning: shouldPlay });
   };
 
   handleReset = () => {
