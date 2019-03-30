@@ -125,6 +125,7 @@ class Timer extends Component {
   stopFlashAnim = () => {
     const { flashValue } = this.state;
     Animated.timing(flashValue).stop();
+    flashValue.setValue(1);
   };
 
   handleToggleTimer = () => {
