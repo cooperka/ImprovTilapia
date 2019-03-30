@@ -5,5 +5,13 @@ const getRandomThing = (list) => () => {
   return list[Math.floor(Math.random() * list.length)];
 };
 
-export const getRandomRelationship = getRandomThing(relationships);
-export const getRandomOccupation = getRandomThing(occupations);
+export const suggestionTypes = {
+  RELATIONSHIP: {
+    name: 'Relationship',
+    getRandomThing: getRandomThing(relationships),
+  },
+  OCCUPATION: {
+    name: 'Occupation',
+    getRandomThing: getRandomThing(occupations),
+  },
+};

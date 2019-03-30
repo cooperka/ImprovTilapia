@@ -55,6 +55,7 @@ exports[`renders as expected 1`] = `
     }
   >
     <Button
+      mode="text"
       onPress={[Function]}
       style={
         Object {
@@ -66,6 +67,7 @@ exports[`renders as expected 1`] = `
       Relationship
     </Button>
     <Button
+      mode="text"
       onPress={[Function]}
       style={
         Object {

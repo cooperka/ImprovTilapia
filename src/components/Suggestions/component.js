@@ -1,10 +1,11 @@
+import * as _ from 'lodash';
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import FloatingNav from '../FloatingNav/component';
-import { Button, FAB } from 'react-native-paper';
-import { getRandomOccupation, getRandomRelationship } from './utils';
+import { Button } from 'react-native-paper';
+import { suggestionTypes } from './utils';
 import { Constants } from 'expo';
 
 class Timer extends Component {
@@ -16,6 +17,7 @@ class Timer extends Component {
   });
 
   state = {
+    currCategory: null,
     currSuggestion: 'Press a button below to get a suggestion',
     width: null,
   };
@@ -31,8 +33,13 @@ class Timer extends Component {
     this.setState({ width });
   };
 
-  handleNewSuggestion = (suggestionFn) => () => {
-    this.setState({ currSuggestion: suggestionFn() });
+  handleNewSuggestion = (category, suggestionFn) => () => {
+    this.setState({ currCategory: category, currSuggestion: suggestionFn() });
+  };
+
+  isActive = (name) => {
+    const { currCategory } = this.state;
+    return name === currCategory;
   };
 
   render() {
@@ -50,18 +57,16 @@ class Timer extends Component {
         </View>
 
         <View style={styles.buttonsContainer}>
-          <Button
-            style={styles.button}
-            onPress={this.handleNewSuggestion(getRandomRelationship)}
-          >
-            Relationship
-          </Button>
-          <Button
-            style={styles.button}
-            onPress={this.handleNewSuggestion(getRandomOccupation)}
-          >
-            Occupation
-          </Button>
+          {_.map(suggestionTypes, ({ name, getRandomThing }) => (
+            <Button
+              key={name}
+              mode={this.isActive(name) ? 'contained' : 'text'}
+              style={styles.button}
+              onPress={this.handleNewSuggestion(name, getRandomThing)}
+            >
+              {name}
+            </Button>
+          ))}
         </View>
       </View>
     );
