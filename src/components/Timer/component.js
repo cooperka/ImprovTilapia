@@ -41,6 +41,7 @@ class Timer extends Component {
   state = {
     seconds: 0,
     isRunning: false,
+    lastSetTime: 0,
     width: null,
     flashValue: new Animated.Value(1),
   };
@@ -104,13 +105,22 @@ class Timer extends Component {
   };
 
   handleReset = () => {
+    const { seconds, lastSetTime } = this.state;
+
     this.stopFlashAnim();
-    this.setState({ seconds: 0, isRunning: false });
+    this.setState({
+      seconds: lastSetTime === seconds ? 0 : lastSetTime,
+      isRunning: false,
+      lastSetTime: 0,
+    });
   };
 
   handleAddTime = (additionalSeconds) => () => {
     this.stopFlashAnim();
-    this.setState(({ seconds }) => ({ seconds: seconds + additionalSeconds }));
+    this.setState(({ seconds }) => {
+      const newTime = seconds + additionalSeconds;
+      return { seconds: newTime, lastSetTime: newTime };
+    });
   };
 
   handleLayoutChange = ({
