@@ -32,8 +32,8 @@ function formatTimeCompact(seconds) {
 
 class Timer extends Component {
   static navigationOptions = ({ navigation }) => ({
-    tabBarIcon: () => (
-      <MaterialCommunityIcons name="timer" color="white" size={20} />
+    tabBarIcon: ({ tintColor }) => (
+      <MaterialCommunityIcons name="timer" color={tintColor} size={20} />
     ),
     tabBarVisible: !navigation.getParam('isFullscreen'),
   });

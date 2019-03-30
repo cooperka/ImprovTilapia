@@ -10,8 +10,12 @@ import { Constants } from 'expo';
 
 class Timer extends Component {
   static navigationOptions = ({ navigation }) => ({
-    tabBarIcon: () => (
-      <MaterialCommunityIcons name="message-outline" color="white" size={20} />
+    tabBarIcon: ({ tintColor }) => (
+      <MaterialCommunityIcons
+        name="message-outline"
+        color={tintColor}
+        size={20}
+      />
     ),
     tabBarVisible: !navigation.getParam('isFullscreen'),
   });
