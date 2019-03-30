@@ -166,13 +166,13 @@ class Timer extends Component {
               icon={isRunning ? PauseIcon : PlayIcon}
               onPress={this.handleToggleTimer}
             />
-            <Button style={styles.button} onPress={this.handleAddTime(60)}>
-              +1 min
+            <Button style={styles.button} onPress={this.handleAddTime(10)}>
+              +10 sec
             </Button>
           </View>
 
           <View style={styles.buttonsRow}>
-            {[10 / 60.0, 5, 10, 30]
+            {[1, 5, 10, 30]
               .map((num) => num * 60)
               .map((seconds) => (
                 <Button
