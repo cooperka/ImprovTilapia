@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { DrawerItems as DefaultDrawerItems } from 'react-navigation';
 import { List } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -17,6 +17,17 @@ const getDrawerIcon = (name) => (props) => {
   );
 };
 
+function ListItem({ title, description }) {
+  return (
+    <View style={styles.settingsItem}>
+      {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
+      {description ? (
+        <Text style={styles.itemDescription}>{description}</Text>
+      ) : null}
+    </View>
+  );
+}
+
 class DrawerItems extends Component {
   render() {
     return (
@@ -31,14 +42,17 @@ class DrawerItems extends Component {
         ) : null}
 
         <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
-          <List.Item title="Nothing yet" />
+          <ListItem
+            title="Increase screen brightness while timer is running"
+            description="Currently OFF"
+          />
         </List.Accordion>
 
         <List.Accordion
           title="Suggestions settings"
           left={getDrawerIcon('message-outline')}
         >
-          <List.Item title="Nothing yet" />
+          <ListItem title="Nothing yet" />
         </List.Accordion>
       </React.Fragment>
     );
@@ -53,6 +67,20 @@ const styles = StyleSheet.create({
     width: 40,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  /** Adapted from Paper's `List.ListAccordion`. */
+  settingsItem: {
+    marginLeft: 64 + 8,
+    marginRight: 16,
+  },
+  /** Adapted from Paper's `List.ListItem`. */
+  itemTitle: {
+    fontSize: 16,
+    marginBottom: 8,
+  },
+  itemDescription: {
+    fontSize: 14,
+    marginBottom: 8,
   },
 });
 

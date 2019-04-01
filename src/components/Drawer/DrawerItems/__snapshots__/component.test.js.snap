@@ -6,17 +6,59 @@ Array [
     left={[Function]}
     title="Timer settings"
   >
-    <Item
-      title="Nothing yet"
-    />
+    <View
+      style={
+        Object {
+          "marginLeft": 72,
+          "marginRight": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "marginBottom": 8,
+          }
+        }
+      >
+        Increase screen brightness while timer is running
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 14,
+            "marginBottom": 8,
+          }
+        }
+      >
+        Currently OFF
+      </Text>
+    </View>
   </Accordion>,
   <Accordion
     left={[Function]}
     title="Suggestions settings"
   >
-    <Item
-      title="Nothing yet"
-    />
+    <View
+      style={
+        Object {
+          "marginLeft": 72,
+          "marginRight": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "marginBottom": 8,
+          }
+        }
+      >
+        Nothing yet
+      </Text>
+    </View>
   </Accordion>,
 ]
 `;
