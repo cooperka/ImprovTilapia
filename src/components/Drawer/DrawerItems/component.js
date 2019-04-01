@@ -28,32 +28,48 @@ function ListItem({ title, description }) {
   );
 }
 
+function RouteItems() {
+  return (
+    <List.Accordion
+      title="Routes"
+      left={(props) => <List.Icon {...props} icon="routes" />}
+    >
+      <DefaultDrawerItems {...this.props} />
+    </List.Accordion>
+  );
+}
+
+function TimerItems() {
+  return (
+    <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
+      <ListItem
+        title="Increase screen brightness while timer is running"
+        description="Currently OFF"
+      />
+    </List.Accordion>
+  );
+}
+
+function SuggestionsItems() {
+  return (
+    <List.Accordion
+      title="Suggestions settings"
+      left={getDrawerIcon('message-outline')}
+    >
+      <ListItem title="Nothing yet" />
+    </List.Accordion>
+  );
+}
+
 class DrawerItems extends Component {
   render() {
     return (
       <React.Fragment>
-        {SHOW_ROUTES ? (
-          <List.Accordion
-            title="Routes"
-            left={(props) => <List.Icon {...props} icon="routes" />}
-          >
-            <DefaultDrawerItems {...this.props} />
-          </List.Accordion>
-        ) : null}
+        {SHOW_ROUTES ? <RouteItems /> : null}
 
-        <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
-          <ListItem
-            title="Increase screen brightness while timer is running"
-            description="Currently OFF"
-          />
-        </List.Accordion>
+        <TimerItems />
 
-        <List.Accordion
-          title="Suggestions settings"
-          left={getDrawerIcon('message-outline')}
-        >
-          <ListItem title="Nothing yet" />
-        </List.Accordion>
+        <SuggestionsItems />
       </React.Fragment>
     );
   }
