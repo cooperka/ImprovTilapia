@@ -2,14 +2,23 @@
 
 exports[`renders as expected 1`] = `
 <Provider
-  theme={
-    Object {
-      "colors": Object {
-        "primary": "#3f51b5",
-      },
-    }
-  }
+  timerSettings={TimerSettingsModel {}}
 >
-  <AppContainer />
+  <Provider
+    theme={
+      Object {
+        "colors": Object {
+          "primary": "#3f51b5",
+        },
+      }
+    }
+  >
+    <StatusBar
+      animated={false}
+      barStyle="light-content"
+      showHideTransition="fade"
+    />
+    <AppContainer />
+  </Provider>
 </Provider>
 `;

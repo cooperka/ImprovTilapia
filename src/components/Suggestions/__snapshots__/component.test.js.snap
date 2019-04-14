@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<View
+<Component
   onLayout={[Function]}
   style={
     Object {
@@ -13,7 +13,7 @@ exports[`renders as expected 1`] = `
   }
 >
   <FloatingNav />
-  <View
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -22,7 +22,7 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    <Text
+    <Component
       style={
         Array [
           Object {
@@ -39,9 +39,9 @@ exports[`renders as expected 1`] = `
       }
     >
       Press a button below to get a suggestion
-    </Text>
-  </View>
-  <View
+    </Component>
+  </Component>
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -55,6 +55,7 @@ exports[`renders as expected 1`] = `
     }
   >
     <Button
+      key="Relationship"
       mode="text"
       onPress={[Function]}
       style={
@@ -67,6 +68,7 @@ exports[`renders as expected 1`] = `
       Relationship
     </Button>
     <Button
+      key="Occupation"
       mode="text"
       onPress={[Function]}
       style={
@@ -78,6 +80,6 @@ exports[`renders as expected 1`] = `
     >
       Occupation
     </Button>
-  </View>
-</View>
+  </Component>
+</Component>
 `;

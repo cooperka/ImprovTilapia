@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<View
+<Component
   onLayout={[Function]}
   style={
     Object {
@@ -12,8 +12,9 @@ exports[`renders as expected 1`] = `
     }
   }
 >
+  <KeepAwake />
   <FloatingNav />
-  <View
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -24,19 +25,23 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    <Text
+    <AnimatedComponent
       style={
-        Object {
-          "color": "#f00",
-          "fontSize": 0,
-          "opacity": 1,
-        }
+        Array [
+          Object {
+            "color": "#f00",
+          },
+          Object {
+            "fontSize": 0,
+            "opacity": 1,
+          },
+        ]
       }
     >
       0:00
-    </Text>
-  </View>
-  <View
+    </AnimatedComponent>
+  </Component>
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -47,7 +52,7 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    <View
+    <Component
       style={
         Object {
           "alignItems": "center",
@@ -72,6 +77,7 @@ exports[`renders as expected 1`] = `
       </Button>
       <FAB
         icon={[Function]}
+        key="playPause_false"
         onPress={[Function]}
         style={
           Object {
@@ -91,8 +97,8 @@ exports[`renders as expected 1`] = `
       >
         +0:10
       </Button>
-    </View>
-    <View
+    </Component>
+    <Component
       style={
         Object {
           "alignItems": "center",
@@ -105,6 +111,7 @@ exports[`renders as expected 1`] = `
       }
     >
       <Button
+        key="60"
         onPress={[Function]}
         style={
           Object {
@@ -116,6 +123,7 @@ exports[`renders as expected 1`] = `
         +1
       </Button>
       <Button
+        key="300"
         onPress={[Function]}
         style={
           Object {
@@ -127,6 +135,7 @@ exports[`renders as expected 1`] = `
         +5
       </Button>
       <Button
+        key="600"
         onPress={[Function]}
         style={
           Object {
@@ -138,6 +147,7 @@ exports[`renders as expected 1`] = `
         +10
       </Button>
       <Button
+        key="1800"
         onPress={[Function]}
         style={
           Object {
@@ -148,13 +158,13 @@ exports[`renders as expected 1`] = `
       >
         +30
       </Button>
-    </View>
-  </View>
-</View>
+    </Component>
+  </Component>
+</Component>
 `;
 
 exports[`renders as expected 2`] = `
-<View
+<Component
   onLayout={[Function]}
   style={
     Object {
@@ -165,8 +175,9 @@ exports[`renders as expected 2`] = `
     }
   }
 >
+  <KeepAwake />
   <FloatingNav />
-  <View
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -177,19 +188,23 @@ exports[`renders as expected 2`] = `
       }
     }
   >
-    <Text
+    <AnimatedComponent
       style={
-        Object {
-          "color": "#f00",
-          "fontSize": 0,
-          "opacity": 1,
-        }
+        Array [
+          Object {
+            "color": "#f00",
+          },
+          Object {
+            "fontSize": 0,
+            "opacity": 1,
+          },
+        ]
       }
     >
       0:00
-    </Text>
-  </View>
-  <View
+    </AnimatedComponent>
+  </Component>
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -200,7 +215,7 @@ exports[`renders as expected 2`] = `
       }
     }
   >
-    <View
+    <Component
       style={
         Object {
           "alignItems": "center",
@@ -225,6 +240,7 @@ exports[`renders as expected 2`] = `
       </Button>
       <FAB
         icon={[Function]}
+        key="playPause_false"
         onPress={[Function]}
         style={
           Object {
@@ -244,8 +260,8 @@ exports[`renders as expected 2`] = `
       >
         +0:10
       </Button>
-    </View>
-    <View
+    </Component>
+    <Component
       style={
         Object {
           "alignItems": "center",
@@ -258,6 +274,7 @@ exports[`renders as expected 2`] = `
       }
     >
       <Button
+        key="60"
         onPress={[Function]}
         style={
           Object {
@@ -269,6 +286,7 @@ exports[`renders as expected 2`] = `
         +1
       </Button>
       <Button
+        key="300"
         onPress={[Function]}
         style={
           Object {
@@ -280,6 +298,7 @@ exports[`renders as expected 2`] = `
         +5
       </Button>
       <Button
+        key="600"
         onPress={[Function]}
         style={
           Object {
@@ -291,6 +310,7 @@ exports[`renders as expected 2`] = `
         +10
       </Button>
       <Button
+        key="1800"
         onPress={[Function]}
         style={
           Object {
@@ -301,7 +321,7 @@ exports[`renders as expected 2`] = `
       >
         +30
       </Button>
-    </View>
-  </View>
-</View>
+    </Component>
+  </Component>
+</Component>
 `;

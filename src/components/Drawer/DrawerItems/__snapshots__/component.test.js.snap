@@ -1,64 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-Array [
-  <Accordion
-    left={[Function]}
-    title="Timer settings"
-  >
-    <View
-      style={
-        Object {
-          "marginLeft": 72,
-          "marginRight": 16,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 16,
-            "marginBottom": 8,
-          }
-        }
-      >
-        Increase screen brightness while timer is running
-      </Text>
-      <Text
-        style={
-          Object {
-            "fontSize": 14,
-            "marginBottom": 8,
-          }
-        }
-      >
-        Currently OFF
-      </Text>
-    </View>
-  </Accordion>,
-  <Accordion
-    left={[Function]}
-    title="Suggestions settings"
-  >
-    <View
-      style={
-        Object {
-          "marginLeft": 72,
-          "marginRight": 16,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 16,
-            "marginBottom": 8,
-          }
-        }
-      >
-        Nothing yet
-      </Text>
-    </View>
-  </Accordion>,
-]
+<Fragment>
+  <TimerItems />
+  <SuggestionsItems />
+</Fragment>
 `;

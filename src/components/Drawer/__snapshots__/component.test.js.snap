@@ -1,23 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<RCTScrollView>
-  <View>
-    <SafeAreaView
-      forceInset={
-        Object {
-          "horizontal": "never",
-          "top": "always",
-        }
+<ScrollView>
+  <SafeAreaView
+    forceInset={
+      Object {
+        "horizontal": "never",
+        "top": "always",
       }
-      style={
-        Object {
-          "flex": 1,
-        }
+    }
+    style={
+      Object {
+        "flex": 1,
       }
-    >
-      <DrawerItems />
-    </SafeAreaView>
-  </View>
-</RCTScrollView>
+    }
+  >
+    <DrawerItems />
+  </SafeAreaView>
+</ScrollView>
 `;

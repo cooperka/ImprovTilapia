@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import Component from './component';
 
@@ -8,6 +8,6 @@ const props = {
 };
 
 it('renders as expected', async () => {
-  const tree = renderer.create(<Component {...props} />);
-  expect(tree.toJSON()).toMatchSnapshot();
+  const wrapper = shallow(<Component {...props} />);
+  expect(wrapper).toMatchSnapshot();
 });

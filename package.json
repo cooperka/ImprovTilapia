@@ -11,7 +11,10 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "husky": {
     "hooks": {
@@ -33,10 +36,13 @@
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "7.4.0",
     "babel-preset-expo": "5.0.0",
+    "enzyme": "3.9.0",
+    "enzyme-adapter-react-16": "1.12.1",
+    "enzyme-to-json": "3.3.5",
     "husky": "1.3.1",
     "jest-expo": "32.0.0",
     "prettier": "1.16.4",
     "pretty-quick": "1.10.0",
-    "react-test-renderer": "16.5.0"
+    "react-native-mock-render": "0.1.2"
   }
 }
