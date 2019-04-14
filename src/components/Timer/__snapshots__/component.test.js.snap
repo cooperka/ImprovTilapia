@@ -13,7 +13,9 @@ exports[`renders as expected 1`] = `
   }
 >
   <KeepAwake />
-  <FloatingNav />
+  <FloatingNav
+    navigation={Object {}}
+  />
   <Component
     style={
       Object {
@@ -176,7 +178,9 @@ exports[`renders as expected 2`] = `
   }
 >
   <KeepAwake />
-  <FloatingNav />
+  <FloatingNav
+    navigation={Object {}}
+  />
   <Component
     style={
       Object {

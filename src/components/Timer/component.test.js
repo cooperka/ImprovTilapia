@@ -5,12 +5,14 @@ import Component from './component';
 import { TimerSettingsModel } from './model';
 
 jest.useFakeTimers();
-jest.mock('../FloatingNav/component', () => 'FloatingNav');
 
-const mockTimerSettings = new TimerSettingsModel();
+const props = {
+  navigation: {},
+  timerSettings: new TimerSettingsModel(),
+};
 
 it('renders as expected', async () => {
-  const wrapper = shallow(<Component timerSettings={mockTimerSettings} />);
+  const wrapper = shallow(<Component {...props} />);
   expect(wrapper).toMatchSnapshot();
 
   // TODO: Click buttons with Enzyme to actually test this.

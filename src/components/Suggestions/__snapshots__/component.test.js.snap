@@ -12,7 +12,9 @@ exports[`renders as expected 1`] = `
     }
   }
 >
-  <FloatingNav />
+  <FloatingNav
+    navigation={Object {}}
+  />
   <Component
     style={
       Object {
