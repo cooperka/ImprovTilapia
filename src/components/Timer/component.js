@@ -4,6 +4,7 @@ import { StyleSheet, View, Animated } from 'react-native';
 import { Constants, KeepAwake, Brightness, Permissions } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { observer, inject } from 'mobx-react/native';
 
 import theme from '../App/paperTheme';
 
@@ -30,6 +31,8 @@ function formatTimeCompact(seconds) {
   );
 }
 
+@inject('timerSettings')
+@observer
 class Timer extends Component {
   static navigationOptions = ({ navigation }) => ({
     tabBarIcon: ({ tintColor }) => (
@@ -48,7 +51,12 @@ class Timer extends Component {
   };
 
   componentWillMount() {
-    Permissions.askAsync(Permissions.SYSTEM_BRIGHTNESS);
+    const {
+      timerSettings: { shouldIncreaseBrightness },
+    } = this.props;
+    if (shouldIncreaseBrightness) {
+      Permissions.askAsync(Permissions.SYSTEM_BRIGHTNESS);
+    }
   }
 
   componentDidMount() {
@@ -76,6 +84,13 @@ class Timer extends Component {
   };
 
   setMaxBrightness = async () => {
+    const {
+      timerSettings: { shouldIncreaseBrightness },
+    } = this.props;
+    if (!shouldIncreaseBrightness) {
+      return;
+    }
+
     const { status } = await Permissions.getAsync(
       Permissions.SYSTEM_BRIGHTNESS,
     );
@@ -88,6 +103,13 @@ class Timer extends Component {
   };
 
   undoBrightness = async () => {
+    const {
+      timerSettings: { shouldIncreaseBrightness },
+    } = this.props;
+    if (!shouldIncreaseBrightness) {
+      return;
+    }
+
     const { originalBrightness } = this.state;
     const { status } = await Permissions.getAsync(
       Permissions.SYSTEM_BRIGHTNESS,

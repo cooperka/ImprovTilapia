@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { Provider as MobxProvider } from 'mobx-react/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import theme from './paperTheme';
 import { loadAssets } from './utils';
+import { TimerSettingsModel } from '../Timer/model';
 
 import AppNavigator from './AppNavigator/component';
 
 const images = [];
 const fonts = [MaterialCommunityIcons.font];
+
+const timerSettings = new TimerSettingsModel();
 
 class App extends Component {
   state = {
@@ -31,10 +35,12 @@ class App extends Component {
     }
 
     return (
-      <PaperProvider theme={theme}>
-        <StatusBar barStyle="light-content" />
-        <AppNavigator />
-      </PaperProvider>
+      <MobxProvider timerSettings={timerSettings}>
+        <PaperProvider theme={theme}>
+          <StatusBar barStyle="light-content" />
+          <AppNavigator />
+        </PaperProvider>
+      </MobxProvider>
     );
   }
 }

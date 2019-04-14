@@ -1,1 +1,6 @@
-export class TimerModel {}
+import { observable } from 'mobx';
+
+export class TimerSettingsModel {
+  @observable
+  shouldIncreaseBrightness = true;
+}
