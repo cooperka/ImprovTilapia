@@ -10,7 +10,8 @@
     "eject": "expo eject"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "husky": {
     "hooks": {
