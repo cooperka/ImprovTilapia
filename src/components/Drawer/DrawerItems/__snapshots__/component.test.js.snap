@@ -1,8 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`renders as expected (root) 1`] = `
 <Fragment>
   <TimerItems />
   <SuggestionsItems />
 </Fragment>
+`;
+
+exports[`renders as expected (route items) 1`] = `
+<Accordion
+  left={[Function]}
+  title="Routes"
+>
+  <DrawerItems />
+</Accordion>
+`;
+
+exports[`renders as expected (suggestions items) 1`] = `
+<Accordion
+  left={[Function]}
+  title="Suggestions settings"
+>
+  <ListItem
+    title="Nothing yet"
+  />
+</Accordion>
+`;
+
+exports[`renders as expected (timer items) 1`] = `
+<Accordion
+  left={[Function]}
+  title="Timer settings"
+>
+  <ListItem
+    description="Currently ON"
+    onPress={[Function]}
+    title="Increase screen brightness while timer is running"
+  />
+</Accordion>
 `;

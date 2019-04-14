@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { DrawerItems as DefaultDrawerItems } from 'react-navigation';
-import { List } from 'react-native-paper';
+import { List, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { inject, observer } from 'mobx-react/native';
 
 const SHOW_ROUTES = false;
 
@@ -17,18 +18,20 @@ const getDrawerIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description }) {
+function ListItem({ title, description, ...viewProps }) {
   return (
-    <View style={styles.settingsItem}>
-      {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
-      {description ? (
-        <Text style={styles.itemDescription}>{description}</Text>
-      ) : null}
-    </View>
+    <TouchableRipple style={styles.settingsItem} {...viewProps}>
+      <View>
+        {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
+        {description ? (
+          <Text style={styles.itemDescription}>{description}</Text>
+        ) : null}
+      </View>
+    </TouchableRipple>
   );
 }
 
-function RouteItems() {
+export function RouteItems() {
   return (
     <List.Accordion
       title="Routes"
@@ -39,18 +42,32 @@ function RouteItems() {
   );
 }
 
-function TimerItems() {
-  return (
-    <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
-      <ListItem
-        title="Increase screen brightness while timer is running"
-        description="Currently OFF"
-      />
-    </List.Accordion>
-  );
+@inject('timerSettings')
+@observer
+export class TimerItems extends Component {
+  handleTapBrightness = () => {
+    const { timerSettings } = this.props;
+    timerSettings.shouldIncreaseBrightness = !timerSettings.shouldIncreaseBrightness;
+  };
+
+  render() {
+    const {
+      timerSettings: { shouldIncreaseBrightness },
+    } = this.props;
+
+    return (
+      <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
+        <ListItem
+          title="Increase screen brightness while timer is running"
+          description={`Currently ${shouldIncreaseBrightness ? 'ON' : 'OFF'}`}
+          onPress={this.handleTapBrightness}
+        />
+      </List.Accordion>
+    );
+  }
 }
 
-function SuggestionsItems() {
+export function SuggestionsItems() {
   return (
     <List.Accordion
       title="Suggestions settings"
