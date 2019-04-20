@@ -203,6 +203,7 @@ class Timer extends Component {
 
         <View style={styles.timeContainer}>
           <Animated.Text
+            id="timeRemaining"
             style={[
               styles.time,
               { fontSize: width / 4.0, opacity: flashValue },

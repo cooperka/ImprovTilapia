@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`handles timers 1`] = `
+<Icon
+  allowFontScaling={false}
+  color="white"
+  name="pause"
+  size={36}
+  style={
+    Object {
+      "marginBottom": "auto",
+      "marginTop": "auto",
+      "textAlign": "center",
+    }
+  }
+/>
+`;
+
+exports[`handles timers 2`] = `"0:50"`;
+
+exports[`handles timers 3`] = `
+<Icon
+  allowFontScaling={false}
+  color="white"
+  name="play"
+  size={36}
+  style={
+    Object {
+      "marginBottom": "auto",
+      "marginTop": "auto",
+      "textAlign": "center",
+    }
+  }
+/>
+`;
+
+exports[`handles timers 4`] = `"0:00"`;
+
 exports[`renders as expected 1`] = `
 <Component
   onLayout={[Function]}
@@ -27,7 +63,8 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    <AnimatedComponent
+    <Animated.Text
+      id="timeRemaining"
       style={
         Array [
           Object {
@@ -35,182 +72,13 @@ exports[`renders as expected 1`] = `
           },
           Object {
             "fontSize": 0,
-            "opacity": 1,
+            "opacity": "Value",
           },
         ]
       }
     >
       0:00
-    </AnimatedComponent>
-  </Component>
-  <Component
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-        "maxHeight": 180,
-        "maxWidth": 500,
-      }
-    }
-  >
-    <Component
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginHorizontal": 16,
-          "marginTop": 24,
-        }
-      }
-    >
-      <Button
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        Reset
-      </Button>
-      <FAB
-        icon={[Function]}
-        key="playPause_false"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#3f51b5",
-            "marginHorizontal": 16,
-          }
-        }
-      />
-      <Button
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        +0:10
-      </Button>
-    </Component>
-    <Component
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-          "marginHorizontal": 16,
-          "marginTop": 24,
-        }
-      }
-    >
-      <Button
-        id={60}
-        key="60"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        +1
-      </Button>
-      <Button
-        id={300}
-        key="300"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        +5
-      </Button>
-      <Button
-        id={600}
-        key="600"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        +10
-      </Button>
-      <Button
-        id={1800}
-        key="1800"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        +30
-      </Button>
-    </Component>
-  </Component>
-</Component>
-`;
-
-exports[`renders as expected 2`] = `
-<Component
-  onLayout={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#000",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }
->
-  <KeepAwake />
-  <FloatingNav
-    navigation={Object {}}
-  />
-  <Component
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-        "marginBottom": 8,
-        "marginTop": 20,
-      }
-    }
-  >
-    <AnimatedComponent
-      style={
-        Array [
-          Object {
-            "color": "#f00",
-          },
-          Object {
-            "fontSize": 0,
-            "opacity": 1,
-          },
-        ]
-      }
-    >
-      0:00
-    </AnimatedComponent>
+    </Animated.Text>
   </Component>
   <Component
     style={

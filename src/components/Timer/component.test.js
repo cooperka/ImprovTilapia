@@ -1,3 +1,4 @@
+import { Duration } from 'luxon';
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -14,8 +15,36 @@ const props = {
 it('renders as expected', async () => {
   const wrapper = shallow(<Component {...props} />);
   expect(wrapper).toMatchSnapshot();
+});
 
-  // TODO: Click buttons with Enzyme to actually test this.
-  jest.advanceTimersByTime(1100);
-  expect(wrapper).toMatchSnapshot();
+it('handles timers', async () => {
+  const wrapper = shallow(<Component {...props} />);
+
+  // Add 60 seconds.
+  wrapper
+    .find({ id: 60 })
+    .props()
+    .onPress();
+
+  // Start.
+  wrapper
+    .find('FAB')
+    .props()
+    .onPress();
+
+  // Advance a few seconds.
+  jest.advanceTimersByTime(
+    Duration.fromObject({ seconds: 10 }).as('milliseconds'),
+  );
+
+  expect(wrapper.find('FAB').prop('icon')()).toMatchSnapshot();
+  expect(wrapper.find({ id: 'timeRemaining' }).text()).toMatchSnapshot();
+
+  // Complete the timer.
+  jest.advanceTimersByTime(
+    Duration.fromObject({ seconds: 51 }).as('milliseconds'),
+  );
+
+  expect(wrapper.find('FAB').prop('icon')()).toMatchSnapshot();
+  expect(wrapper.find({ id: 'timeRemaining' }).text()).toMatchSnapshot();
 });
