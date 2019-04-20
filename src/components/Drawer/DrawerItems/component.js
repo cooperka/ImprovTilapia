@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { DrawerItems as DefaultDrawerItems } from 'react-navigation';
+import {
+  withNavigation,
+  DrawerItems as DefaultDrawerItems,
+} from 'react-navigation';
 import { List, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { inject, observer } from 'mobx-react/native';
+
+import { getCurrRouteName } from '../utils';
 
 const SHOW_ROUTES = false;
 
@@ -53,10 +58,15 @@ export class TimerItems extends Component {
   render() {
     const {
       timerSettings: { shouldIncreaseBrightness },
+      currRouteName,
     } = this.props;
 
     return (
-      <List.Accordion title="Timer settings" left={getDrawerIcon('timer')}>
+      <List.Accordion
+        title="Timer settings"
+        left={getDrawerIcon('timer')}
+        expanded={currRouteName === 'Timer'}
+      >
         <ListItem
           title="Increase screen brightness while timer is running"
           description={`Currently ${shouldIncreaseBrightness ? 'ON' : 'OFF'}`}
@@ -67,26 +77,35 @@ export class TimerItems extends Component {
   }
 }
 
-export function SuggestionsItems() {
-  return (
-    <List.Accordion
-      title="Suggestions settings"
-      left={getDrawerIcon('message-outline')}
-    >
-      <ListItem title="Nothing yet" />
-    </List.Accordion>
-  );
+export class SuggestionsItems extends Component {
+  render() {
+    const { currRouteName } = this.props;
+
+    return (
+      <List.Accordion
+        title="Suggestions settings"
+        left={getDrawerIcon('message-outline')}
+        expanded={currRouteName === 'Suggestions'}
+      >
+        <ListItem title="Nothing yet" />
+      </List.Accordion>
+    );
+  }
 }
 
 class DrawerItems extends Component {
   render() {
+    const { navigation } = this.props;
+    const currRouteName = getCurrRouteName(navigation);
+    const sectionProps = {
+      currRouteName,
+    };
+
     return (
       <React.Fragment>
-        {SHOW_ROUTES ? <RouteItems /> : null}
-
-        <TimerItems />
-
-        <SuggestionsItems />
+        {SHOW_ROUTES ? <RouteItems {...sectionProps} /> : null}
+        <TimerItems {...sectionProps} />
+        <SuggestionsItems {...sectionProps} />
       </React.Fragment>
     );
   }
@@ -117,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DrawerItems;
+export default withNavigation(DrawerItems);

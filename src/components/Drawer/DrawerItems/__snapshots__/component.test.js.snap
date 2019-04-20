@@ -2,8 +2,12 @@
 
 exports[`renders as expected (root) 1`] = `
 <Fragment>
-  <TimerItems />
-  <SuggestionsItems />
+  <TimerItems
+    currRouteName="mockRoute"
+  />
+  <SuggestionsItems
+    currRouteName="mockRoute"
+  />
 </Fragment>
 `;
 
@@ -18,6 +22,7 @@ exports[`renders as expected (route items) 1`] = `
 
 exports[`renders as expected (suggestions items) 1`] = `
 <Accordion
+  expanded={false}
   left={[Function]}
   title="Suggestions settings"
 >
@@ -29,6 +34,7 @@ exports[`renders as expected (suggestions items) 1`] = `
 
 exports[`renders as expected (timer items) 1`] = `
 <Accordion
+  expanded={false}
   left={[Function]}
   title="Timer settings"
 >
