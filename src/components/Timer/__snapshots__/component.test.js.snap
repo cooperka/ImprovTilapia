@@ -113,6 +113,7 @@ exports[`renders as expected 1`] = `
       }
     >
       <Button
+        id={60}
         key="60"
         onPress={[Function]}
         style={
@@ -125,6 +126,7 @@ exports[`renders as expected 1`] = `
         +1
       </Button>
       <Button
+        id={300}
         key="300"
         onPress={[Function]}
         style={
@@ -137,6 +139,7 @@ exports[`renders as expected 1`] = `
         +5
       </Button>
       <Button
+        id={600}
         key="600"
         onPress={[Function]}
         style={
@@ -149,6 +152,7 @@ exports[`renders as expected 1`] = `
         +10
       </Button>
       <Button
+        id={1800}
         key="1800"
         onPress={[Function]}
         style={
@@ -278,6 +282,7 @@ exports[`renders as expected 2`] = `
       }
     >
       <Button
+        id={60}
         key="60"
         onPress={[Function]}
         style={
@@ -290,6 +295,7 @@ exports[`renders as expected 2`] = `
         +1
       </Button>
       <Button
+        id={300}
         key="300"
         onPress={[Function]}
         style={
@@ -302,6 +308,7 @@ exports[`renders as expected 2`] = `
         +5
       </Button>
       <Button
+        id={600}
         key="600"
         onPress={[Function]}
         style={
@@ -314,6 +321,7 @@ exports[`renders as expected 2`] = `
         +10
       </Button>
       <Button
+        id={1800}
         key="1800"
         onPress={[Function]}
         style={

@@ -234,6 +234,7 @@ class Timer extends Component {
               .map((seconds) => (
                 <Button
                   key={seconds}
+                  id={seconds}
                   style={styles.button}
                   onPress={this.handleAddTime(seconds)}
                 >
