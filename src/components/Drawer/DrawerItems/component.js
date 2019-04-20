@@ -50,6 +50,8 @@ export function RouteItems() {
 @inject('timerSettings')
 @observer
 export class TimerItems extends Component {
+  routeName = 'Timer';
+
   handleTapBrightness = () => {
     const { timerSettings } = this.props;
     timerSettings.shouldIncreaseBrightness = !timerSettings.shouldIncreaseBrightness;
@@ -59,13 +61,15 @@ export class TimerItems extends Component {
     const {
       timerSettings: { shouldIncreaseBrightness },
       currRouteName,
+      navigateToRoute,
     } = this.props;
 
     return (
       <List.Accordion
         title="Timer settings"
         left={getDrawerIcon('timer')}
-        expanded={currRouteName === 'Timer'}
+        expanded={currRouteName === this.routeName}
+        onPress={() => navigateToRoute(this.routeName)}
       >
         <ListItem
           title="Increase screen brightness while timer is running"
@@ -78,14 +82,17 @@ export class TimerItems extends Component {
 }
 
 export class SuggestionsItems extends Component {
+  routeName = 'Suggestions';
+
   render() {
-    const { currRouteName } = this.props;
+    const { currRouteName, navigateToRoute } = this.props;
 
     return (
       <List.Accordion
         title="Suggestions settings"
         left={getDrawerIcon('message-outline')}
-        expanded={currRouteName === 'Suggestions'}
+        expanded={currRouteName === this.routeName}
+        onPress={() => navigateToRoute(this.routeName)}
       >
         <ListItem title="Nothing yet" />
       </List.Accordion>
@@ -99,6 +106,10 @@ class DrawerItems extends Component {
     const currRouteName = getCurrRouteName(navigation);
     const sectionProps = {
       currRouteName,
+      navigateToRoute: (routeName) => {
+        navigation.navigate({ routeName });
+        navigation.openDrawer();
+      },
     };
 
     return (
