@@ -28,11 +28,11 @@ export const suggestions = {
     getRandomThing: getRandomThing(occupations),
   },
   [suggestionTypes.EMOTION_SHORT]: {
-    name: 'Emotion (short list)',
+    name: 'Emotion (main)',
     getRandomThing: getRandomThing(clearEmotions),
   },
   [suggestionTypes.EMOTION_FULL]: {
-    name: 'Emotion (full list)',
+    name: 'Emotion (full)',
     getRandomThing: getRandomThing(groupedEmotions),
   },
   [suggestionTypes.EMOTIONAL_DIAD]: {

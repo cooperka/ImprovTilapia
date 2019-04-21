@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     maxWidth: 500,
     maxHeight: 140,
+    marginBottom: 16,
   },
   button: {
-    flex: 1,
     marginHorizontal: 16,
   },
 });

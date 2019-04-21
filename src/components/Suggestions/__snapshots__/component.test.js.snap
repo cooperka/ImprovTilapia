@@ -48,6 +48,7 @@ exports[`renders as expected 1`] = `
       Object {
         "alignItems": "center",
         "flex": 1,
+        "marginBottom": 16,
         "maxHeight": 140,
         "maxWidth": 500,
       }
@@ -64,7 +65,6 @@ exports[`renders as expected 1`] = `
           onPress={[Function]}
           style={
             Object {
-              "flex": 1,
               "marginHorizontal": 16,
             }
           }
@@ -73,19 +73,18 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotion (short list)"
+        key="Emotion (main)"
       >
         <Button
           mode="text"
           onPress={[Function]}
           style={
             Object {
-              "flex": 1,
               "marginHorizontal": 16,
             }
           }
         >
-          Emotion (short list)
+          Emotion (main)
         </Button>
       </ColumnNB>
     </RowNB>
@@ -100,7 +99,6 @@ exports[`renders as expected 1`] = `
           onPress={[Function]}
           style={
             Object {
-              "flex": 1,
               "marginHorizontal": 16,
             }
           }
@@ -109,19 +107,18 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotion (full list)"
+        key="Emotion (full)"
       >
         <Button
           mode="text"
           onPress={[Function]}
           style={
             Object {
-              "flex": 1,
               "marginHorizontal": 16,
             }
           }
         >
-          Emotion (full list)
+          Emotion (full)
         </Button>
       </ColumnNB>
     </RowNB>
@@ -136,7 +133,6 @@ exports[`renders as expected 1`] = `
           onPress={[Function]}
           style={
             Object {
-              "flex": 1,
               "marginHorizontal": 16,
             }
           }
