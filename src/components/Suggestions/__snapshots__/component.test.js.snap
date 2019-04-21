@@ -126,6 +126,21 @@ exports[`renders as expected 1`] = `
       key="2"
     >
       <ColumnNB
+        key="Location"
+      >
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "marginHorizontal": 16,
+            }
+          }
+        >
+          Location
+        </Button>
+      </ColumnNB>
+      <ColumnNB
         key="Emotional diad"
       >
         <Button

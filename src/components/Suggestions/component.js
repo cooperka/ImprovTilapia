@@ -16,6 +16,7 @@ const suggestionOrder = [
   suggestionTypes.OCCUPATION,
   suggestionTypes.EMOTION_FULL,
 
+  suggestionTypes.LOCATION,
   suggestionTypes.EMOTIONAL_DIAD,
 ];
 

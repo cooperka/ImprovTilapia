@@ -5,6 +5,7 @@ import {
   groupedEmotions,
   emotionalDiads,
 } from '../../suggestions/emotions';
+import { locations } from '../../suggestions/locations';
 
 const getRandomThing = (list) => () => {
   return list[Math.floor(Math.random() * list.length)];
@@ -16,6 +17,7 @@ export const suggestionTypes = {
   EMOTION_SHORT: 'EMOTION_SHORT',
   EMOTION_FULL: 'EMOTION_FULL',
   EMOTIONAL_DIAD: 'EMOTIONAL_DIAD',
+  LOCATION: 'LOCATION',
 };
 
 export const suggestions = {
@@ -38,5 +40,9 @@ export const suggestions = {
   [suggestionTypes.EMOTIONAL_DIAD]: {
     name: 'Emotional diad',
     getRandomThing: getRandomThing(emotionalDiads),
+  },
+  [suggestionTypes.LOCATION]: {
+    name: 'Location',
+    getRandomThing: getRandomThing(locations),
   },
 };

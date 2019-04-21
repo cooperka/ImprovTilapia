@@ -8,7 +8,7 @@
 export const relationships = [
   // Cleaned up from https://improwiki.com/en/wiki/improv/list_of_relations.
   // License: https://improwiki.com/en/lizenz
-  'Spouses / partners',
+  'Spouses/partners',
   'Father + child',
   'Mother + child',
   'Parent-in-law + child-in-law',
