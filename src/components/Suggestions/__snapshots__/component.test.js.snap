@@ -54,84 +54,96 @@ exports[`renders as expected 1`] = `
     }
   >
     <RowNB
-      key="Relationship"
+      key="0"
     >
-      <Button
-        mode="text"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
+      <ColumnNB
+        key="Relationship"
       >
-        Relationship
-      </Button>
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 1,
+              "marginHorizontal": 16,
+            }
+          }
+        >
+          Relationship
+        </Button>
+      </ColumnNB>
+      <ColumnNB
+        key="Emotion (short list)"
+      >
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 1,
+              "marginHorizontal": 16,
+            }
+          }
+        >
+          Emotion (short list)
+        </Button>
+      </ColumnNB>
     </RowNB>
     <RowNB
-      key="Occupation"
+      key="1"
     >
-      <Button
-        mode="text"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
+      <ColumnNB
+        key="Occupation"
       >
-        Occupation
-      </Button>
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 1,
+              "marginHorizontal": 16,
+            }
+          }
+        >
+          Occupation
+        </Button>
+      </ColumnNB>
+      <ColumnNB
+        key="Emotion (full list)"
+      >
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 1,
+              "marginHorizontal": 16,
+            }
+          }
+        >
+          Emotion (full list)
+        </Button>
+      </ColumnNB>
     </RowNB>
     <RowNB
-      key="Emotion (short list)"
+      key="2"
     >
-      <Button
-        mode="text"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
+      <ColumnNB
+        key="Emotional diad"
       >
-        Emotion (short list)
-      </Button>
-    </RowNB>
-    <RowNB
-      key="Emotion (full list)"
-    >
-      <Button
-        mode="text"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
+        <Button
+          mode="text"
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 1,
+              "marginHorizontal": 16,
+            }
           }
-        }
-      >
-        Emotion (full list)
-      </Button>
-    </RowNB>
-    <RowNB
-      key="Emotional diad"
-    >
-      <Button
-        mode="text"
-        onPress={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "marginHorizontal": 16,
-          }
-        }
-      >
-        Emotional diad
-      </Button>
+        >
+          Emotional diad
+        </Button>
+      </ColumnNB>
     </RowNB>
   </GridNB>
 </Component>

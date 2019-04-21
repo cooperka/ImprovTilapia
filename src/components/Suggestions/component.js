@@ -8,11 +8,14 @@ import { Button } from 'react-native-paper';
 import { suggestionTypes, suggestions } from './utils';
 import { Constants } from 'expo';
 
+// Organized in pairs (left and right column).
 const suggestionOrder = [
   suggestionTypes.RELATIONSHIP,
-  suggestionTypes.OCCUPATION,
   suggestionTypes.EMOTION_SHORT,
+
+  suggestionTypes.OCCUPATION,
   suggestionTypes.EMOTION_FULL,
+
   suggestionTypes.EMOTIONAL_DIAD,
 ];
 
@@ -70,16 +73,31 @@ class Timer extends Component {
 
         <Grid style={styles.buttonsContainer}>
           {suggestionOrder
+            // Get data.
             .map((key) => suggestions[key])
-            .map(({ name, getRandomThing }) => (
-              <Row key={name}>
-                <Button
-                  mode={this.isActive(name) ? 'contained' : 'text'}
-                  style={styles.button}
-                  onPress={this.handleNewSuggestion(name, getRandomThing)}
-                >
-                  {name}
-                </Button>
+            // Pair into columns.
+            .reduce((reduction, value, index) => {
+              if (index % 2 === 0) {
+                reduction.push([value]);
+              } else {
+                reduction[reduction.length - 1].push(value);
+              }
+              return reduction;
+            }, [])
+            // Render each pair.
+            .map((pair, index) => (
+              <Row key={index}>
+                {pair.map(({ name, getRandomThing }) => (
+                  <Col key={name}>
+                    <Button
+                      mode={this.isActive(name) ? 'contained' : 'text'}
+                      style={styles.button}
+                      onPress={this.handleNewSuggestion(name, getRandomThing)}
+                    >
+                      {name}
+                    </Button>
+                  </Col>
+                ))}
               </Row>
             ))}
         </Grid>
