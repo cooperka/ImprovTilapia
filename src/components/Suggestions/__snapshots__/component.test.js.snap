@@ -82,6 +82,45 @@ exports[`renders as expected 1`] = `
     >
       Occupation
     </Button>
+    <Button
+      key="Emotion (short list)"
+      mode="text"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      Emotion (short list)
+    </Button>
+    <Button
+      key="Emotion (full list)"
+      mode="text"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      Emotion (full list)
+    </Button>
+    <Button
+      key="Emotional diad"
+      mode="text"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      Emotional diad
+    </Button>
   </Component>
 </Component>
 `;
