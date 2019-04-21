@@ -43,7 +43,7 @@ exports[`renders as expected (timer items) 1`] = `
   title="Timer settings"
 >
   <ListItem
-    description="Currently ON"
+    description="Currently OFF"
     onPress={[Function]}
     title="Increase screen brightness while timer is running"
   />
