@@ -163,12 +163,13 @@ class Timer extends Component {
 
   handleReset = () => {
     const { seconds, lastSetTime } = this.state;
+    const newTime = lastSetTime === seconds ? 0 : lastSetTime;
 
     this.stopFlashAnim();
     this.setState({
-      seconds: lastSetTime === seconds ? 0 : lastSetTime,
+      seconds: newTime,
       isRunning: false,
-      lastSetTime: 0,
+      lastSetTime: newTime,
     });
   };
 
