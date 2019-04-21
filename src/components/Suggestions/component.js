@@ -1,12 +1,20 @@
-import * as _ from 'lodash';
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import FloatingNav from '../FloatingNav/component';
 import { Button } from 'react-native-paper';
-import { suggestionTypes } from './utils';
+import { suggestionTypes, suggestions } from './utils';
 import { Constants } from 'expo';
+
+const suggestionOrder = [
+  suggestionTypes.RELATIONSHIP,
+  suggestionTypes.OCCUPATION,
+  suggestionTypes.EMOTION_SHORT,
+  suggestionTypes.EMOTION_FULL,
+  suggestionTypes.EMOTIONAL_DIAD,
+];
 
 class Timer extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -60,18 +68,21 @@ class Timer extends Component {
           </Text>
         </View>
 
-        <View style={styles.buttonsContainer}>
-          {_.map(suggestionTypes, ({ name, getRandomThing }) => (
-            <Button
-              key={name}
-              mode={this.isActive(name) ? 'contained' : 'text'}
-              style={styles.button}
-              onPress={this.handleNewSuggestion(name, getRandomThing)}
-            >
-              {name}
-            </Button>
-          ))}
-        </View>
+        <Grid style={styles.buttonsContainer}>
+          {suggestionOrder
+            .map((key) => suggestions[key])
+            .map(({ name, getRandomThing }) => (
+              <Row key={name}>
+                <Button
+                  mode={this.isActive(name) ? 'contained' : 'text'}
+                  style={styles.button}
+                  onPress={this.handleNewSuggestion(name, getRandomThing)}
+                >
+                  {name}
+                </Button>
+              </Row>
+            ))}
+        </Grid>
       </View>
     );
   }
@@ -98,10 +109,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flex: 1,
-    display: 'flex',
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     maxWidth: 500,
     maxHeight: 140,
   },

@@ -11,23 +11,31 @@ const getRandomThing = (list) => () => {
 };
 
 export const suggestionTypes = {
-  RELATIONSHIP: {
+  RELATIONSHIP: 'RELATIONSHIP',
+  OCCUPATION: 'OCCUPATION',
+  EMOTION_SHORT: 'EMOTION_SHORT',
+  EMOTION_FULL: 'EMOTION_FULL',
+  EMOTIONAL_DIAD: 'EMOTIONAL_DIAD',
+};
+
+export const suggestions = {
+  [suggestionTypes.RELATIONSHIP]: {
     name: 'Relationship',
     getRandomThing: getRandomThing(relationships),
   },
-  OCCUPATION: {
+  [suggestionTypes.OCCUPATION]: {
     name: 'Occupation',
     getRandomThing: getRandomThing(occupations),
   },
-  EMOTION_SHORT: {
+  [suggestionTypes.EMOTION_SHORT]: {
     name: 'Emotion (short list)',
     getRandomThing: getRandomThing(clearEmotions),
   },
-  EMOTION_FULL: {
+  [suggestionTypes.EMOTION_FULL]: {
     name: 'Emotion (full list)',
     getRandomThing: getRandomThing(groupedEmotions),
   },
-  EMOTIONAL_DIAD: {
+  [suggestionTypes.EMOTIONAL_DIAD]: {
     name: 'Emotional diad',
     getRandomThing: getRandomThing(emotionalDiads),
   },
