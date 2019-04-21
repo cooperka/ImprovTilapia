@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import { relationships } from '../../suggestions/relationships';
 import { occupations } from '../../suggestions/occupations';
 import {
@@ -7,8 +9,23 @@ import {
 } from '../../suggestions/emotions';
 import { locations } from '../../suggestions/locations';
 
-const getRandomThing = (list) => () => {
-  return list[Math.floor(Math.random() * list.length)];
+const getRandomThingFactory = (list) => {
+  let shuffledList;
+  let shuffleIndex;
+
+  const reset = () => {
+    shuffledList = _.shuffle(list);
+    shuffleIndex = 0;
+  };
+
+  reset();
+
+  return () => {
+    if (shuffleIndex >= shuffledList.length) {
+      reset();
+    }
+    return shuffledList[shuffleIndex++];
+  };
 };
 
 export const suggestionTypes = {
@@ -23,26 +40,26 @@ export const suggestionTypes = {
 export const suggestions = {
   [suggestionTypes.RELATIONSHIP]: {
     name: 'Relationship',
-    getRandomThing: getRandomThing(relationships),
+    getRandomThing: getRandomThingFactory(relationships),
   },
   [suggestionTypes.OCCUPATION]: {
     name: 'Occupation',
-    getRandomThing: getRandomThing(occupations),
+    getRandomThing: getRandomThingFactory(occupations),
   },
   [suggestionTypes.EMOTION_SHORT]: {
     name: 'Emotion (main)',
-    getRandomThing: getRandomThing(clearEmotions),
+    getRandomThing: getRandomThingFactory(clearEmotions),
   },
   [suggestionTypes.EMOTION_FULL]: {
     name: 'Emotion (full)',
-    getRandomThing: getRandomThing(groupedEmotions),
+    getRandomThing: getRandomThingFactory(groupedEmotions),
   },
   [suggestionTypes.EMOTIONAL_DIAD]: {
     name: 'Emotional diad',
-    getRandomThing: getRandomThing(emotionalDiads),
+    getRandomThing: getRandomThingFactory(emotionalDiads),
   },
   [suggestionTypes.LOCATION]: {
     name: 'Location',
-    getRandomThing: getRandomThing(locations),
+    getRandomThing: getRandomThingFactory(locations),
   },
 };
