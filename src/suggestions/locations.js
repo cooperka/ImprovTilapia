@@ -79,7 +79,6 @@ export const locations = [
   'Spaceship',
   'Space station',
   'Time machine',
-  'Transportation',
   'Aircraft',
   'Camper/RV',
   'Motorcycle',
