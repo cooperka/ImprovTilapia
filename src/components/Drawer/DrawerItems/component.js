@@ -81,11 +81,30 @@ export class TimerItems extends Component {
   }
 }
 
+@inject('suggestionsSettings')
+@observer
 export class SuggestionsItems extends Component {
   routeName = 'Suggestions';
 
+  handleTapAutoSuggest = () => {
+    const { suggestionsSettings } = this.props;
+    suggestionsSettings.shouldAutoSuggest = !suggestionsSettings.shouldAutoSuggest;
+  };
+
+  handleTapAutoSuggestInterval = () => {
+    const { suggestionsSettings } = this.props;
+    const { autoSuggestIntervalSeconds } = suggestionsSettings;
+    // Simple toggle for now.
+    suggestionsSettings.autoSuggestIntervalSeconds =
+      autoSuggestIntervalSeconds >= 30 ? 10 : 30;
+  };
+
   render() {
-    const { currRouteName, navigateToRoute } = this.props;
+    const {
+      suggestionsSettings: { shouldAutoSuggest, autoSuggestIntervalSeconds },
+      currRouteName,
+      navigateToRoute,
+    } = this.props;
 
     return (
       <List.Accordion
@@ -94,7 +113,18 @@ export class SuggestionsItems extends Component {
         expanded={currRouteName === this.routeName}
         onPress={() => navigateToRoute(this.routeName)}
       >
-        <ListItem title="Nothing yet" />
+        <ListItem
+          title="Auto-suggest"
+          description={`Using the interval defined below.\nCurrently ${
+            shouldAutoSuggest ? 'ON' : 'OFF'
+          }`}
+          onPress={this.handleTapAutoSuggest}
+        />
+        <ListItem
+          title="Auto-suggest interval"
+          description={`Currently ${autoSuggestIntervalSeconds} seconds`}
+          onPress={this.handleTapAutoSuggestInterval}
+        />
       </List.Accordion>
     );
   }

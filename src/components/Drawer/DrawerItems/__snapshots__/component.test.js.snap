@@ -30,7 +30,15 @@ exports[`renders as expected (suggestions items) 1`] = `
   title="Suggestions settings"
 >
   <ListItem
-    title="Nothing yet"
+    description="Using the interval defined below.
+Currently ON"
+    onPress={[Function]}
+    title="Auto-suggest"
+  />
+  <ListItem
+    description="Currently 10 seconds"
+    onPress={[Function]}
+    title="Auto-suggest interval"
   />
 </Accordion>
 `;

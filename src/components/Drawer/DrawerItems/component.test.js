@@ -7,8 +7,12 @@ import Component, {
   SuggestionsItems,
 } from './component';
 import { TimerSettingsModel } from '../../Timer/model';
+import { SuggestionsSettingsModel } from '../../Suggestions/model';
 
-const mockTimerSettings = new TimerSettingsModel();
+const mockStores = {
+  timerSettings: new TimerSettingsModel(),
+  suggestionsSettings: new SuggestionsSettingsModel(),
+};
 
 jest.mock('../utils', () => ({
   getCurrRouteName: () => 'mockRoute',
@@ -25,13 +29,13 @@ it('renders as expected (route items)', async () => {
 });
 
 it('renders as expected (timer items)', async () => {
-  const wrapper = shallow(
-    <TimerItems timerSettings={mockTimerSettings} currRouteName={''} />,
-  );
+  const wrapper = shallow(<TimerItems {...mockStores} currRouteName={''} />);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('renders as expected (suggestions items)', async () => {
-  const wrapper = shallow(<SuggestionsItems currRouteName={''} />);
+  const wrapper = shallow(
+    <SuggestionsItems {...mockStores} currRouteName={''} />,
+  );
   expect(wrapper).toMatchSnapshot();
 });
