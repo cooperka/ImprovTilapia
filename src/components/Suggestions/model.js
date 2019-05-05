@@ -6,7 +6,7 @@ const STORAGE_KEY = 'SuggestionsSettingsModel';
 
 export class SuggestionsSettingsModel {
   @observable
-  shouldAutoSuggest = true;
+  shouldAutoSuggest = false;
 
   @observable
   autoSuggestIntervalSeconds = 10;

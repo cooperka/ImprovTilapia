@@ -31,7 +31,7 @@ exports[`renders as expected (suggestions items) 1`] = `
 >
   <ListItem
     description="Using the interval defined below.
-Currently ON"
+Currently OFF"
     onPress={[Function]}
     title="Auto-suggest"
   />
