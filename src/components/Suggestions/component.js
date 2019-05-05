@@ -38,7 +38,37 @@ class Suggestions extends Component {
   state = {
     currCategory: null,
     currSuggestion: 'Press a button below to get a suggestion',
+    suggestionFn: null,
+    seconds: 0,
     width: null,
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(this.tick, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  tick = () => {
+    const {
+      suggestionsSettings: { shouldAutoSuggest, autoSuggestIntervalSeconds },
+    } = this.props;
+    const { currCategory, suggestionFn, seconds } = this.state;
+
+    if (shouldAutoSuggest && currCategory && suggestionFn) {
+      this.setState(({ seconds }) => ({
+        seconds: seconds + 1,
+      }));
+
+      if (seconds + 1 >= autoSuggestIntervalSeconds) {
+        this.handleNewSuggestion(currCategory, suggestionFn)();
+      }
+    } else {
+      // Reset seconds to 0 in case they turn it on later.
+      this.setState({ seconds: 0 });
+    }
   };
 
   handleLayoutChange = ({
@@ -53,7 +83,12 @@ class Suggestions extends Component {
   };
 
   handleNewSuggestion = (category, suggestionFn) => () => {
-    this.setState({ currCategory: category, currSuggestion: suggestionFn() });
+    this.setState({
+      currCategory: category,
+      currSuggestion: suggestionFn(),
+      suggestionFn,
+      seconds: 0,
+    });
   };
 
   isActive = (name) => {
