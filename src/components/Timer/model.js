@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
-import { AsyncStorage } from 'react-native';
 import { observable, autorun, toJS } from 'mobx';
+import { storeData, retrieveData } from '../../storageUtils';
 
 const STORAGE_KEY = 'TimerSettingsModel';
 
@@ -12,7 +12,7 @@ export class TimerSettingsModel {
   shouldIncreaseBrightness = true;
 
   constructor() {
-    retrieveData().then((savedValues) => {
+    retrieveData(STORAGE_KEY).then((savedValues) => {
       // Set initial state if there's something valid saved.
       if (_.isPlainObject(savedValues)) {
         Object.assign(this, savedValues);
@@ -21,29 +21,12 @@ export class TimerSettingsModel {
       // Persist state any time it changes.
       autorun(
         async () => {
-          await storeData(toJS(this));
+          await storeData(STORAGE_KEY, toJS(this));
         },
         {
           delay: PERSISTENCE_DELAY_MS,
         },
       );
     });
-  }
-}
-
-async function storeData(data) {
-  try {
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  } catch (error) {
-    console.error('Failed to storeData:', error);
-  }
-}
-
-async function retrieveData() {
-  try {
-    const data = await AsyncStorage.getItem(STORAGE_KEY);
-    return JSON.parse(data);
-  } catch (error) {
-    console.error('Failed to retrieveData:', error);
   }
 }
