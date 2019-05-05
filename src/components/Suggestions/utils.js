@@ -1,13 +1,13 @@
 import * as _ from 'lodash';
 
-import { relationships } from '../../suggestions/relationships';
-import { occupations } from '../../suggestions/occupations';
+import { relationships } from './lists/relationships';
+import { occupations } from './lists/occupations';
 import {
   clearEmotions,
   groupedEmotions,
   emotionalDiads,
-} from '../../suggestions/emotions';
-import { locations } from '../../suggestions/locations';
+} from './lists/emotions';
+import { locations } from './lists/locations';
 
 const getRandomThingFactory = (list) => {
   let shuffledList;
