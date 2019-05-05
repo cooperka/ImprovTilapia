@@ -8,6 +8,7 @@ import { List, TouchableRipple } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { inject, observer } from 'mobx-react/native';
 
+import { color } from '../../../constants';
 import { getCurrRouteName } from '../utils';
 
 const SHOW_ROUTES = false;
@@ -168,10 +169,12 @@ const styles = StyleSheet.create({
   },
   /** Adapted from Paper's `List.ListItem`. */
   itemTitle: {
+    color: color.MATERIAL_PRIMARY,
     fontSize: 16,
     marginBottom: 8,
   },
   itemDescription: {
+    color: color.MATERIAL_SECONDARY,
     fontSize: 14,
     marginBottom: 8,
   },
