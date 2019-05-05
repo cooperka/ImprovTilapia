@@ -2,5 +2,5 @@ import { observable } from 'mobx';
 
 export class TimerSettingsModel {
   @observable
-  shouldIncreaseBrightness = false;
+  shouldIncreaseBrightness = true;
 }

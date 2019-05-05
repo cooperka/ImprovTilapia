@@ -1,7 +1,7 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
 import { StyleSheet, View, Animated } from 'react-native';
-import { Constants, KeepAwake, Brightness, Permissions } from 'expo';
+import { Constants, KeepAwake, Brightness } from 'expo';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { observer, inject } from 'mobx-react/native';
@@ -50,15 +50,6 @@ class Timer extends Component {
     flashValue: new Animated.Value(1),
   };
 
-  componentWillMount() {
-    const {
-      timerSettings: { shouldIncreaseBrightness },
-    } = this.props;
-    if (shouldIncreaseBrightness) {
-      Permissions.askAsync(Permissions.SYSTEM_BRIGHTNESS);
-    }
-  }
-
   componentDidMount() {
     this.timer = setInterval(this.tick, 1000);
   }
@@ -91,15 +82,9 @@ class Timer extends Component {
       return;
     }
 
-    const { status } = await Permissions.getAsync(
-      Permissions.SYSTEM_BRIGHTNESS,
-    );
-
-    if (status === 'granted') {
-      const originalBrightness = await Brightness.getBrightnessAsync();
-      this.setState({ originalBrightness });
-      Brightness.setBrightnessAsync(1.0);
-    }
+    const originalBrightness = await Brightness.getBrightnessAsync();
+    this.setState({ originalBrightness });
+    Brightness.setBrightnessAsync(1.0);
   };
 
   undoBrightness = async () => {
@@ -111,11 +96,7 @@ class Timer extends Component {
     }
 
     const { originalBrightness } = this.state;
-    const { status } = await Permissions.getAsync(
-      Permissions.SYSTEM_BRIGHTNESS,
-    );
-
-    if (status === 'granted' && originalBrightness !== undefined) {
+    if (originalBrightness !== undefined) {
       Brightness.setBrightnessAsync(originalBrightness);
     }
   };
