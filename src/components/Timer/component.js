@@ -46,7 +46,6 @@ class Timer extends Component {
     isRunning: false,
     lastSetTime: 0,
     width: null,
-    originalBrightness: undefined,
     flashValue: new Animated.Value(1),
   };
 
@@ -82,12 +81,10 @@ class Timer extends Component {
       return;
     }
 
-    const originalBrightness = await Brightness.getBrightnessAsync();
-    this.setState({ originalBrightness });
     Brightness.setBrightnessAsync(1.0);
   };
 
-  undoBrightness = async () => {
+  undoBrightness = () => {
     const {
       timerSettings: { shouldIncreaseBrightness },
     } = this.props;
@@ -95,10 +92,7 @@ class Timer extends Component {
       return;
     }
 
-    const { originalBrightness } = this.state;
-    if (originalBrightness !== undefined) {
-      Brightness.setBrightnessAsync(originalBrightness);
-    }
+    Brightness.setBrightnessAsync(null);
   };
 
   startFlashAnim = () => {
@@ -147,6 +141,7 @@ class Timer extends Component {
     const newTime = lastSetTime === seconds ? 0 : lastSetTime;
 
     this.stopFlashAnim();
+    this.undoBrightness();
     this.setState({
       seconds: newTime,
       isRunning: false,
