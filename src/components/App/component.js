@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from './paperTheme';
 import { loadAssets } from './utils';
 import { TimerSettingsModel } from '../Timer/model';
+import { SuggestionsSettingsModel } from '../Suggestions/model';
 
 import AppNavigator from './AppNavigator/component';
 
@@ -15,6 +16,7 @@ const images = [];
 const fonts = [MaterialCommunityIcons.font];
 
 const timerSettings = new TimerSettingsModel();
+const suggestionsSettings = new SuggestionsSettingsModel();
 
 class App extends Component {
   state = {
@@ -35,7 +37,10 @@ class App extends Component {
     }
 
     return (
-      <MobxProvider timerSettings={timerSettings}>
+      <MobxProvider
+        timerSettings={timerSettings}
+        suggestionsSettings={suggestionsSettings}
+      >
         <PaperProvider theme={theme}>
           <StatusBar barStyle="light-content" />
           <AppNavigator />

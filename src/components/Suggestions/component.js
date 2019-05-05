@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { inject, observer } from 'mobx-react/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
@@ -20,7 +21,9 @@ const suggestionOrder = [
   suggestionTypes.EMOTIONAL_DIAD,
 ];
 
-class Timer extends Component {
+@inject('suggestionsSettings')
+@observer
+class Suggestions extends Component {
   static navigationOptions = ({ navigation }) => ({
     tabBarIcon: ({ tintColor }) => (
       <MaterialCommunityIcons
@@ -148,4 +151,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Timer;
+export default Suggestions;
