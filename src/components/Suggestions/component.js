@@ -139,6 +139,7 @@ class Suggestions extends Component {
                 {pair.map(({ name, getRandomThing }) => (
                   <Col key={name}>
                     <Button
+                      id={name}
                       mode={this.isActive(name) ? 'contained' : 'text'}
                       style={styles.button}
                       onPress={this.handleNewSuggestion(name, getRandomThing)}

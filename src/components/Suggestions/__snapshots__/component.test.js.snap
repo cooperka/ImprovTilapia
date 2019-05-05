@@ -61,6 +61,7 @@ exports[`renders as expected 1`] = `
         key="Relationship"
       >
         <Button
+          id="Relationship"
           mode="text"
           onPress={[Function]}
           style={
@@ -76,6 +77,7 @@ exports[`renders as expected 1`] = `
         key="Emotion (main)"
       >
         <Button
+          id="Emotion (main)"
           mode="text"
           onPress={[Function]}
           style={
@@ -95,6 +97,7 @@ exports[`renders as expected 1`] = `
         key="Occupation"
       >
         <Button
+          id="Occupation"
           mode="text"
           onPress={[Function]}
           style={
@@ -110,6 +113,7 @@ exports[`renders as expected 1`] = `
         key="Emotion (full)"
       >
         <Button
+          id="Emotion (full)"
           mode="text"
           onPress={[Function]}
           style={
@@ -129,6 +133,7 @@ exports[`renders as expected 1`] = `
         key="Location"
       >
         <Button
+          id="Location"
           mode="text"
           onPress={[Function]}
           style={
@@ -144,6 +149,7 @@ exports[`renders as expected 1`] = `
         key="Emotional diad"
       >
         <Button
+          id="Emotional diad"
           mode="text"
           onPress={[Function]}
           style={
