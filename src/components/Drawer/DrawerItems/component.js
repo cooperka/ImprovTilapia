@@ -24,10 +24,10 @@ const getDrawerIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description, ...viewProps }) {
+function ListItem({ title, description, onPress }) {
   return (
-    <TouchableRipple style={styles.settingsItem} {...viewProps}>
-      <View>
+    <TouchableRipple style={styles.settingsItemContainer} onPress={onPress}>
+      <View style={styles.settingsItem}>
         {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
         {description ? (
           <Text style={styles.itemDescription}>{description}</Text>
@@ -161,6 +161,9 @@ const styles = StyleSheet.create({
     width: 40,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  settingsItemContainer: {
+    marginBottom: 8,
   },
   /** Adapted from Paper's `List.ListAccordion`. */
   settingsItem: {
