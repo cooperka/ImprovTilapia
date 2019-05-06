@@ -1,9 +1,9 @@
 /**
- * These suggestions may individually be subject to a different license than
+ * these items may individually be subject to a different license than
  * the main project. See the LICENSE file in this directory for more details.
  *
  * To the best of my ability, I've included comments describing the source of
- * each group of suggestions.
+ * each group of items.
  */
 export const occupations = [
   // Cleaned up from https://improwiki.com/en/wiki/improv/occupations_list.
