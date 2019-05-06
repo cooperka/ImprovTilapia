@@ -11,5 +11,22 @@ exports[`renders as expected 1`] = `
   <FloatingNav
     navigation={Object {}}
   />
+  <Accordion
+    expanded={true}
+    key="Vocabulary"
+    left={[Function]}
+    title="Vocabulary"
+  >
+    <Item
+      description="Foo"
+      key="Short-form"
+      title="Short-form"
+    />
+    <Item
+      description="Bar"
+      key="Long-form"
+      title="Long-form"
+    />
+  </Accordion>
 </Component>
 `;
