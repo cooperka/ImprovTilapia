@@ -26,11 +26,7 @@ const suggestionOrder = [
 class Suggestions extends Component {
   static navigationOptions = ({ navigation }) => ({
     tabBarIcon: ({ tintColor }) => (
-      <MaterialCommunityIcons
-        name="message-outline"
-        color={tintColor}
-        size={20}
-      />
+      <MaterialCommunityIcons name="message-text" color={tintColor} size={20} />
     ),
     tabBarVisible: !navigation.getParam('isFullscreen'),
   });

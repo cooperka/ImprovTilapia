@@ -110,7 +110,7 @@ export class SuggestionsItems extends Component {
     return (
       <List.Accordion
         title="Suggestions settings"
-        left={getDrawerIcon('message-outline')}
+        left={getDrawerIcon('message-text')}
         expanded={currRouteName === this.routeName}
         onPress={() => navigateToRoute(this.routeName)}
       >
