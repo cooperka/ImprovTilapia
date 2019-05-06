@@ -4,14 +4,17 @@ import { shallow } from 'enzyme';
 import Component, {
   RouteItems,
   TimerItems,
+  ReferenceItems,
   SuggestionsItems,
 } from './component';
 import { TimerSettingsModel } from '../../Timer/model';
 import { SuggestionsSettingsModel } from '../../Suggestions/model';
+import { ReferenceSettingsModel } from '../../Reference/model';
 
 const mockStores = {
   timerSettings: new TimerSettingsModel(),
   suggestionsSettings: new SuggestionsSettingsModel(),
+  referenceSettings: new ReferenceSettingsModel(),
 };
 
 jest.mock('../utils', () => ({
@@ -36,6 +39,13 @@ it('renders as expected (timer items)', async () => {
 it('renders as expected (suggestions items)', async () => {
   const wrapper = shallow(
     <SuggestionsItems {...mockStores} currRouteName={''} />,
+  );
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('renders as expected (reference items)', async () => {
+  const wrapper = shallow(
+    <ReferenceItems {...mockStores} currRouteName={''} />,
   );
   expect(wrapper).toMatchSnapshot();
 });

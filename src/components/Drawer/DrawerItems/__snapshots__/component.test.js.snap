@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders as expected (reference items) 1`] = `
+<Accordion
+  expanded={false}
+  left={[Function]}
+  onPress={[Function]}
+  title="Reference settings"
+>
+  <ListItem
+    title="Nothing here yet"
+  />
+</Accordion>
+`;
+
 exports[`renders as expected (root) 1`] = `
 <Fragment>
   <TimerItems
@@ -7,6 +20,10 @@ exports[`renders as expected (root) 1`] = `
     navigateToRoute={[Function]}
   />
   <SuggestionsItems
+    currRouteName="mockRoute"
+    navigateToRoute={[Function]}
+  />
+  <ReferenceItems
     currRouteName="mockRoute"
     navigateToRoute={[Function]}
   />

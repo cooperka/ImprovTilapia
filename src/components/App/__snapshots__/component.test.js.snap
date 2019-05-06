@@ -2,6 +2,7 @@
 
 exports[`renders as expected 1`] = `
 <Provider
+  referenceSettings={ReferenceSettingsModel {}}
   suggestionsSettings={SuggestionsSettingsModel {}}
   timerSettings={TimerSettingsModel {}}
 >

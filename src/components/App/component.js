@@ -9,6 +9,7 @@ import theme from './paperTheme';
 import { loadAssets } from './utils';
 import { TimerSettingsModel } from '../Timer/model';
 import { SuggestionsSettingsModel } from '../Suggestions/model';
+import { ReferenceSettingsModel } from '../Reference/model';
 
 import AppNavigator from './AppNavigator/component';
 
@@ -17,6 +18,7 @@ const fonts = [MaterialCommunityIcons.font];
 
 const timerSettings = new TimerSettingsModel();
 const suggestionsSettings = new SuggestionsSettingsModel();
+const referenceSettings = new ReferenceSettingsModel();
 
 class App extends Component {
   state = {
@@ -40,6 +42,7 @@ class App extends Component {
       <MobxProvider
         timerSettings={timerSettings}
         suggestionsSettings={suggestionsSettings}
+        referenceSettings={referenceSettings}
       >
         <PaperProvider theme={theme}>
           <StatusBar barStyle="light-content" />

@@ -4,6 +4,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import Drawer from '../../Drawer/component';
 import Timer from '../../Timer/component';
 import Suggestions from '../../Suggestions/component';
+import Reference from '../../Reference/component';
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
@@ -12,6 +13,9 @@ const TabNavigator = createMaterialBottomTabNavigator(
     },
     Suggestions: {
       screen: Suggestions,
+    },
+    Reference: {
+      screen: Reference,
     },
   },
   {

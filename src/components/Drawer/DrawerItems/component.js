@@ -131,6 +131,27 @@ export class SuggestionsItems extends Component {
   }
 }
 
+@inject('referenceSettings')
+@observer
+export class ReferenceItems extends Component {
+  routeName = 'Reference';
+
+  render() {
+    const { currRouteName, navigateToRoute } = this.props;
+
+    return (
+      <List.Accordion
+        title="Reference settings"
+        left={getDrawerIcon('book-open-page-variant')}
+        expanded={currRouteName === this.routeName}
+        onPress={() => navigateToRoute(this.routeName)}
+      >
+        <ListItem title="Nothing here yet" />
+      </List.Accordion>
+    );
+  }
+}
+
 class DrawerItems extends Component {
   render() {
     const { navigation } = this.props;
@@ -148,6 +169,7 @@ class DrawerItems extends Component {
         {SHOW_ROUTES ? <RouteItems {...sectionProps} /> : null}
         <TimerItems {...sectionProps} />
         <SuggestionsItems {...sectionProps} />
+        <ReferenceItems {...sectionProps} />
       </React.Fragment>
     );
   }
