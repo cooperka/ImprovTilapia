@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   settingsItemContainer: {
+    marginTop: 8,
     marginBottom: 8,
   },
   /** Adapted from Paper's `List.ListAccordion`. */
@@ -196,7 +197,6 @@ const styles = StyleSheet.create({
   itemTitle: {
     color: color.MATERIAL_PRIMARY,
     fontSize: 16,
-    marginBottom: 8,
   },
   itemDescription: {
     color: color.MATERIAL_SECONDARY,

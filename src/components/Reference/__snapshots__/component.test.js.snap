@@ -14,22 +14,22 @@ exports[`renders as expected 1`] = `
     left={[Function]}
     title="Basic terminology"
   >
-    <Item
+    <ListItem
       description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
       key="Short-form (adjective)"
       title="Short-form (adjective)"
     />
-    <Item
+    <ListItem
       description="A performance of short-form improv."
       key="Short form (noun)"
       title="Short form (noun)"
     />
-    <Item
+    <ListItem
       description="A type of improv where the structure is decided in advance but there is no predetermined \\"game\\" to be played."
       key="Long-form (adjective)"
       title="Long-form (adjective)"
     />
-    <Item
+    <ListItem
       description="A performance of long-form improv."
       key="Long form (noun)"
       title="Long form (noun)"

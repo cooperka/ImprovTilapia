@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { List } from 'react-native-paper';
+import { List, TouchableRipple } from 'react-native-paper';
 
 import { references } from './utils';
 import FloatingNav from '../FloatingNav/component';
+import { color } from '../../constants';
 
 /** Adapted from Paper's `List.Icon`. */
 const getSectionIcon = (name) => (props) => {
@@ -17,6 +18,19 @@ const getSectionIcon = (name) => (props) => {
     </View>
   );
 };
+
+function ListItem({ title, description, onPress }) {
+  return (
+    <TouchableRipple style={styles.itemContainer} onPress={onPress}>
+      <View style={styles.item}>
+        {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
+        {description ? (
+          <Text style={styles.itemDescription}>{description}</Text>
+        ) : null}
+      </View>
+    </TouchableRipple>
+  );
+}
 
 @inject('referenceSettings')
 @observer
@@ -49,7 +63,7 @@ class Reference extends Component {
             expanded={true}
           >
             {items.map(({ name: itemName, description }) => (
-              <List.Item
+              <ListItem
                 key={itemName}
                 title={itemName}
                 description={description}
@@ -73,6 +87,25 @@ const styles = StyleSheet.create({
     width: 40,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  itemContainer: {
+    marginTop: 8,
+    marginBottom: 8,
+  },
+  /** Adapted from Paper's `List.ListAccordion`. */
+  item: {
+    marginLeft: 64 + 8,
+    marginRight: 16,
+  },
+  /** Adapted from Paper's `List.ListItem`. */
+  itemTitle: {
+    color: color.MATERIAL_PRIMARY,
+    fontSize: 16,
+  },
+  itemDescription: {
+    color: color.MATERIAL_SECONDARY,
+    fontSize: 14,
+    marginBottom: 8,
   },
 });
 
