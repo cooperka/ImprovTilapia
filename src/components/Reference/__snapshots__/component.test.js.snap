@@ -16,6 +16,7 @@ exports[`renders as expected 1`] = `
   >
     <ListItem
       description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
+      example="I watched short-form improv last night."
       expanded={false}
       key="Short-form (adjective)"
       onPress={[Function]}
@@ -23,6 +24,7 @@ exports[`renders as expected 1`] = `
     />
     <ListItem
       description="A performance of short-form improv."
+      example="I watched a short form last night."
       expanded={false}
       key="Short form (noun)"
       onPress={[Function]}
@@ -30,6 +32,7 @@ exports[`renders as expected 1`] = `
     />
     <ListItem
       description="A type of improv where the structure is decided in advance but there is no predetermined \\"game\\" to be played."
+      example="I watched long-form improv last night."
       expanded={false}
       key="Long-form (adjective)"
       onPress={[Function]}
@@ -37,6 +40,7 @@ exports[`renders as expected 1`] = `
     />
     <ListItem
       description="A performance of long-form improv."
+      example="I watched a long form last night."
       expanded={false}
       key="Long form (noun)"
       onPress={[Function]}

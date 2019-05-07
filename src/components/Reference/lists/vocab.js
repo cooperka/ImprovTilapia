@@ -14,22 +14,22 @@ export const vocab = [
     name: 'Short-form (adjective)',
     description:
       'A type of improv where you play structured "games" with predetermined rules (like in the TV show "Whose Line Is It Anyway?").',
-    quote: 'I enjoy doing short-form.',
+    example: 'I watched short-form improv last night.',
   },
   {
     name: 'Short form (noun)',
     description: 'A performance of short-form improv.',
-    quote: 'I did a short form last night.',
+    example: 'I watched a short form last night.',
   },
   {
     name: 'Long-form (adjective)',
     description:
       'A type of improv where the structure is decided in advance but there is no predetermined "game" to be played.',
-    quote: 'I enjoy doing long-form.',
+    example: 'I watched long-form improv last night.',
   },
   {
     name: 'Long form (noun)',
     description: 'A performance of long-form improv.',
-    quote: 'I did a long form last night.',
+    example: 'I watched a long form last night.',
   },
 ];

@@ -20,7 +20,7 @@ const getSectionIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description, expanded, onPress }) {
+function ListItem({ title, description, example, expanded, onPress }) {
   return (
     <TouchableRipple style={styles.itemContainer} onPress={onPress}>
       <View style={styles.item}>
@@ -32,6 +32,9 @@ function ListItem({ title, description, expanded, onPress }) {
           >
             {description}
           </Text>
+        ) : null}
+        {example && expanded ? (
+          <Text style={styles.itemDescription}>Example: {example}</Text>
         ) : null}
       </View>
     </TouchableRipple>
@@ -81,12 +84,13 @@ class Reference extends Component {
             left={getSectionIcon(iconName)}
             expanded={true}
           >
-            {items.map(({ name: itemName, description }) => (
+            {items.map(({ name: itemName, description, example }) => (
               <ListItem
                 key={itemName}
                 title={itemName}
                 expanded={expandedItems.contains(itemName)}
                 description={description}
+                example={example}
                 onPress={() => this.handleToggleItem(itemName)}
               />
             ))}
