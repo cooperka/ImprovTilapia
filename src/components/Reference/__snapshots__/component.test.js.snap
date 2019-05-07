@@ -16,22 +16,30 @@ exports[`renders as expected 1`] = `
   >
     <ListItem
       description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
+      expanded={false}
       key="Short-form (adjective)"
+      onPress={[Function]}
       title="Short-form (adjective)"
     />
     <ListItem
       description="A performance of short-form improv."
+      expanded={false}
       key="Short form (noun)"
+      onPress={[Function]}
       title="Short form (noun)"
     />
     <ListItem
       description="A type of improv where the structure is decided in advance but there is no predetermined \\"game\\" to be played."
+      expanded={false}
       key="Long-form (adjective)"
+      onPress={[Function]}
       title="Long-form (adjective)"
     />
     <ListItem
       description="A performance of long-form improv."
+      expanded={false}
       key="Long form (noun)"
+      onPress={[Function]}
       title="Long form (noun)"
     />
   </Accordion>

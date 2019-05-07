@@ -1,3 +1,4 @@
+import Immutable from 'immutable';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
@@ -19,13 +20,18 @@ const getSectionIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description, onPress }) {
+function ListItem({ title, description, expanded, onPress }) {
   return (
     <TouchableRipple style={styles.itemContainer} onPress={onPress}>
       <View style={styles.item}>
         {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
         {description ? (
-          <Text style={styles.itemDescription}>{description}</Text>
+          <Text
+            numberOfLines={expanded ? undefined : 1}
+            style={styles.itemDescription}
+          >
+            {description}
+          </Text>
         ) : null}
       </View>
     </TouchableRipple>
@@ -50,9 +56,22 @@ class Reference extends Component {
     ),
   });
 
-  state = {};
+  state = {
+    expandedItems: Immutable.Set(),
+  };
+
+  handleToggleItem = (itemName) => {
+    const { expandedItems } = this.state;
+    const exists = expandedItems.contains(itemName);
+    const newItems = exists
+      ? expandedItems.delete(itemName)
+      : expandedItems.add(itemName);
+    this.setState({ expandedItems: newItems });
+  };
 
   render() {
+    const { expandedItems } = this.state;
+
     return (
       <View style={styles.container}>
         {references.map(({ name: sectionName, iconName, items }) => (
@@ -66,7 +85,9 @@ class Reference extends Component {
               <ListItem
                 key={itemName}
                 title={itemName}
+                expanded={expandedItems.contains(itemName)}
                 description={description}
+                onPress={() => this.handleToggleItem(itemName)}
               />
             ))}
           </List.Accordion>
