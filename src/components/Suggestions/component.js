@@ -103,7 +103,7 @@ class Suggestions extends Component {
 
     return (
       <View style={styles.container} onLayout={this.handleLayoutChange}>
-        <FloatingNav navigation={navigation} />
+        <FloatingNav navigation={navigation} floating />
 
         <View style={styles.suggestionContainer}>
           <Text

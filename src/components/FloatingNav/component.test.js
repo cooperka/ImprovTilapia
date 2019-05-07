@@ -7,7 +7,12 @@ const props = {
   navigation: {},
 };
 
-it('renders as expected', async () => {
+it('renders as expected (floating)', async () => {
+  const wrapper = shallow(<Component {...props} floating />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('renders as expected (not floating)', async () => {
   const wrapper = shallow(<Component {...props} />);
   expect(wrapper).toMatchSnapshot();
 });

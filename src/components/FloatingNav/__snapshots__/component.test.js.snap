@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`renders as expected (floating) 1`] = `
 <FAB
   icon={[Function]}
   onPress={[Function]}
@@ -10,6 +10,18 @@ exports[`renders as expected 1`] = `
       "left": 16,
       "position": "absolute",
       "top": 36,
+    }
+  }
+/>
+`;
+
+exports[`renders as expected (not floating) 1`] = `
+<IconButton
+  icon={[Function]}
+  onPress={[Function]}
+  style={
+    Object {
+      "marginLeft": 22,
     }
   }
 />

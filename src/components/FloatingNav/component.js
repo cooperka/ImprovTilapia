@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Constants } from 'expo';
-import { FAB } from 'react-native-paper';
+import { IconButton, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+import { color } from '../../constants';
 
 class FloatingNav extends Component {
   static propTypes = {
     navigation: PropTypes.object.isRequired,
+    floating: PropTypes.bool,
   };
 
   handleOpenDrawer = () => {
@@ -16,16 +19,35 @@ class FloatingNav extends Component {
   };
 
   render() {
+    const { floating } = this.props;
+
+    if (floating) {
+      return (
+        <FAB
+          style={styles.floatingMenuButton}
+          onPress={this.handleOpenDrawer}
+          icon={() => (
+            <MaterialCommunityIcons
+              style={styles.icon}
+              name="menu"
+              size={36}
+              color="white"
+            />
+          )}
+        />
+      );
+    }
+
     return (
-      <FAB
+      <IconButton
         style={styles.menuButton}
         onPress={this.handleOpenDrawer}
         icon={() => (
           <MaterialCommunityIcons
             style={styles.icon}
             name="menu"
-            size={36}
-            color="white"
+            size={28}
+            color={color.MATERIAL_PRIMARY}
           />
         )}
       />
@@ -35,6 +57,10 @@ class FloatingNav extends Component {
 
 const styles = StyleSheet.create({
   menuButton: {
+    // TODO: Improve hacky margin to make it look centered.
+    marginLeft: 22,
+  },
+  floatingMenuButton: {
     position: 'absolute',
     top: Constants.statusBarHeight + 16,
     left: 16,

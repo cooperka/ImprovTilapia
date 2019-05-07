@@ -176,7 +176,7 @@ class Timer extends Component {
       <View style={styles.container} onLayout={this.handleLayoutChange}>
         <KeepAwake />
 
-        <FloatingNav navigation={navigation} />
+        <FloatingNav navigation={navigation} floating />
 
         <View style={styles.timeContainer}>
           <Animated.Text

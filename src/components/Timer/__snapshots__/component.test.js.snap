@@ -50,6 +50,7 @@ exports[`renders as expected 1`] = `
 >
   <KeepAwake />
   <FloatingNav
+    floating={true}
     navigation={Object {}}
   />
   <Component
