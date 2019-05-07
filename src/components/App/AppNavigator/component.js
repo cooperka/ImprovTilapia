@@ -1,10 +1,20 @@
-import { createAppContainer, createDrawerNavigator } from 'react-navigation';
+import {
+  createAppContainer,
+  createDrawerNavigator,
+  createStackNavigator,
+} from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import Drawer from '../../Drawer/component';
 import Timer from '../../Timer/component';
 import Suggestions from '../../Suggestions/component';
 import Reference from '../../Reference/component';
+
+const ReferenceStackNavigator = createStackNavigator({
+  Reference: {
+    screen: Reference,
+  },
+});
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
@@ -15,7 +25,8 @@ const TabNavigator = createMaterialBottomTabNavigator(
       screen: Suggestions,
     },
     Reference: {
-      screen: Reference,
+      screen: ReferenceStackNavigator,
+      navigationOptions: Reference.tabNavigationOptions,
     },
   },
   {

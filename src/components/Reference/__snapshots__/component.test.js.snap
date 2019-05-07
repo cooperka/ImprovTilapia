@@ -8,9 +8,6 @@ exports[`renders as expected 1`] = `
     }
   }
 >
-  <FloatingNav
-    navigation={Object {}}
-  />
   <Accordion
     expanded={true}
     key="Vocabulary"

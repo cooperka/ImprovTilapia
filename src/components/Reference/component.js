@@ -22,6 +22,11 @@ const getSectionIcon = (name) => (props) => {
 @observer
 class Reference extends Component {
   static navigationOptions = ({ navigation }) => ({
+    title: 'Reference',
+    headerLeft: () => <FloatingNav navigation={navigation} />,
+  });
+
+  static tabNavigationOptions = () => ({
     tabBarIcon: ({ tintColor }) => (
       <MaterialCommunityIcons
         name="book-open-page-variant"
@@ -29,18 +34,13 @@ class Reference extends Component {
         size={20}
       />
     ),
-    tabBarVisible: !navigation.getParam('isFullscreen'),
   });
 
   state = {};
 
   render() {
-    const { navigation } = this.props;
-
     return (
       <View style={styles.container}>
-        <FloatingNav navigation={navigation} />
-
         {references.map(({ name: sectionName, iconName, items }) => (
           <List.Accordion
             key={sectionName}

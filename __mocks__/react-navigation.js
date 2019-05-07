@@ -3,6 +3,7 @@ module.exports = {
 
   createAppContainer: () => 'AppContainer',
   createDrawerNavigator: () => 'DrawerNavigator',
+  createStackNavigator: () => 'StackNavigator',
   createBottomTabNavigator: () => 'TabNavigator',
 
   SafeAreaView: 'SafeAreaView',
