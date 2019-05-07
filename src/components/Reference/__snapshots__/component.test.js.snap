@@ -10,19 +10,29 @@ exports[`renders as expected 1`] = `
 >
   <Accordion
     expanded={true}
-    key="Vocabulary"
+    key="Basic terminology"
     left={[Function]}
-    title="Vocabulary"
+    title="Basic terminology"
   >
     <Item
-      description="Foo"
-      key="Short-form"
-      title="Short-form"
+      description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
+      key="Short-form (adjective)"
+      title="Short-form (adjective)"
     />
     <Item
-      description="Bar"
-      key="Long-form"
-      title="Long-form"
+      description="A performance of short-form improv."
+      key="Short form (noun)"
+      title="Short form (noun)"
+    />
+    <Item
+      description="A type of improv where the structure is decided in advance but there is no predetermined \\"game\\" to be played."
+      key="Long-form (adjective)"
+      title="Long-form (adjective)"
+    />
+    <Item
+      description="A performance of long-form improv."
+      key="Long form (noun)"
+      title="Long form (noun)"
     />
   </Accordion>
 </Component>

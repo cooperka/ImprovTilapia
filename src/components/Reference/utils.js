@@ -2,7 +2,7 @@ import { vocab } from './lists/vocab';
 
 export const references = [
   {
-    name: 'Vocabulary',
+    name: 'Basic terminology',
     iconName: 'dictionary',
     items: vocab,
   },
