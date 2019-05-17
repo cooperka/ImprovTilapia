@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { List, TouchableRipple } from 'react-native-paper';
@@ -76,7 +76,7 @@ class Reference extends Component {
     const { expandedItems } = this.state;
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {references.map(({ name: sectionName, iconName, items }) => (
           <List.Accordion
             key={sectionName}
@@ -96,7 +96,7 @@ class Reference extends Component {
             ))}
           </List.Accordion>
         ))}
-      </View>
+      </ScrollView>
     );
   }
 }

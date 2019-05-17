@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected 1`] = `
-<Component
+<ScrollViewMock
   style={
     Object {
       "flex": 1,
@@ -110,5 +110,5 @@ exports[`renders as expected 1`] = `
       title="Yes, and"
     />
   </Accordion>
-</Component>
+</ScrollViewMock>
 `;
