@@ -9,9 +9,10 @@ exports[`renders as expected 1`] = `
   }
 >
   <Accordion
-    expanded={true}
+    expanded={false}
     key="Primary building blocks"
     left={[Function]}
+    onPress={[Function]}
     title="Primary building blocks"
   >
     <ListItem

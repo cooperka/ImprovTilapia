@@ -88,7 +88,14 @@ class Reference extends Component {
   });
 
   state = {
+    expandedSection: null,
     expandedItems: Immutable.Set(),
+  };
+
+  handleToggleSection = (sectionName) => {
+    const { expandedSection } = this.state;
+    const wasExpanded = expandedSection === sectionName;
+    this.setState({ expandedSection: wasExpanded ? null : sectionName });
   };
 
   handleToggleItem = (itemName) => {
@@ -101,7 +108,7 @@ class Reference extends Component {
   };
 
   render() {
-    const { expandedItems } = this.state;
+    const { expandedSection, expandedItems } = this.state;
 
     return (
       <ScrollView style={styles.container}>
@@ -110,7 +117,8 @@ class Reference extends Component {
             key={sectionName}
             title={sectionName}
             left={getSectionIcon(iconName)}
-            expanded={true}
+            expanded={expandedSection === sectionName}
+            onPress={() => this.handleToggleSection(sectionName)}
           >
             {items.map(({ name: itemName, ...props }) => (
               <ListItem
