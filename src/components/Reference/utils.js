@@ -1,9 +1,9 @@
-import { vocab } from './lists/vocab';
+import { primary } from './lists/vocab';
 
 export const references = [
   {
-    name: 'Basic terminology',
+    name: 'Primary building blocks',
     iconName: 'dictionary',
-    items: vocab,
+    items: primary,
   },
 ];

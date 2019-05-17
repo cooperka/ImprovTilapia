@@ -10,9 +10,9 @@ exports[`renders as expected 1`] = `
 >
   <Accordion
     expanded={true}
-    key="Basic terminology"
+    key="Primary building blocks"
     left={[Function]}
-    title="Basic terminology"
+    title="Primary building blocks"
   >
     <ListItem
       description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
@@ -31,7 +31,7 @@ exports[`renders as expected 1`] = `
       title="Short form (noun)"
     />
     <ListItem
-      description="A type of improv where the structure is decided in advance but there is no predetermined \\"game\\" to be played."
+      description="A type of improv where the structure is decided in advance but there's no predetermined \\"game\\" to be played."
       example="I watched long-form improv last night."
       expanded={false}
       key="Long-form (adjective)"
@@ -45,6 +45,69 @@ exports[`renders as expected 1`] = `
       key="Long form (noun)"
       onPress={[Function]}
       title="Long form (noun)"
+    />
+    <ListItem
+      description="The person or thing you're acting like while you perform."
+      expanded={false}
+      key="Character"
+      onPress={[Function]}
+      title="Character"
+    />
+    <ListItem
+      description="You, the person (not the character you're playing)."
+      expanded={false}
+      key="Performer"
+      onPress={[Function]}
+      title="Performer"
+    />
+    <ListItem
+      description="An activity that helps you \\"get in the moment\\", \\"get out of your head\\", and be prepared to take risks with the other performers you're about improvise with. Often fun and goofy. Warm ups also work well as icebreakers for new groups of people."
+      expanded={false}
+      key="Warm up"
+      onPress={[Function]}
+      title="Warm up"
+    />
+    <ListItem
+      description="An activity with predetermined rules that helps you develop specific improv skills."
+      expanded={false}
+      key="Exercise"
+      onPress={[Function]}
+      title="Exercise"
+    />
+    <ListItem
+      description="An activity with predetermined rules that you can generally perform for an audience. Often used for short-form improv."
+      expanded={false}
+      key="Game (a)"
+      onPress={[Function]}
+      title="Game (a)"
+    />
+    <ListItem
+      description="A small performance that has a distinct start and end. This could be a single game in short-form, or one piece of a long-form set. The end of a scene is often triggered by an edit. A series of scenes generally make up a whole show."
+      expanded={false}
+      key="Scene"
+      onPress={[Function]}
+      title="Scene"
+    />
+    <ListItem
+      description="The entire performance that an audience comes to watch. Generally made up of a series of scenes."
+      expanded={false}
+      key="Show, Set, Performance"
+      onPress={[Function]}
+      title="Show, Set, Performance"
+    />
+    <ListItem
+      description="A way to end a scene. For example, clapping loudly to signal that one scene is over."
+      expanded={false}
+      key="Edit"
+      onPress={[Function]}
+      title="Edit"
+    />
+    <ListItem
+      description="A common phrase used to convey the idea of \\"accepting\\" plus \\"advancing\\"."
+      expanded={false}
+      key="Yes, and"
+      onPress={[Function]}
+      title="Yes, and"
     />
   </Accordion>
 </Component>
