@@ -20,22 +20,50 @@ const getSectionIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description, example, expanded, onPress }) {
+function ListItem({
+  title,
+  description,
+  example,
+  confusingTerms,
+  relatedTerms,
+  relatedSections,
+  expanded,
+  onPress,
+}) {
   return (
     <TouchableRipple style={styles.itemContainer} onPress={onPress}>
       <View style={styles.item}>
-        {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
-        {description ? (
+        {title && <Text style={styles.itemTitle}>{title}</Text>}
+        {description && (
           <Text
             numberOfLines={expanded ? undefined : 1}
             style={styles.itemDescription}
           >
             {description}
           </Text>
-        ) : null}
-        {example && expanded ? (
-          <Text style={styles.itemDescription}>Example: {example}</Text>
-        ) : null}
+        )}
+        {expanded && (
+          <React.Fragment>
+            {example && (
+              <Text style={styles.itemDescription}>Example: {example}</Text>
+            )}
+            {confusingTerms && (
+              <Text style={styles.itemDescription}>
+                Not to be confused with: {confusingTerms.join(', ')}
+              </Text>
+            )}
+            {relatedTerms && (
+              <Text style={styles.itemDescription}>
+                See also: {relatedTerms.join(', ')}
+              </Text>
+            )}
+            {relatedSections && (
+              <Text style={styles.itemDescription}>
+                See sections: {relatedSections.join(', ')}
+              </Text>
+            )}
+          </React.Fragment>
+        )}
       </View>
     </TouchableRipple>
   );
@@ -84,13 +112,12 @@ class Reference extends Component {
             left={getSectionIcon(iconName)}
             expanded={true}
           >
-            {items.map(({ name: itemName, description, example }) => (
+            {items.map(({ name: itemName, ...props }) => (
               <ListItem
+                {...props}
                 key={itemName}
                 title={itemName}
                 expanded={expandedItems.contains(itemName)}
-                description={description}
-                example={example}
                 onPress={() => this.handleToggleItem(itemName)}
               />
             ))}

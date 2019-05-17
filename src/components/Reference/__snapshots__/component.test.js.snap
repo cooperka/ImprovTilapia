@@ -20,6 +20,12 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Short-form (adjective)"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Short form (noun)",
+          "Game (a)",
+        ]
+      }
       title="Short-form (adjective)"
     />
     <ListItem
@@ -28,6 +34,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Short form (noun)"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Short-form (adjective)",
+        ]
+      }
       title="Short form (noun)"
     />
     <ListItem
@@ -36,6 +47,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Long-form (adjective)"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Long form (noun)",
+        ]
+      }
       title="Long-form (adjective)"
     />
     <ListItem
@@ -44,6 +60,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Long form (noun)"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Long-form (adjective)",
+        ]
+      }
       title="Long form (noun)"
     />
     <ListItem
@@ -51,6 +72,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Character"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Performer",
+        ]
+      }
       title="Character"
     />
     <ListItem
@@ -58,6 +84,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Performer"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Character",
+        ]
+      }
       title="Performer"
     />
     <ListItem
@@ -72,13 +103,29 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Exercise"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Game (a)",
+        ]
+      }
       title="Exercise"
     />
     <ListItem
+      confusingTerms={
+        Array [
+          "Game (the)",
+        ]
+      }
       description="An activity with predetermined rules that you can generally perform for an audience. Often used for short-form improv."
       expanded={false}
       key="Game (a)"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Exercise",
+          "Short-form",
+        ]
+      }
       title="Game (a)"
     />
     <ListItem
@@ -86,6 +133,13 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Scene"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Show",
+          "Edit",
+          "Game (a)",
+        ]
+      }
       title="Scene"
     />
     <ListItem
@@ -93,6 +147,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Show, Set, Performance"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Scene",
+        ]
+      }
       title="Show, Set, Performance"
     />
     <ListItem
@@ -100,6 +159,11 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Edit"
       onPress={[Function]}
+      relatedSections={
+        Array [
+          "Types of edits",
+        ]
+      }
       title="Edit"
     />
     <ListItem
@@ -107,6 +171,12 @@ exports[`renders as expected 1`] = `
       expanded={false}
       key="Yes, and"
       onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Accepting",
+          "Advancing",
+        ]
+      }
       title="Yes, and"
     />
   </Accordion>
