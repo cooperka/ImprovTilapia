@@ -5,6 +5,9 @@ import Component from './component';
 
 const props = {
   navigation: {},
+  referenceSettings: {
+    expandedItems: new Set(),
+  },
 };
 
 it('renders as expected', async () => {

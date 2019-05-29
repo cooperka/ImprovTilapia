@@ -1,4 +1,3 @@
-import Immutable from 'immutable';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
@@ -87,28 +86,25 @@ class Reference extends Component {
     ),
   });
 
-  state = {
-    expandedSection: null,
-    expandedItems: Immutable.Set(),
-  };
-
   handleToggleSection = (sectionName) => {
-    const { expandedSection } = this.state;
+    const { referenceSettings } = this.props;
+    const { expandedSection } = referenceSettings;
     const wasExpanded = expandedSection === sectionName;
-    this.setState({ expandedSection: wasExpanded ? null : sectionName });
+    referenceSettings.expandedSection = wasExpanded ? null : sectionName;
   };
 
   handleToggleItem = (itemName) => {
-    const { expandedItems } = this.state;
-    const exists = expandedItems.contains(itemName);
-    const newItems = exists
-      ? expandedItems.delete(itemName)
-      : expandedItems.add(itemName);
-    this.setState({ expandedItems: newItems });
+    const {
+      referenceSettings: { expandedItems },
+    } = this.props;
+    const wasExpanded = expandedItems.has(itemName);
+    wasExpanded ? expandedItems.delete(itemName) : expandedItems.add(itemName);
   };
 
   render() {
-    const { expandedSection, expandedItems } = this.state;
+    const {
+      referenceSettings: { expandedSection, expandedItems },
+    } = this.props;
 
     return (
       <ScrollView style={styles.container}>
@@ -125,7 +121,7 @@ class Reference extends Component {
                 {...props}
                 key={itemName}
                 title={itemName}
-                expanded={expandedItems.contains(itemName)}
+                expanded={expandedItems.has(itemName)}
                 onPress={() => this.handleToggleItem(itemName)}
               />
             ))}
