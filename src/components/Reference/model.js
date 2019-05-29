@@ -1,6 +1,7 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 import { initPersistedStore } from '../../storageUtils';
+import { references } from './utils';
 
 const STORAGE_KEY = 'ReferenceSettingsModel';
 
@@ -20,5 +21,19 @@ export class ReferenceSettingsModel {
       .catch((error) => {
         console.error('Failed to initPersistedStore:', error);
       });
+  }
+
+  @action
+  expandAllItems() {
+    this.expandedSection = references[0].name;
+    references.forEach(({ items }) => {
+      items.forEach(({ name }) => this.expandedItems.add(name));
+    });
+  }
+
+  @action
+  collapseAllItems() {
+    this.expandedSection = null;
+    this.expandedItems.clear();
   }
 }

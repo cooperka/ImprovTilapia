@@ -136,6 +136,16 @@ export class SuggestionsItems extends Component {
 export class ReferenceItems extends Component {
   routeName = 'Reference';
 
+  handleExpandAll = () => {
+    const { referenceSettings } = this.props;
+    referenceSettings.expandAllItems();
+  };
+
+  handleCollapseAll = () => {
+    const { referenceSettings } = this.props;
+    referenceSettings.collapseAllItems();
+  };
+
   render() {
     const { currRouteName, navigateToRoute } = this.props;
 
@@ -146,7 +156,8 @@ export class ReferenceItems extends Component {
         expanded={currRouteName === this.routeName}
         onPress={() => navigateToRoute(this.routeName)}
       >
-        <ListItem title="Nothing here yet" />
+        <ListItem title="Expand all items" onPress={this.handleExpandAll} />
+        <ListItem title="Collapse all items" onPress={this.handleCollapseAll} />
       </List.Accordion>
     );
   }

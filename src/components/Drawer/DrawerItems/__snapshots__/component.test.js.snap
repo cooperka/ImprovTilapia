@@ -8,7 +8,12 @@ exports[`renders as expected (reference items) 1`] = `
   title="Reference settings"
 >
   <ListItem
-    title="Nothing here yet"
+    onPress={[Function]}
+    title="Expand all items"
+  />
+  <ListItem
+    onPress={[Function]}
+    title="Collapse all items"
   />
 </Accordion>
 `;
