@@ -24,10 +24,10 @@ const getDrawerIcon = (name) => (props) => {
   );
 };
 
-function ListItem({ title, description, onPress }) {
+function ListItem({ title, description, onPress, containerStyle }) {
   return (
     <TouchableRipple style={styles.settingsItemContainer} onPress={onPress}>
-      <View style={styles.settingsItem}>
+      <View style={[styles.settingsItem, containerStyle]}>
         {title ? <Text style={styles.itemTitle}>{title}</Text> : null}
         {description ? (
           <Text style={styles.itemDescription}>{description}</Text>
@@ -156,8 +156,16 @@ export class ReferenceItems extends Component {
         expanded={currRouteName === this.routeName}
         onPress={() => navigateToRoute(this.routeName)}
       >
-        <ListItem title="Expand all items" onPress={this.handleExpandAll} />
-        <ListItem title="Collapse all items" onPress={this.handleCollapseAll} />
+        <ListItem
+          containerStyle={styles.titleOnly}
+          title="Expand all items"
+          onPress={this.handleExpandAll}
+        />
+        <ListItem
+          containerStyle={styles.titleOnly}
+          title="Collapse all items"
+          onPress={this.handleCollapseAll}
+        />
       </List.Accordion>
     );
   }
@@ -208,6 +216,9 @@ const styles = StyleSheet.create({
   itemTitle: {
     color: color.MATERIAL_PRIMARY,
     fontSize: 16,
+  },
+  titleOnly: {
+    paddingVertical: 8,
   },
   itemDescription: {
     color: color.MATERIAL_SECONDARY,

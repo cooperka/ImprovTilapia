@@ -8,10 +8,20 @@ exports[`renders as expected (reference items) 1`] = `
   title="Reference settings"
 >
   <ListItem
+    containerStyle={
+      Object {
+        "paddingVertical": 8,
+      }
+    }
     onPress={[Function]}
     title="Expand all items"
   />
   <ListItem
+    containerStyle={
+      Object {
+        "paddingVertical": 8,
+      }
+    }
     onPress={[Function]}
     title="Collapse all items"
   />
