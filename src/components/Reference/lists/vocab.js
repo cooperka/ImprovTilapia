@@ -196,3 +196,29 @@ export const secondary = [
       "Your character's place in the world; your self-worth or importance relative to other characters. Your status can change throughout a scene, which is often exciting to see. Objects can also have status.",
   },
 ];
+
+export const other = [
+  {
+    name: 'Story',
+    description: 'A sequence of events with a beginning, middle, and end.',
+    relatedTerms: ['Plot, Narrative'],
+  },
+  {
+    name: 'Plot',
+    description:
+      'The way the events in a story relate to each other. Cause and effect.',
+    relatedTerms: ['Story, Narrative'],
+  },
+  {
+    name: 'Narrative',
+    description: 'How a story is told; its structure or interpretation.',
+    relatedTerms: ['Story, Plot'],
+  },
+  {
+    name: 'Beat',
+    description: `1. A stand-alone part of a scene. Often contains significant events that affect the characters. Scenes sometimes have multiple beats. Edits generally happen at the end of a beat.
+2. A specific situation that can be revisited later. This term is most often used during the Harold, a form composed of three beats.
+3. A small, purposeful pause.`,
+    relatedTerms: ['Scene, Edit'],
+  },
+];

@@ -1,4 +1,4 @@
-import { primary, secondary } from './lists/vocab';
+import { primary, secondary, other } from './lists/vocab';
 
 export const references = [
   {
@@ -10,5 +10,10 @@ export const references = [
     name: 'Secondary building blocks',
     iconName: 'dictionary',
     items: secondary,
+  },
+  {
+    name: 'Additional concepts (WIP)',
+    iconName: 'dictionary',
+    items: other,
   },
 ];

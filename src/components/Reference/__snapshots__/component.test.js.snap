@@ -376,5 +376,63 @@ exports[`renders as expected 1`] = `
       title="Status"
     />
   </Accordion>
+  <Accordion
+    expanded={false}
+    key="Additional concepts (WIP)"
+    left={[Function]}
+    onPress={[Function]}
+    title="Additional concepts (WIP)"
+  >
+    <ListItem
+      description="A sequence of events with a beginning, middle, and end."
+      expanded={false}
+      key="Story"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Plot, Narrative",
+        ]
+      }
+      title="Story"
+    />
+    <ListItem
+      description="The way the events in a story relate to each other. Cause and effect."
+      expanded={false}
+      key="Plot"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Story, Narrative",
+        ]
+      }
+      title="Plot"
+    />
+    <ListItem
+      description="How a story is told; its structure or interpretation."
+      expanded={false}
+      key="Narrative"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Story, Plot",
+        ]
+      }
+      title="Narrative"
+    />
+    <ListItem
+      description="1. A stand-alone part of a scene. Often contains significant events that affect the characters. Scenes sometimes have multiple beats. Edits generally happen at the end of a beat.
+2. A specific situation that can be revisited later. This term is most often used during the Harold, a form composed of three beats.
+3. A small, purposeful pause."
+      expanded={false}
+      key="Beat"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Scene, Edit",
+        ]
+      }
+      title="Beat"
+    />
+  </Accordion>
 </ScrollViewMock>
 `;
