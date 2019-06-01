@@ -22,6 +22,7 @@ const getSectionIcon = (name) => (props) => {
 function ListItem({
   title,
   description,
+  note,
   example,
   confusingTerms,
   relatedTerms,
@@ -29,6 +30,7 @@ function ListItem({
   expanded,
   onPress,
 }) {
+  // TODO: Handle example 'scene' array.
   return (
     <TouchableRipple style={styles.itemContainer} onPress={onPress}>
       <View style={styles.item}>
@@ -43,6 +45,7 @@ function ListItem({
         )}
         {expanded && (
           <React.Fragment>
+            {note && <Text style={styles.itemDescription}>Note: {note}</Text>}
             {example && (
               <Text style={styles.itemDescription}>Example: {example}</Text>
             )}

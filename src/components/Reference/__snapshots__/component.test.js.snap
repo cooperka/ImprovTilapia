@@ -170,7 +170,7 @@ exports[`renders as expected 1`] = `
     <ListItem
       description="A common phrase used to convey the idea of \\"accepting\\" plus \\"advancing\\"."
       expanded={false}
-      key="Yes, and"
+      key="\\"Yes, and\\""
       onPress={[Function]}
       relatedTerms={
         Array [
@@ -178,7 +178,202 @@ exports[`renders as expected 1`] = `
           "Advancing",
         ]
       }
-      title="Yes, and"
+      title="\\"Yes, and\\""
+    />
+  </Accordion>
+  <Accordion
+    expanded={false}
+    key="Secondary building blocks"
+    left={[Function]}
+    onPress={[Function]}
+    title="Secondary building blocks"
+  >
+    <ListItem
+      description="A question you ask the audience, e.g. \\"Can I get a location?\\" to help inspire a scene."
+      expanded={false}
+      key="Ask, Ask-for"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Suggestion",
+        ]
+      }
+      title="Ask, Ask-for"
+    />
+    <ListItem
+      description="A word or phrase you get from the audience, e.g. the answer to \\"Can I get a location?\\" that helps inspire a scene."
+      expanded={false}
+      key="Suggestion, Get"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Ask",
+        ]
+      }
+      title="Suggestion, Get"
+    />
+    <ListItem
+      description="Embracing ideas and going along with them. You as a character can say \\"no\\" as long as you as a performer are still accepting the idea."
+      expanded={false}
+      key="Accepting, Agreeing"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "\\"Yes, and\\", Blocking",
+        ]
+      }
+      scene={
+        Array [
+          "Would you like a delicious apple? [offer]",
+          "Not the poison apple, you're trying to kill me! [saying \\"no\\" while still accepting the idea]",
+        ]
+      }
+      title="Accepting, Agreeing"
+    />
+    <ListItem
+      description="Rejecting ideas and not advancing the narrative. One of the most common problems experienced by new improvisers."
+      expanded={false}
+      key="Blocking, Denial, Rejecting"
+      note="In conventional theater, blocking refers to pre-planned stage movement."
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Accepting",
+        ]
+      }
+      scene={
+        Array [
+          "Would you like a delicious apple?",
+          "That's not an apple, it's a porcupine! [audience laughs, but now your partner has to scrap their idea and start over. Rude.]",
+        ]
+      }
+      title="Blocking, Denial, Rejecting"
+    />
+    <ListItem
+      description="Making a previous idea irrelevant. Often problematic because it wastes time and causes the audience to stop caring about your ideas."
+      example="Pulling out a guitar, but then realizing you don't know how to play it and deciding to go to the opera instead. Why not just start at the opera?"
+      expanded={false}
+      key="Canceling"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Advancing, Blocking",
+        ]
+      }
+      title="Canceling"
+    />
+    <ListItem
+      description="Doing things to move the scene forward."
+      expanded={false}
+      key="Advancing"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Heightening, Exploring, Raising the stakes, \\"Yes, and\\"",
+        ]
+      }
+      title="Advancing"
+    />
+    <ListItem
+      description="Building on what's already there. Taking things one step further."
+      example="If you're upset, finding a reason to become furious."
+      expanded={false}
+      key="Heightening"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Raising the stakes, Advancing, Exploring",
+        ]
+      }
+      title="Heightening"
+    />
+    <ListItem
+      description="Seeing where an idea leads. If one thing is true, what else might be true? Don't think too hard; often the most obvious ideas lead to the funniest scenes."
+      expanded={false}
+      key="Exploring"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Advancing",
+        ]
+      }
+      title="Exploring"
+    />
+    <ListItem
+      description="Increasing the possible consequences for the characters. Making your actions have more significance."
+      expanded={false}
+      key="Raising the stakes"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Heightening, Advancing",
+        ]
+      }
+      title="Raising the stakes"
+    />
+    <ListItem
+      description="The thing your character wants. The driving force behind what your character does."
+      expanded={false}
+      key="Objective, Motivation"
+      onPress={[Function]}
+      title="Objective, Motivation"
+    />
+    <ListItem
+      description="Identifying things specifically. Giving characters names, describing objects, etc. This adds detail and helps the audience visualize what's going on."
+      expanded={false}
+      key="Naming"
+      onPress={[Function]}
+      title="Naming"
+    />
+    <ListItem
+      description="How you're related to another character in the scene. Often surface-level."
+      example="Siblings, doctor/patient, jars of salsa on a grocery store shelf"
+      expanded={false}
+      key="Relationship"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Dynamic",
+        ]
+      }
+      title="Relationship"
+    />
+    <ListItem
+      description="The way you interact with another character in the scene. Goes deeper than a simple relationship."
+      example="Supportive friendship, tender romance, aggressive competition"
+      expanded={false}
+      key="Dynamic"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Relationship",
+        ]
+      }
+      title="Dynamic"
+    />
+    <ListItem
+      confusingTerms={
+        Array [
+          "Game (a)",
+        ]
+      }
+      description="The \\"game\\" of a scene is often described as the \\"one weird thing\\" that you focus on and heighten. \\"Gamey\\" scenes often focus on the game more than the story, whereas \\"grounded\\" scenes are less gamey."
+      expanded={false}
+      key="Game (the)"
+      onPress={[Function]}
+      relatedTerms={
+        Array [
+          "Heightening, Dynamic, Raising the stakes",
+        ]
+      }
+      title="Game (the)"
+    />
+    <ListItem
+      description="Your character's place in the world; your self-worth or importance relative to other characters. Your status can change throughout a scene, which is often exciting to see. Objects can also have status."
+      expanded={false}
+      key="Status"
+      onPress={[Function]}
+      title="Status"
     />
   </Accordion>
 </ScrollViewMock>

@@ -5,6 +5,7 @@
  * To the best of my ability, I've included comments describing the source of
  * each group of items.
  */
+
 export const clearEmotions = [
   // Cleaned up from https://en.wikipedia.org/wiki/Template:Emotion.
   // License: https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
