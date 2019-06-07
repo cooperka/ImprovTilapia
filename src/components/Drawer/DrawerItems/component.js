@@ -223,6 +223,7 @@ const styles = StyleSheet.create({
   itemDescription: {
     color: color.MATERIAL_SECONDARY,
     fontSize: 14,
+    marginTop: 2,
     marginBottom: 8,
   },
 });
