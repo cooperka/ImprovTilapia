@@ -6,6 +6,7 @@ import { IconButton, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { color } from '../../constants';
+import { icon36 } from '../../styles';
 
 class FloatingNav extends Component {
   static propTypes = {
@@ -28,7 +29,7 @@ class FloatingNav extends Component {
           onPress={this.handleOpenDrawer}
           icon={() => (
             <MaterialCommunityIcons
-              style={styles.icon}
+              style={icon36}
               name="menu"
               size={36}
               color="white"
@@ -65,11 +66,6 @@ const styles = StyleSheet.create({
     top: Constants.statusBarHeight + 16,
     left: 16,
     backgroundColor: 'transparent',
-  },
-  icon: {
-    textAlign: 'center',
-    marginTop: 'auto',
-    marginBottom: 'auto',
   },
 });
 

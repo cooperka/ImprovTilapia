@@ -7,11 +7,13 @@ exports[`handles timers 1`] = `
   name="pause"
   size={36}
   style={
-    Object {
-      "marginBottom": "auto",
-      "marginTop": "auto",
-      "textAlign": "center",
-    }
+    Array [
+      Object {},
+      Object {
+        "marginLeft": -5,
+        "marginTop": -5,
+      },
+    ]
   }
 />
 `;
@@ -25,11 +27,13 @@ exports[`handles timers 3`] = `
   name="play"
   size={36}
   style={
-    Object {
-      "marginBottom": "auto",
-      "marginTop": "auto",
-      "textAlign": "center",
-    }
+    Array [
+      Object {},
+      Object {
+        "marginLeft": -5,
+        "marginTop": -5,
+      },
+    ]
   }
 />
 `;

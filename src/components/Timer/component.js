@@ -7,16 +7,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { observer, inject } from 'mobx-react/native';
 
 import theme from '../App/paperTheme';
+import { icon36 } from '../../styles';
 
 import FloatingNav from '../FloatingNav/component';
 
 const getFabIcon = (name) => () => (
-  <MaterialCommunityIcons
-    style={styles.icon}
-    name={name}
-    size={36}
-    color="white"
-  />
+  <MaterialCommunityIcons style={icon36} name={name} size={36} color="white" />
 );
 const PlayIcon = getFabIcon('play');
 const PauseIcon = getFabIcon('pause');
@@ -265,11 +261,6 @@ const styles = StyleSheet.create({
   fab: {
     backgroundColor: theme.colors.primary,
     marginHorizontal: 16,
-  },
-  icon: {
-    textAlign: 'center',
-    marginTop: 'auto',
-    marginBottom: 'auto',
   },
 });
 
