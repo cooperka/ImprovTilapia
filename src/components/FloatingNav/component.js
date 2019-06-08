@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     marginLeft: 22,
   },
   floatingMenuButton: {
+    zIndex: 9999,
     position: 'absolute',
     top: Constants.statusBarHeight + 16,
     left: 16,
