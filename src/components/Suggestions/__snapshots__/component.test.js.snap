@@ -172,10 +172,10 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotional diad"
+        key="Emotional dyad"
       >
         <Button
-          id="Emotional diad"
+          id="Emotional dyad"
           mode="text"
           onPress={[Function]}
           style={
@@ -189,7 +189,7 @@ exports[`renders as expected 1`] = `
             ]
           }
         >
-          Emotional diad
+          Emotional dyad
         </Button>
       </ColumnNB>
     </RowNB>

@@ -18,7 +18,7 @@ const suggestionOrder = [
   suggestionTypes.EMOTION_FULL,
 
   suggestionTypes.LOCATION,
-  suggestionTypes.EMOTIONAL_DIAD,
+  suggestionTypes.EMOTIONAL_DYAD,
 ];
 
 @inject('suggestionsSettings')

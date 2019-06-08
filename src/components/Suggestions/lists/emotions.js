@@ -82,7 +82,7 @@ export const clearEmotions = [
   'Worry',
 ];
 
-export const emotionalDiads = [
+export const emotionalDyads = [
   // Cleaned up from https://en.wikipedia.org/wiki/Contrasting_and_categorization_of_emotions.
   // Wiki's source: Plutchik's wheel of emotions.
   // License: https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License

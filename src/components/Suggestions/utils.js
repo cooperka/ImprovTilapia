@@ -5,7 +5,7 @@ import { occupations } from './lists/occupations';
 import {
   clearEmotions,
   groupedEmotions,
-  emotionalDiads,
+  emotionalDyads,
 } from './lists/emotions';
 import { locations } from './lists/locations';
 
@@ -33,7 +33,7 @@ export const suggestionTypes = {
   OCCUPATION: 'OCCUPATION',
   EMOTION_SHORT: 'EMOTION_SHORT',
   EMOTION_FULL: 'EMOTION_FULL',
-  EMOTIONAL_DIAD: 'EMOTIONAL_DIAD',
+  EMOTIONAL_DYAD: 'EMOTIONAL_DYAD',
   LOCATION: 'LOCATION',
 };
 
@@ -54,9 +54,9 @@ export const suggestions = {
     name: 'Emotion (full)',
     getRandomThing: getRandomThingFactory(groupedEmotions),
   },
-  [suggestionTypes.EMOTIONAL_DIAD]: {
-    name: 'Emotional diad',
-    getRandomThing: getRandomThingFactory(emotionalDiads),
+  [suggestionTypes.EMOTIONAL_DYAD]: {
+    name: 'Emotional dyad',
+    getRandomThing: getRandomThingFactory(emotionalDyads),
   },
   [suggestionTypes.LOCATION]: {
     name: 'Location',
