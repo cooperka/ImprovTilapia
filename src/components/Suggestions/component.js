@@ -132,12 +132,15 @@ class Suggestions extends Component {
             // Render each pair.
             .map((pair, index) => (
               <Row key={index}>
-                {pair.map(({ name, getRandomThing }) => (
+                {pair.map(({ name, getRandomThing }, index) => (
                   <Col key={name}>
                     <Button
                       id={name}
                       mode={this.isActive(name) ? 'contained' : 'text'}
-                      style={styles.button}
+                      style={[
+                        styles.button,
+                        index > 0 ? styles.button_right : styles.button_left,
+                      ]}
                       onPress={this.handleNewSuggestion(name, getRandomThing)}
                     >
                       {name}
@@ -180,6 +183,12 @@ const styles = StyleSheet.create({
   },
   button: {
     marginHorizontal: 16,
+  },
+  button_right: {
+    marginLeft: 8,
+  },
+  button_left: {
+    marginRight: 8,
   },
 });
 

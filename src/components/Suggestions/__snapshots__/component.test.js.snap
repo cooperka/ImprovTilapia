@@ -66,9 +66,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginRight": 8,
+              },
+            ]
           }
         >
           Relationship
@@ -82,9 +87,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginLeft": 8,
+              },
+            ]
           }
         >
           Emotion (main)
@@ -102,9 +112,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginRight": 8,
+              },
+            ]
           }
         >
           Occupation
@@ -118,9 +133,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginLeft": 8,
+              },
+            ]
           }
         >
           Emotion (full)
@@ -138,9 +158,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginRight": 8,
+              },
+            ]
           }
         >
           Location
@@ -154,9 +179,14 @@ exports[`renders as expected 1`] = `
           mode="text"
           onPress={[Function]}
           style={
-            Object {
-              "marginHorizontal": 16,
-            }
+            Array [
+              Object {
+                "marginHorizontal": 16,
+              },
+              Object {
+                "marginLeft": 8,
+              },
+            ]
           }
         >
           Emotional diad
