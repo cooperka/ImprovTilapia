@@ -47,15 +47,15 @@ export const suggestions = {
     getRandomThing: getRandomThingFactory(occupations),
   },
   [suggestionTypes.EMOTION_SHORT]: {
-    name: 'Emotion (main)',
+    name: 'Emotion (70)',
     getRandomThing: getRandomThingFactory(clearEmotions),
   },
   [suggestionTypes.EMOTION_FULL]: {
-    name: 'Emotion (full)',
+    name: 'Emotion (150)',
     getRandomThing: getRandomThingFactory(groupedEmotions),
   },
   [suggestionTypes.EMOTIONAL_DYAD]: {
-    name: 'Emotional dyad',
+    name: 'Dyad',
     getRandomThing: getRandomThingFactory(emotionalDyads),
   },
   [suggestionTypes.LOCATION]: {

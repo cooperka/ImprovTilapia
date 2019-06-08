@@ -80,10 +80,10 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotion (main)"
+        key="Emotion (70)"
       >
         <Button
-          id="Emotion (main)"
+          id="Emotion (70)"
           mode="text"
           onPress={[Function]}
           style={
@@ -97,7 +97,7 @@ exports[`renders as expected 1`] = `
             ]
           }
         >
-          Emotion (main)
+          Emotion (70)
         </Button>
       </ColumnNB>
     </RowNB>
@@ -126,10 +126,10 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotion (full)"
+        key="Emotion (150)"
       >
         <Button
-          id="Emotion (full)"
+          id="Emotion (150)"
           mode="text"
           onPress={[Function]}
           style={
@@ -143,7 +143,7 @@ exports[`renders as expected 1`] = `
             ]
           }
         >
-          Emotion (full)
+          Emotion (150)
         </Button>
       </ColumnNB>
     </RowNB>
@@ -172,10 +172,10 @@ exports[`renders as expected 1`] = `
         </Button>
       </ColumnNB>
       <ColumnNB
-        key="Emotional dyad"
+        key="Dyad"
       >
         <Button
-          id="Emotional dyad"
+          id="Dyad"
           mode="text"
           onPress={[Function]}
           style={
@@ -189,7 +189,7 @@ exports[`renders as expected 1`] = `
             ]
           }
         >
-          Emotional dyad
+          Dyad
         </Button>
       </ColumnNB>
     </RowNB>

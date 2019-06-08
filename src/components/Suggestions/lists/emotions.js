@@ -68,8 +68,6 @@ export const clearEmotions = [
   'Remorse',
   'Resentment',
   'Sadness',
-  'Saudade (melancholic longing)',
-  "Schadenfreude (joy in others' harm)",
   'Self-confidence',
   'Shame',
   'Shock',
@@ -202,6 +200,7 @@ export const groupedEmotions = [
   'Envy',
   'Jealousy',
   'Torment',
+  "Schadenfreude (joy in others' harm)",
 
   'Sadness',
   'Suffering',
@@ -242,6 +241,7 @@ export const groupedEmotions = [
   'Pity',
   'Mono no aware (awareness of the transience of all things)',
   'Sympathy',
+  'Saudade (melancholic longing)',
 
   'Fear',
   'Horror',
