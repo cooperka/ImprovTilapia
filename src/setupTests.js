@@ -29,6 +29,15 @@ jest.mock('mobx-react/native', () => {
   };
 });
 
+const SUPPRESSED_WARNINGS = /Warning: Async Storage has been extracted from react-native core/;
+
+console.error = (...args) => {
+  if (SUPPRESSED_WARNINGS.match(args[0])) {
+    return;
+  }
+  console.error(...args);
+};
+
 // Initialize Enzyme.
 Enzyme.configure({
   adapter: new Adapter(),
