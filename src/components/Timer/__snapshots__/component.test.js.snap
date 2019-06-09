@@ -41,7 +41,7 @@ exports[`handles timers 3`] = `
 exports[`handles timers 4`] = `"0:00"`;
 
 exports[`renders as expected 1`] = `
-<Component
+<View
   onLayout={[Function]}
   style={
     Object {
@@ -57,7 +57,7 @@ exports[`renders as expected 1`] = `
     floating={true}
     navigation={Object {}}
   />
-  <Component
+  <View
     style={
       Object {
         "alignItems": "center",
@@ -84,8 +84,8 @@ exports[`renders as expected 1`] = `
     >
       0:00
     </Animated.Text>
-  </Component>
-  <Component
+  </View>
+  <View
     style={
       Object {
         "alignItems": "center",
@@ -96,7 +96,7 @@ exports[`renders as expected 1`] = `
       }
     }
   >
-    <Component
+    <View
       style={
         Object {
           "alignItems": "center",
@@ -141,8 +141,8 @@ exports[`renders as expected 1`] = `
       >
         +0:10
       </Button>
-    </Component>
-    <Component
+    </View>
+    <View
       style={
         Object {
           "alignItems": "center",
@@ -206,7 +206,7 @@ exports[`renders as expected 1`] = `
       >
         +30
       </Button>
-    </Component>
-  </Component>
-</Component>
+    </View>
+  </View>
+</View>
 `;

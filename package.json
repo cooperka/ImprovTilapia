@@ -11,7 +11,9 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
@@ -22,15 +24,20 @@
     }
   },
   "dependencies": {
-    "expo": "32.0.6",
+    "expo": "33.0.3",
+    "expo-asset": "5.0.1",
+    "expo-brightness": "5.0.1",
+    "expo-constants": "5.0.1",
+    "expo-font": "5.0.1",
+    "expo-keep-awake": "5.0.1",
     "immutable": "4.0.0-rc.12",
     "lodash": "4.17.11",
     "luxon": "1.16.0",
     "mobx": "5.9.4",
     "mobx-react": "5.4.4",
     "prop-types": "15.7.2",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-easy-grid": "0.2.1",
     "react-native-paper": "2.16.0",
     "react-navigation": "3.11.0",
@@ -43,7 +50,7 @@
     "enzyme-adapter-react-16": "1.14.0",
     "enzyme-to-json": "3.3.5",
     "husky": "2.4.0",
-    "jest-expo": "32.0.0",
+    "jest-expo": "33.0.2",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.0",
     "react-native-mock-render": "0.1.3"

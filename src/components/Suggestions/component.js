@@ -7,7 +7,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 import FloatingNav from '../FloatingNav/component';
 import { Button } from 'react-native-paper';
 import { suggestionTypes, suggestions } from './utils';
-import { Constants } from 'expo';
+import Constants from 'expo-constants';
 
 // Organized in pairs (left and right column).
 const suggestionOrder = [

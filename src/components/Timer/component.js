@@ -1,7 +1,9 @@
 import { Duration } from 'luxon';
 import React, { Component } from 'react';
 import { StyleSheet, View, Animated } from 'react-native';
-import { Constants, KeepAwake, Brightness } from 'expo';
+import * as Brightness from 'expo-brightness';
+import { useKeepAwake } from 'expo-keep-awake';
+import Constants from 'expo-constants';
 import { Button, FAB } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { observer, inject } from 'mobx-react/native';
@@ -25,6 +27,12 @@ function formatTimeCompact(seconds) {
   return Duration.fromObject({ seconds }).toFormat(
     seconds % 60 === 0 ? 'm' : ':ss',
   );
+}
+
+// Functional component since hooks can't be used in classes.
+function KeepAwake() {
+  useKeepAwake();
+  return null;
 }
 
 @inject('timerSettings')

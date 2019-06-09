@@ -1,4 +1,5 @@
-import { Asset, Font } from 'expo';
+import * as Font from 'expo-font';
+import { Asset } from 'expo-asset';
 
 function cacheImages(images) {
   return images.map((image) => {
