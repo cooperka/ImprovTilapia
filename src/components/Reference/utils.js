@@ -1,18 +1,18 @@
-import { primary, secondary, other } from './lists/vocab';
+import { basic, major, other } from './lists/vocab';
 
 export const references = [
   {
-    name: 'Primary building blocks',
+    name: 'Basic terms',
     iconName: 'dictionary',
-    items: primary,
+    items: basic,
   },
   {
-    name: 'Secondary building blocks',
+    name: 'Major concepts',
     iconName: 'dictionary',
-    items: secondary,
+    items: major,
   },
   {
-    name: 'Additional concepts (WIP)',
+    name: 'Additional concepts (more soon)',
     iconName: 'dictionary',
     items: other,
   },

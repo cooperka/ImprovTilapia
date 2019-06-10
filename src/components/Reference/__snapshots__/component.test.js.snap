@@ -14,10 +14,10 @@ exports[`renders as expected 1`] = `
   />
   <Accordion
     expanded={false}
-    key="Primary building blocks"
+    key="Basic terms"
     left={[Function]}
     onPress={[Function]}
-    title="Primary building blocks"
+    title="Basic terms"
   >
     <ListItem
       description="A type of improv where you play structured \\"games\\" with predetermined rules (like in the TV show \\"Whose Line Is It Anyway?\\")."
@@ -187,10 +187,10 @@ exports[`renders as expected 1`] = `
   </Accordion>
   <Accordion
     expanded={false}
-    key="Secondary building blocks"
+    key="Major concepts"
     left={[Function]}
     onPress={[Function]}
-    title="Secondary building blocks"
+    title="Major concepts"
   >
     <ListItem
       description="A question you ask the audience, e.g. \\"Can I get a location?\\" to help inspire a scene."
@@ -382,10 +382,10 @@ exports[`renders as expected 1`] = `
   </Accordion>
   <Accordion
     expanded={false}
-    key="Additional concepts (WIP)"
+    key="Additional concepts (more soon)"
     left={[Function]}
     onPress={[Function]}
-    title="Additional concepts (WIP)"
+    title="Additional concepts (more soon)"
   >
     <ListItem
       description="A sequence of events with a beginning, middle, and end."

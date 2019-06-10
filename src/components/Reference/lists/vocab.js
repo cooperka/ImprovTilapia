@@ -6,7 +6,7 @@
  * each group of items.
  */
 
-export const primary = [
+export const basic = [
   // Cleaned up from TODO.
   // License: TODO
 
@@ -91,7 +91,7 @@ export const primary = [
   },
 ];
 
-export const secondary = [
+export const major = [
   // From my own head and things I've heard:
   {
     name: 'Ask, Ask-for',
