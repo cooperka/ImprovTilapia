@@ -52,6 +52,10 @@ exports[`renders as expected 1`] = `
     }
   }
 >
+  <StatusBarEffect
+    barStyle="light-content"
+    navigation={Object {}}
+  />
   <KeepAwake />
   <FloatingNav
     floating={true}

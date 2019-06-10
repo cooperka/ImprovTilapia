@@ -7,6 +7,7 @@ import { List, TouchableRipple } from 'react-native-paper';
 import { references } from './utils';
 import FloatingNav from '../FloatingNav/component';
 import { color } from '../../constants';
+import StatusBarEffect from '../StatusBarEffect/component';
 
 /** Adapted from Paper's `List.Icon`. */
 const getSectionIcon = (name) => (props) => {
@@ -106,11 +107,14 @@ class Reference extends Component {
 
   render() {
     const {
+      navigation,
       referenceSettings: { expandedSection, expandedItems },
     } = this.props;
 
     return (
       <ScrollView style={styles.container}>
+        <StatusBarEffect navigation={navigation} barStyle={'dark-content'} />
+
         {references.map(({ name: sectionName, iconName, items }) => (
           <List.Accordion
             key={sectionName}

@@ -8,6 +8,10 @@ exports[`renders as expected 1`] = `
     }
   }
 >
+  <StatusBarEffect
+    barStyle="dark-content"
+    navigation={Object {}}
+  />
   <Accordion
     expanded={false}
     key="Primary building blocks"

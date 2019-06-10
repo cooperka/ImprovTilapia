@@ -8,6 +8,7 @@ import FloatingNav from '../FloatingNav/component';
 import { Button } from 'react-native-paper';
 import { suggestionTypes, suggestions } from './utils';
 import Constants from 'expo-constants';
+import StatusBarEffect from '../StatusBarEffect/component';
 
 // Organized in pairs (left and right column).
 const suggestionOrder = [
@@ -103,6 +104,7 @@ class Suggestions extends Component {
 
     return (
       <View style={styles.container} onLayout={this.handleLayoutChange}>
+        <StatusBarEffect navigation={navigation} barStyle={'light-content'} />
         <FloatingNav navigation={navigation} floating />
 
         <View style={styles.suggestionContainer}>

@@ -11,6 +11,7 @@ import { observer, inject } from 'mobx-react/native';
 import theme from '../App/paperTheme';
 import { icon36 } from '../../styles';
 
+import StatusBarEffect from '../StatusBarEffect/component';
 import FloatingNav from '../FloatingNav/component';
 
 const getFabIcon = (name) => () => (
@@ -178,6 +179,7 @@ class Timer extends Component {
 
     return (
       <View style={styles.container} onLayout={this.handleLayoutChange}>
+        <StatusBarEffect navigation={navigation} barStyle={'light-content'} />
         <KeepAwake />
 
         <FloatingNav navigation={navigation} floating />
