@@ -1,19 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders as expected (floating) 1`] = `
-<FAB
-  icon={[Function]}
-  onPress={[Function]}
-  style={
-    Object {
-      "backgroundColor": "transparent",
-      "left": 16,
-      "position": "absolute",
-      "top": 36,
-      "zIndex": 9999,
+<Fragment>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "height": 0,
+        "width": 0,
+      }
     }
-  }
-/>
+  />
+  <FAB
+    icon={[Function]}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "left": 16,
+          "position": "absolute",
+          "zIndex": 9999,
+        },
+        Object {
+          "top": 36,
+        },
+      ]
+    }
+  />
+</Fragment>
 `;
 
 exports[`renders as expected (not floating) 1`] = `
