@@ -844,10 +844,9 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@expo/status-bar-height@0.0.1":
+"@expo/status-bar-height@cooperka/status-bar-height#2019-06-12-syntaxErrors":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@expo/status-bar-height/-/status-bar-height-0.0.1.tgz#c39df6daa018fe10bba4b699cce8a881bfc6f9e4"
-  integrity sha512-kNaX1sZ1eF0M0GvEXaAtv/6BsiPHPIAxCjkUzcUQ58E1h1rsbqO/spPxedsJkw/GneXuNLXNy8+UTkWKARFLyw==
+  resolved "https://codeload.github.com/cooperka/status-bar-height/tar.gz/58d7c888d8810643c4a10466c764112c2c30adea"
 
 "@expo/vector-icons@^10.0.1":
   version "10.0.2"

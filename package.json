@@ -24,7 +24,7 @@
     }
   },
   "dependencies": {
-    "@expo/status-bar-height": "0.0.1",
+    "@expo/status-bar-height": "cooperka/status-bar-height#2019-06-12-syntaxErrors",
     "expo": "33.0.3",
     "expo-asset": "5.0.1",
     "expo-brightness": "5.0.1",
