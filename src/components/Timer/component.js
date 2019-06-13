@@ -176,6 +176,8 @@ class Timer extends Component {
   render() {
     const { navigation } = this.props;
     const { isRunning, width, flashValue } = this.state;
+    const fontSize = width / 4.0;
+    const lineHeight = fontSize;
 
     return (
       <View style={styles.container} onLayout={this.handleLayoutChange}>
@@ -187,10 +189,7 @@ class Timer extends Component {
         <View style={styles.timeContainer}>
           <Animated.Text
             id="timeRemaining"
-            style={[
-              styles.time,
-              { fontSize: width / 4.0, opacity: flashValue },
-            ]}
+            style={[styles.time, { fontSize, lineHeight, opacity: flashValue }]}
           >
             {formatTime(this.state.seconds)}
           </Animated.Text>

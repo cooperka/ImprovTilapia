@@ -81,6 +81,7 @@ exports[`renders as expected 1`] = `
           },
           Object {
             "fontSize": 0,
+            "lineHeight": 0,
             "opacity": "Value",
           },
         ]

@@ -101,6 +101,8 @@ class Suggestions extends Component {
         ? // 5% smaller for each character beyond 20, but at most half the normal size.
           Math.min(((currSuggestion.length - 20) * 5) / 100 + 1, 2)
         : 1;
+    const fontSize = width / 8.0 / textLengthFactor;
+    const lineHeight = fontSize;
 
     return (
       <View style={styles.container} onLayout={this.handleLayoutChange}>
@@ -108,12 +110,7 @@ class Suggestions extends Component {
         <FloatingNav navigation={navigation} floating />
 
         <View style={styles.suggestionContainer}>
-          <Text
-            style={[
-              styles.suggestion,
-              { fontSize: width / 8.0 / textLengthFactor },
-            ]}
-          >
+          <Text style={[styles.suggestion, { fontSize, lineHeight }]}>
             {currSuggestion}
           </Text>
         </View>
