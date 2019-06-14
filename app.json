@@ -27,6 +27,7 @@
     "ios": {
       "buildNumber": "8",
       "bundleIdentifier": "com.cooperka.improv",
+      "appStoreUrl": "https://apps.apple.com/us/app/improv-tilapia/id1456501532",
       "icon": "./assets/icon-ios.png",
       "supportsTablet": true
     },
