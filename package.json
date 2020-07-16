@@ -32,7 +32,7 @@
     "expo-font": "5.0.1",
     "expo-keep-awake": "5.0.1",
     "immutable": "4.0.0-rc.12",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "luxon": "1.16.0",
     "mobx": "5.9.4",
     "mobx-react": "5.4.4",
